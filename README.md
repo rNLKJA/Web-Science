@@ -1,5 +1,7 @@
 # Geo localisation & Web Science
 
+![Geolocation Data (地理定位数据) ⭐⭐⭐⭐](https://github.com/user-attachments/assets/733b9b45-fffb-4368-bf78-30530165fcb1)
+
 > **Geolocalisation** refers to the process of identifying or estimating the real-world geographic location of an object, such as a mobile device, internet-connected computer, or website visitor. 
 
 > From a **geographical perspective**, geolocalisation involves determining physical coordinates (latitude and longitude) or place names (countries, cities, addresses) of entities in the real world. It relies on various technologies including GPS (Global Positioning System), cell tower triangulation, IP address mapping, and Wi-Fi positioning systems.
