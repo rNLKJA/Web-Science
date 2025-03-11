@@ -1,6 +1,6 @@
 # Geo localisation & Web Science
 
-![Geolocation Data (地理定位数据) ⭐⭐⭐⭐](https://github.com/user-attachments/assets/733b9b45-fffb-4368-bf78-30530165fcb1)
+![Geolocation Data (地理定位数据) ⭐⭐⭐⭐](./img/419000991-733b9b45-fffb-4368-bf78-30530165fcb1.png)
 
 > **Geolocalisation** refers to the process of identifying or estimating the real-world geographic location of an object, such as a mobile device, internet-connected computer, or website visitor. 
 
@@ -36,6 +36,60 @@
   - [Real-world Applications](#real-world-applications)
     - [Emergency Response](#emergency-response)
     - [Traffic Incident Detection](#traffic-incident-detection)
+- [Social Media Data – Twitter/X](#social-media-data--twitterx)
+  - [Importance of X platform](#importance-of-x-platform)
+  - [Demographics](#demographics)
+  - [Income distribution - above average?](#income-distribution---above-average)
+  - [Political Beliefs](#political-beliefs)
+  - [Bias in data](#bias-in-data)
+  - [It's not about Twitter but about data](#its-not-about-twitter-but-about-data)
+  - [Data Structure](#data-structure)
+  - [Tweet Structure and Metadata](#tweet-structure-and-metadata)
+    - [Basic Tweet Structure](#basic-tweet-structure)
+      - [Example of Basic Tweet JSON Structure](#example-of-basic-tweet-json-structure)
+    - [Communication Elements](#communication-elements)
+    - [Metadata for Geolocation](#metadata-for-geolocation)
+      - [Example: Tweet with Only Place Object (No Precise Coordinates)](#example-tweet-with-only-place-object-no-precise-coordinates)
+      - [Example: Tweet with Location Mentioned in Text (No Explicit Geolocation)](#example-tweet-with-location-mentioned-in-text-no-explicit-geolocation)
+    - [Data Structure for Analysis](#data-structure-for-analysis)
+      - [Example: Structured Data for Geolocation Analysis](#example-structured-data-for-geolocation-analysis)
+  - [Place Object](#place-object)
+    - [Detailed Place Object Example](#detailed-place-object-example)
+    - [Example: Tweet with Credibility Indicators for Geolocation](#example-tweet-with-credibility-indicators-for-geolocation)
+  - [Tutorial Questions and Answers](#tutorial-questions-and-answers)
+    - [Why do you think location information is important?](#why-do-you-think-location-information-is-important)
+    - [What are the benefits of location information?](#what-are-the-benefits-of-location-information)
+    - [How does Twitter encode location information \& their advantages and limitations?](#how-does-twitter-encode-location-information--their-advantages-and-limitations)
+- [Content Processing](#content-processing)
+  - [Processing and Cleansing Social Media Data](#processing-and-cleansing-social-media-data)
+    - [Text Preprocessing Pipeline](#text-preprocessing-pipeline)
+  - [Text Vector Representation](#text-vector-representation)
+    - [Vector Space Model for Documents and Queries](#vector-space-model-for-documents-and-queries)
+    - [Binary Representation Approach](#binary-representation-approach)
+  - [Similar Documents](#similar-documents)
+  - [Cosine Similarity Measure](#cosine-similarity-measure)
+  - [Length of a Vector](#length-of-a-vector)
+  - [Unit Vector](#unit-vector)
+  - [Similarity Computation](#similarity-computation)
+    - [Cosine Similarity](#cosine-similarity)
+    - [Similarity vs. Dissimilarity (Distance)](#similarity-vs-dissimilarity-distance)
+    - [Working with Normalized Vectors:](#working-with-normalized-vectors)
+  - [Text Processing Pipeline](#text-processing-pipeline)
+  - [Term Weighting](#term-weighting)
+    - [In documents, such as web pages:](#in-documents-such-as-web-pages)
+    - [However, in tweets and short social media posts:](#however-in-tweets-and-short-social-media-posts)
+  - [Finding similar tweets](#finding-similar-tweets)
+    - [What is a cluster?](#what-is-a-cluster)
+    - [Clustering in Text Analysis](#clustering-in-text-analysis)
+    - [Applications of Tweet Clustering](#applications-of-tweet-clustering)
+  - [Single-pass clustering](#single-pass-clustering)
+  - [Cluster centroid](#cluster-centroid)
+  - [Stream of tweets](#stream-of-tweets)
+  - [Single Pass Clustering Steps](#single-pass-clustering-steps)
+  - [How to group tweets](#how-to-group-tweets)
+  - [Comments](#comments)
+  - [Comments \& Observations](#comments--observations)
+  - [Moving average](#moving-average)
 
 ## Introduction to Geolocalisation
 
@@ -580,3 +634,999 @@ Geolocalisation enables advanced traffic monitoring and incident detection:
    - Integrate with traffic management systems
 
 This application demonstrates how social media geolocalisation can complement traditional sensor networks to improve urban mobility and safety.
+
+
+![](./img/Twitter_X%20Data%20(Twitter_X%20数据)%20⭐⭐⭐.png)
+
+# Social Media Data – Twitter/X
+
+## Importance of X platform
+
+- Vital communications platform in times of disasters
+  - Hurricanes, earthquakes, political upheavals, travel disruptions
+  - Enables real-time information sharing when traditional media may be unavailable
+  - Facilitates coordination between affected individuals and emergency services
+- Hence, scientists (social science), business leaders, security experts gather:
+  - Twitter data to understand human behavior and dynamics
+  - For example, role of micro-influencers: detection of informative tweets in crisis events
+  - Analysis of information spread patterns during emergencies helps improve disaster response
+
+## Demographics
+
+- Men use X more than women, accounting for almost 68% of the platform's user base
+  - This gender imbalance may affect the representativeness of data collected from the platform
+- More than 80% of Twitter's global population is under 50 years old
+  - Indicates a skew toward younger generations, potentially underrepresenting older perspectives
+- More teenagers are on Twitter in the U.S. than on:
+  - WhatsApp, Pinterest, LinkedIn, and Reddit
+  - Shows Twitter's significant penetration among youth demographics
+- Twitter ranks only slightly behind Instagram when it comes to 65+ users in the U.S. (7% vs. 8%)
+  - Despite being youth-oriented, still maintains some presence among older populations
+
+> Similarly ranked sites include Snapchat and TikTok for younger demographics, while Facebook has higher penetration among older users
+
+## Income distribution - above average?
+
+- 41% of Twitter users surveyed earn a household income about $75,000 (vs. 32% overall)
+- Only 23% of people on Twitter earn less than $30,000 annually (vs. 30% overall)
+- Education level of Twitter Users tends to be higher than average, with more college-educated users compared to the general population
+
+> What does this mean?
+> 
+> This demographic profile indicates that Twitter users tend to be wealthier and more educated than the general population. This creates potential biases in geolocation data and analysis:
+> 
+> 1. Socioeconomic bias: Lower-income communities may be underrepresented in Twitter data, leading to "data deserts" in certain geographic areas
+> 2. Educational bias: Higher education levels may influence how users describe locations and events
+> 3. Geographic bias: Urban areas with better internet access may be overrepresented compared to rural regions
+> 4. Age and gender biases: The perspectives of women, older adults, and certain minority groups may be underrepresented
+> 
+> These biases must be considered when using Twitter data for geolocation analysis, especially in emergency response scenarios where reaching all affected populations is critical.
+
+## Political Beliefs
+
+Twitter users in the United States tend to have a distinct political profile compared to the general population:
+
+- 36% of Twitter users identify as Democrats, while only 21% identify as Republicans
+- This 15-point gap is significantly larger than the 7-point difference in the general U.S. adult population
+- Liberal and progressive viewpoints are more prevalent in Twitter discussions
+- Users who post political content are more likely to be politically active offline as well
+- Political polarization on Twitter often exceeds that observed in face-to-face interactions
+
+> These political demographics have important implications for geolocation analysis:
+> 
+> 1. Political events may receive disproportionate attention based on alignment with the platform's dominant political leaning
+> 2. Geographic areas with higher concentrations of conservative populations might be underrepresented in Twitter data
+> 3. Interpretation of events may skew toward progressive perspectives
+> 4. Researchers must account for this political bias when analyzing geolocation data related to politically sensitive topics or regions
+
+## Bias in data
+
+When analyzing social media data, particularly from Twitter/X, we must consider inherent biases:
+
+- Social media usage varies significantly across different population segments
+  - Twitter represents only a subset of the general population (as shown in demographics above)
+  - Not everyone has equal access to or interest in social media platforms
+
+- While Twitter has widespread adoption, it functions differently than traditional data sources:
+  - A physical sensor (like a traffic camera or weather station) makes objective measurements
+  - Twitter acts as a "social sensor" where humans generate the data points
+    - For example, during the 2011 Japan earthquake, Twitter users reported the event 2-3 minutes before official seismic detection systems alerted authorities
+    - During Hurricane Sandy (2012), geotagged tweets helped emergency services identify flooded areas faster than traditional reporting methods
+
+- Twitter data often contains valuable information collected implicitly:
+  - Users typically share information for personal reasons, not for data collection
+  - This creates both an opportunity (authentic, real-time data) and challenge (noise and bias)
+  - If we can effectively filter out irrelevant content and misinformation, tweets become valuable social sensors
+
+- Demographics significantly impact data interpretation:
+  - Why? Because the Twitter population doesn't mirror the general population
+  - As shown above, Twitter users tend to be younger, more affluent, more educated, and more politically liberal
+  - Geographic distribution is uneven, with urban areas overrepresented compared to rural regions
+  
+- When using Twitter for geolocation analysis, we must:
+  - Acknowledge these biases in our methodology
+  - Avoid making sweeping generalizations about entire populations
+  - Supplement Twitter data with other sources when possible
+  - Be especially cautious when analyzing underrepresented communities
+  - Document limitations and potential biases in research findings
+
+![](./img/2025-03-11-20-21-24.png)
+
+## It's not about Twitter but about data
+
+This course extends beyond Twitter/X to focus on the broader challenge of extracting meaningful insights from large-scale unstructured data sources. Social media platforms provide excellent case studies for several reasons:
+
+- **Unstructured and noisy data**: Social media content lacks formal organization and contains significant noise (irrelevant information, spam, etc.), presenting real-world data processing challenges.
+- **Massive volume**: These platforms generate billions of interactions daily, requiring efficient processing techniques and methodologies.
+- **Rich analytical potential**: Despite the challenges, these datasets contain valuable patterns about human behavior, events, trends, and geographic phenomena when properly analyzed.
+
+We focus primarily on Twitter and Reddit data because:
+- They offer diverse usage patterns (short-form vs. long-form content, different community structures)
+- Extensive historical datasets are available for research purposes
+- They provide accessible APIs for data collection and analysis
+- They contain location-based information that enables geospatial analysis
+
+## Data Structure
+
+![](./img/2025-03-11-20-23-25.png)
+
+![](./img/2025-03-11-20-23-37.png)
+
+## Tweet Structure and Metadata
+
+A tweet contains rich structured and unstructured data that can be leveraged for geolocation analysis:
+
+### Basic Tweet Structure
+- **Limited to 280 characters** (formerly 140 characters)
+  - It was 140 until Twitter expanded the limit in 2017
+  - Limits to certain circumstances still apply
+- **Each tweet has a unique ID**
+  - On Twitter, a message, a unique ID, a timestamp of when it was posted, and information about the user
+  - This metadata is crucial for temporal analysis
+- **Each user has a Twitter name, an ID, a profile description, and often a location field**
+- **Tweets can be retweeted, replied to, liked, and bookmarked**
+
+#### Example of Basic Tweet JSON Structure
+
+```json
+{
+  "created_at": "Wed Oct 10 20:19:24 +0000 2023",
+  "id": 1580623451872395264,
+  "id_str": "1580623451872395264",
+  "text": "Beautiful sunset over Glasgow Green today! #Glasgow #Sunset",
+  "truncated": false,
+  "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+  "user": {
+    "id": 87654321,
+    "id_str": "87654321",
+    "name": "Jane Smith",
+    "screen_name": "janesmith",
+    "location": "Glasgow, Scotland",
+    "description": "Urban photographer and coffee enthusiast",
+    "verified": false,
+    "followers_count": 1243,
+    "friends_count": 567,
+    "time_zone": "London"
+  },
+  "coordinates": {
+    "type": "Point",
+    "coordinates": [-4.2333, 55.8500]
+  },
+  "place": {
+    "id": "0e8b2a4c5f6d7e8f",
+    "url": "https://api.twitter.com/1.1/geo/id/0e8b2a4c5f6d7e8f.json",
+    "place_type": "city",
+    "name": "Glasgow",
+    "full_name": "Glasgow, Scotland",
+    "country_code": "GB",
+    "country": "United Kingdom",
+    "bounding_box": {
+      "type": "Polygon",
+      "coordinates": [[
+        [-4.3939, 55.7943],
+        [-4.3939, 55.9072],
+        [-4.0892, 55.9072],
+        [-4.0892, 55.7943]
+      ]]
+    }
+  },
+  "entities": {
+    "hashtags": [
+      {"text": "Glasgow", "indices": [35, 43]},
+      {"text": "Sunset", "indices": [44, 51]}
+    ]
+  },
+  "geo_enabled": true
+}
+```
+
+**Key Fields Explained:**
+- `created_at`: Timestamp when the tweet was created, crucial for temporal analysis
+- `text`: The actual content of the tweet, which may contain location references
+- `user.location`: Self-reported location in the user's profile ("Glasgow, Scotland")
+- `user.time_zone`: User's selected time zone, which can provide coarse location information
+- `coordinates`: Precise geolocation data with longitude (-4.2333) and latitude (55.8500)
+- `place`: A structured object representing the location (Glasgow, Scotland)
+- `entities.hashtags`: May contain location-relevant hashtags like "#Glasgow"
+
+### Communication Elements
+- What can we communicate?
+  - Text, URLs, hashtags, mentions, pictures, videos, GIFs
+  - If a tag is related to another tweet, it is, however, reply or retweet, and this information will be embedded into the tweet
+
+### Metadata for Geolocation
+- **Explicit location data**:
+  - Precise coordinates (if location services enabled)
+  - Place tags (city, neighborhood, venue)
+  - User-defined location in profile (often unreliable)
+- **Implicit location indicators**:
+  - Time zones
+  - Language settings
+  - Local references in content
+  - Mentioned locations in text
+
+#### Example: Tweet with Only Place Object (No Precise Coordinates)
+
+```json
+{
+  "created_at": "Thu Oct 12 13:45:10 +0000 2023",
+  "id": 1581298765432198765,
+  "id_str": "1581298765432198765",
+  "text": "Traffic is terrible on the M8 this morning! #TrafficAlert #Glasgow",
+  "user": {
+    "id": 12345678,
+    "id_str": "12345678",
+    "name": "John Doe",
+    "screen_name": "johndoe",
+    "location": "Scotland, UK",
+    "description": "Daily commuter, coffee lover",
+    "verified": false
+  },
+  "coordinates": null,
+  "place": {
+    "id": "0e8b2a4c5f6d7e8f",
+    "place_type": "city",
+    "name": "Glasgow",
+    "full_name": "Glasgow, Scotland",
+    "country_code": "GB",
+    "country": "United Kingdom",
+    "bounding_box": {
+      "type": "Polygon",
+      "coordinates": [[
+        [-4.3939, 55.7943],
+        [-4.3939, 55.9072],
+        [-4.0892, 55.9072],
+        [-4.0892, 55.7943]
+      ]]
+    }
+  },
+  "geo_enabled": true
+}
+```
+
+**Explanation:**
+- This tweet has a `place` object but `coordinates` is null
+- The user has enabled geolocation (`geo_enabled: true`) but chose to share only the general place (Glasgow) rather than precise coordinates
+- For geolocation analysis, we can still determine that this tweet is about Glasgow, but we don't know the exact location within the city
+
+#### Example: Tweet with Location Mentioned in Text (No Explicit Geolocation)
+
+```json
+{
+  "created_at": "Fri Oct 13 09:23:45 +0000 2023",
+  "id": 1582345678901234567,
+  "id_str": "1582345678901234567",
+  "text": "Hearing reports of a traffic accident near Buchanan Street station in Glasgow city center. Anyone know what's happening? #Glasgow",
+  "user": {
+    "id": 23456789,
+    "id_str": "23456789",
+    "name": "Local News Watcher",
+    "screen_name": "newswatcher",
+    "location": "UK",
+    "description": "Keeping an eye on local events",
+    "verified": false
+  },
+  "coordinates": null,
+  "place": null,
+  "geo_enabled": false,
+  "entities": {
+    "hashtags": [
+      {"text": "Glasgow", "indices": [102, 110]}
+    ]
+  }
+}
+```
+
+**Explanation:**
+- This tweet has no explicit geolocation data (`coordinates` and `place` are both null)
+- The user has not enabled geolocation (`geo_enabled: false`)
+- However, the tweet text mentions specific locations: "Buchanan Street station" and "Glasgow city center"
+- The tweet also includes a hashtag "#Glasgow"
+- For geolocation analysis, natural language processing techniques would be needed to extract these location references from the text
+
+### Data Structure for Analysis
+The JSON structure of tweets provides multiple fields relevant to geolocation:
+- `coordinates`: Contains precise latitude and longitude (when available)
+- `place`: Contains location information like country, city, bounding box
+- `user.location`: Free-text location field from user profile
+- `user.time_zone`: User's selected time zone
+- `lang`: Language of the tweet
+
+#### Example: Structured Data for Geolocation Analysis
+
+```json
+{
+  "tweet_id": "1583456789012345678",
+  "timestamp": "2023-10-14T15:30:22Z",
+  "text": "Major traffic accident on M8 eastbound near junction 15. Emergency services on scene. Expect delays. #TrafficScotland",
+  "user": {
+    "id": "34567890",
+    "screen_name": "trafficscotland",
+    "verified": true,
+    "followers_count": 213456
+  },
+  "location_data": {
+    "explicit_coordinates": [-4.2650, 55.8680],
+    "place_name": "Glasgow, Scotland",
+    "place_type": "city",
+    "bounding_box": [[-4.3939, 55.7943], [-4.3939, 55.9072], [-4.0892, 55.9072], [-4.0892, 55.7943]],
+    "user_profile_location": "Scotland, UK",
+    "mentioned_locations": ["M8", "junction 15"]
+  },
+  "credibility_score": 0.92,
+  "event_type": "traffic_incident"
+}
+```
+
+**Explanation:**
+- This structured format combines various location indicators from the original Twitter JSON
+- `explicit_coordinates`: Precise location if available
+- `place_name` and `place_type`: From the Place object
+- `bounding_box`: Geographical boundaries of the place
+- `user_profile_location`: From the user's profile
+- `mentioned_locations`: Extracted from the tweet text using NLP
+- `credibility_score`: Calculated based on user verification, follower count, etc.
+- `event_type`: Categorized based on content analysis
+
+![](./img/2025-03-11-20-24-52.png)
+
+![](./img/2025-03-11-20-25-37.png)
+
+
+![](./img/2025-03-11-20-27-00.png)
+
+![](./img/2025-03-11-20-27-11.png)
+
+![](./img/2025-03-11-20-27-17.png)
+
+![](./img/2025-03-11-20-27-23.png)
+
+![](./img/2025-03-11-20-27-29.png)
+
+![](./img/2025-03-11-20-27-35.png)
+
+![](./img/2025-03-11-20-27-43.png)
+
+## Place Object
+
+- Places are specific, named locations with corresponding geo-coordinates
+- When users decide to assign a location to their Tweet, they are presented with a list of candidate Twitter Places
+- When suing the API to post a Tweet, a Twitter Place can be attached b y specifying a place_id when posting the Tweet
+- Tweets associated with Places are not necessarily issued from that location but could also potentially be about that location
+
+### Detailed Place Object Example
+
+```json
+{
+  "place": {
+    "id": "1a2b3c4d5e6f7g8h",
+    "url": "https://api.twitter.com/1.1/geo/id/1a2b3c4d5e6f7g8h.json",
+    "place_type": "poi",
+    "name": "Glasgow Central Station",
+    "full_name": "Glasgow Central Station, Glasgow",
+    "country_code": "GB",
+    "country": "United Kingdom",
+    "contained_within": [
+      {
+        "id": "0e8b2a4c5f6d7e8f",
+        "place_type": "city",
+        "name": "Glasgow",
+        "full_name": "Glasgow, Scotland"
+      }
+    ],
+    "bounding_box": {
+      "type": "Polygon",
+      "coordinates": [[
+        [-4.2590, 55.8581],
+        [-4.2590, 55.8599],
+        [-4.2570, 55.8599],
+        [-4.2570, 55.8581]
+      ]]
+    },
+    "attributes": {
+      "street_address": "Gordon Street",
+      "locality": "Glasgow City Centre",
+      "region": "Scotland",
+      "iso3": "GBR"
+    }
+  }
+}
+```
+
+**Explanation:**
+- This is a detailed Place object for a point of interest (POI) - Glasgow Central Station
+- `place_type`: "poi" indicates this is a specific point of interest rather than a city or country
+- `contained_within`: Shows the hierarchical relationship (this POI is within Glasgow city)
+- `bounding_box`: Provides precise geographical boundaries of the station
+- `attributes`: Contains additional location details like street address and locality
+- This level of detail is valuable for fine-grained geolocation analysis, allowing precise mapping of tweets to specific venues or landmarks
+
+### Example: Tweet with Credibility Indicators for Geolocation
+
+```json
+{
+  "created_at": "Sat Oct 14 15:30:22 +0000 2023",
+  "id": 1583456789012345678,
+  "id_str": "1583456789012345678",
+  "text": "Major traffic accident on M8 eastbound near junction 15. Emergency services on scene. Expect delays. #TrafficScotland",
+  "user": {
+    "id": 34567890,
+    "id_str": "34567890",
+    "name": "Traffic Scotland Official",
+    "screen_name": "trafficscotland",
+    "location": "Scotland, UK",
+    "description": "Official account for traffic updates in Scotland",
+    "verified": true,
+    "followers_count": 213456,
+    "statuses_count": 45678,
+    "created_at": "Mon Jan 15 10:00:00 +0000 2015"
+  },
+  "coordinates": {
+    "type": "Point",
+    "coordinates": [-4.2650, 55.8680]
+  },
+  "place": {
+    "id": "0e8b2a4c5f6d7e8f",
+    "place_type": "city",
+    "name": "Glasgow",
+    "full_name": "Glasgow, Scotland",
+    "country_code": "GB",
+    "country": "United Kingdom"
+  },
+  "geo_enabled": true,
+  "source": "<a href=\"https://traffic.gov.uk\" rel=\"nofollow\">Traffic Scotland Web App</a>"
+}
+```
+
+**Explanation:**
+- This tweet contains several indicators that would contribute to high credibility for geolocation:
+  - `user.verified`: True indicates this is an official verified account
+  - `user.followers_count`: High number of followers (213,456) suggests authority
+  - `user.description`: Identifies as an "Official account for traffic updates"
+  - `source`: Posted from "Traffic Scotland Web App" rather than a general consumer app
+  - `coordinates`: Contains precise location data
+- When using weighted algorithms for geolocation analysis, tweets like this would receive higher credibility scores
+- The combination of verified status, official source, and precise coordinates makes this tweet highly reliable for traffic incident detection
+
+![](./img/2025-03-11-20-29-16.png)
+
+![](./img/2025-03-11-20-29-24.png)
+
+![](./img/2025-03-11-20-29-41.png)
+
+![](./img/2025-03-11-20-29-49.png)
+
+![](./img/2025-03-11-20-29-55.png)
+
+## Tutorial Questions and Answers
+
+### Why do you think location information is important?
+Location information is critically important for numerous applications:
+- **Emergency response and disaster management**: Enables rapid identification of affected areas and coordination of resources during crises
+- **Urban planning and infrastructure development**: Helps understand population movement patterns and service needs
+- **Targeted marketing and business intelligence**: Allows businesses to reach relevant local audiences
+- **Transportation and logistics optimization**: Facilitates route planning and traffic management
+- **Public health monitoring**: Helps track disease spread and allocate healthcare resources
+- **Social research and behavioral analysis**: Provides context for understanding human activities and interactions
+- **Content personalization**: Enables delivery of location-relevant information to users
+
+### What are the benefits of location information?
+Location information provides several key benefits:
+- **Contextual understanding**: Adds spatial dimension to data, making it more meaningful
+- **Pattern recognition**: Reveals geographic trends and clusters that might otherwise be invisible
+- **Predictive capabilities**: Enables forecasting based on spatial relationships and historical patterns
+- **Resource optimization**: Allows for more efficient allocation of services and infrastructure
+- **Enhanced user experiences**: Provides personalized, location-relevant content and services
+- **Improved decision-making**: Offers critical spatial context for both operational and strategic decisions
+- **Cross-domain insights**: Connects data from different sources based on shared geographic attributes
+
+### How does Twitter encode location information & their advantages and limitations?
+
+Twitter encodes location information through several methods:
+
+**Methods of Encoding:**
+1. **Precise coordinates**: Exact latitude/longitude when users opt to share their precise location
+2. **Place objects**: Named locations with defined boundaries (countries, cities, neighborhoods)
+3. **User profile location**: Free-text field where users can enter their location
+4. **Time zone information**: User's selected time zone
+5. **Content-based location references**: Mentions of places within tweet text
+
+**Advantages:**
+- **Multiple granularity levels**: From precise coordinates to general regions
+- **User control**: Users can choose how much location data to share
+- **Structured data**: Place objects provide standardized location information
+- **Contextual enrichment**: Adds geographic dimension to social media analysis
+- **Real-time insights**: Provides location data for events as they unfold
+
+**Limitations:**
+- **Opt-in nature**: Only a small percentage of tweets contain precise coordinates
+- **Accuracy issues**: User-provided location fields may contain inaccurate or fictional places
+- **Inconsistent availability**: Not all tweets have associated location data
+- **Privacy constraints**: API restrictions limit access to certain location data
+- **Ambiguity**: Place mentions in text may be references rather than actual locations
+- **Representativeness concerns**: Location-sharing users may not represent the broader population
+
+![](./img/Content%20Processing%20&%20Clustering%20(内容处理与聚类)%20⭐⭐⭐⭐.png)
+
+# Content Processing
+
+![](./img/2025-03-11-20-42-49.png)
+
+![](./img/2025-03-11-20-42-56.png)
+
+![](./img/2025-03-11-20-43-03.png)
+
+![](./img/2025-03-11-20-43-08.png)
+
+![](./img/2025-03-11-20-43-14.png)
+
+## Processing and Cleansing Social Media Data
+
+From a data science perspective, processing social media data involves several critical steps to transform raw, unstructured content into analyzable information:
+
+### Text Preprocessing Pipeline
+
+1. **Data Collection and Extraction**
+   - API-based collection (rate limits and sampling considerations)
+   - Web scraping (ethical and legal considerations)
+   - Historical data access limitations
+
+2. **Basic Cleaning Operations**
+   - Removing duplicate content
+   - Handling missing values
+   - Filtering out non-relevant content
+   - Normalizing text encoding (UTF-8 standardization)
+
+3. **Text Normalization**
+   - Case normalization (typically lowercasing)
+   - Punctuation removal or standardization
+   - Whitespace normalization
+   - Special character handling
+   - URL standardization or removal
+
+4. **Linguistic Processing**
+   - Tokenization (word, sentence, n-gram)
+   - Stop word removal (context-dependent)
+   - Stemming and lemmatization
+   - Part-of-speech tagging
+   - Named entity recognition (identifying locations, organizations, people)
+
+5. **Social Media-Specific Elements**
+   - Hashtag segmentation (#ClimateChangeNow → Climate Change Now)
+   - Username handling (@mentions)
+   - Emoji interpretation and standardization
+   - Handling platform-specific features (retweets, quote tweets)
+   - Slang and abbreviation normalization
+
+6. **ASCII Processing Considerations**
+   - Converting non-ASCII characters to ASCII equivalents
+   - Handling extended character sets
+   - Detecting and managing encoding errors
+   - ASCII art and special formatting removal
+   - Control character filtering
+
+7. **Feature Engineering**
+   - Text vectorization (Bag-of-Words, TF-IDF, embeddings)
+   - Sentiment analysis features
+   - Temporal features (posting time, frequency)
+   - Network-based features (user interactions)
+   - Geographic feature extraction
+
+8. **Quality Assessment**
+   - Spam and bot content detection
+   - Credibility scoring
+   - Content relevance evaluation
+   - Representativeness analysis
+   - Bias identification
+
+9. **Ethical Considerations**
+   - Privacy protection (PII removal)
+   - Demographic bias awareness
+   - Context preservation
+   - Source attribution
+   - Responsible reporting of findings
+
+10. **Data Storage and Documentation**
+    - Structured storage formats (CSV, JSON, databases)
+    - Processing pipeline documentation
+    - Version control for datasets
+    - Metadata preservation
+    - Reproducibility considerations
+
+The cleansing process must balance removing noise while preserving meaningful signal, especially considering the informal, abbreviated, and context-dependent nature of social media communication.
+
+![](./img/2025-03-11-20-46-47.png)
+
+![](./img/2025-03-11-20-46-54.png)
+
+![](./img/2025-03-11-20-47-03.png)
+
+![](./img/2025-03-11-20-47-10.png)
+
+## Text Vector Representation
+
+### Vector Space Model for Documents and Queries
+
+Text vector representation is a fundamental concept in information retrieval and natural language processing that converts text documents into mathematical vectors for computational analysis:
+
+- **Document Vectorization**: Each document is transformed into a numerical vector
+  $$D_i = (t_{i1}, t_{i2}, \dots, t_{in})$$
+  Where:
+  - $D_i$ represents document i
+  - Each element $t_{ij}$ represents the weight of term j in document i
+  - n is the total number of unique terms in the collection
+
+- **Query Vectorization**: Similarly, search queries are converted into the same vector space
+  $$Q = (qt_1, qt_2, \dots, qt_n)$$
+  Where:
+  - Each element $qt_j$ represents the weight of term j in the query
+  - The dimensionality matches the document vectors for direct comparison
+
+### Binary Representation Approach
+
+The simplest implementation uses binary weights:
+- $t_{ik} = 1$ if term k appears in document i (regardless of frequency)
+- $t_{ik} = 0$ if term k is absent from document i
+- Similarly, $qt_k = 1$ if term k appears in the query, otherwise $qt_k = 0$
+
+Example:
+For the vocabulary ["glasgow", "traffic", "weather"], a tweet "Traffic in Glasgow" would be represented as:
+$$D = (1, 1, 0)$$
+
+This vector representation enables:
+- Computing similarity between documents and queries using vector operations
+- Clustering similar documents together
+- Performing document classification
+- Supporting geolocalisation by representing location terms in the vector space
+
+More sophisticated weighting schemes like TF-IDF (Term Frequency-Inverse Document Frequency) extend this model by considering term frequency and importance.
+
+![](./img/2025-03-11-20-49-24.png)
+
+![](./img/2025-03-11-20-49-47.png)
+
+## Similar Documents
+
+The most relevant documents for a query are expected to be those represented by the vectors closest to the query vector, meaning documents that use similar words to the query. This concept is fundamental to information retrieval and document similarity analysis.
+
+Closeness is often calculated by examining the angles between document vectors and the query vector rather than the absolute distances. This approach normalizes for document length, ensuring that the similarity measure focuses on content overlap rather than document size.
+
+We need a robust similarity measure to quantify this closeness, which is why cosine similarity is commonly used in text analysis.
+
+## Cosine Similarity Measure
+
+Cosine similarity measures the cosine of the angle between two vectors, providing a value between -1 and 1 (though with text data, values are typically between 0 and 1 since term weights are non-negative).
+
+For a document vector D and query vector Q:
+
+$$
+D = (t_1, t_2, \dots, t_n)
+$$
+
+$$
+Q = (qt_1, qt_2, \dots, qt_n)
+$$
+
+The cosine similarity is calculated as:
+
+$$
+\cos(D, Q) = \frac{\sum^n_{i=1}t_i \times qt_i}{\sqrt{\sum^n_{i=1}t_i^2} \times \sqrt{\sum^n_{i=1}qt_i^2}}
+$$
+
+Where:
+- The numerator represents the dot product of the two vectors
+- The denominator normalizes by the product of the vector magnitudes
+- n is the number of dimensions (terms) in the vector space
+
+The result indicates:
+- 1: Vectors are identical (0° angle)
+- 0: Vectors are orthogonal (90° angle)
+- -1: Vectors point in opposite directions (180° angle)
+
+Example:
+For D = (1, 1, 0) and Q = (1, 0, 0):
+$$
+\cos(D, Q) = \frac{1 \times 1 + 1 \times 0 + 0 \times 0}{\sqrt{1^2 + 1^2 + 0^2} \times \sqrt{1^2 + 0^2 + 0^2}} = \frac{1}{\sqrt{2} \times 1} = \frac{1}{\sqrt{2}} \approx 0.707
+$$
+
+## Length of a Vector
+
+The magnitude (or length) of a vector is its size, calculated using the Euclidean norm:
+
+$$
+\|V\| = \sqrt{\sum^n_{i=1}v_i^2}
+$$
+
+Where:
+- $\|V\|$ denotes the magnitude of vector V
+- $v_i$ is the value of the ith component
+- n is the number of dimensions
+
+Example:
+For a vector V = (3, 4):
+$$
+\|V\| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5
+$$
+
+## Unit Vector
+
+A unit vector has a magnitude of 1 while maintaining the same direction as the original vector. To normalize a vector (convert it to a unit vector):
+
+For any vector $\vec{v}$, its unit vector $\hat{v}$ is calculated as:
+
+$$
+\hat{v} = \frac{\vec{v}}{\|\vec{v}\|}
+$$
+
+Where:
+- $\vec{v}$ is the original vector
+- $\|\vec{v}\|$ is the magnitude of the vector
+- $\hat{v}$ is the resulting unit vector
+
+Example:
+For a vector $\vec{v} = (3, 4)$:
+1. Calculate magnitude: $\|\vec{v}\| = \sqrt{3^2 + 4^2} = 5$
+2. Normalize: $\hat{v} = (\frac{3}{5}, \frac{4}{5})$
+
+In text analysis:
+- If each term has weight 1, normalizing by $\frac{1}{\sqrt{n}}$ where n is the number of terms
+- For a tweet with 19 terms, each term's normalized weight would be $\frac{1}{\sqrt{19}} \approx 0.229$
+
+This normalization ensures that document length doesn't dominate similarity calculations, focusing instead on term distribution patterns.
+
+## Similarity Computation
+
+### Cosine Similarity
+
+Cosine similarity measures the cosine of the angle between two vectors, providing a value between -1 and 1 (though in text analysis with non-negative weights, the range is typically 0 to 1). A value of 1 means the vectors are identical in direction, 0 means they are orthogonal (completely different), and -1 means they point in opposite directions.
+
+### Similarity vs. Dissimilarity (Distance)
+
+- **Similarity measures** increase as objects become more alike (cosine similarity, Jaccard similarity)
+- **Dissimilarity measures** (or distances) increase as objects become more different (Euclidean distance, Manhattan distance)
+- The relationship is often inverse: similarity = 1 - normalized_distance
+
+### Working with Normalized Vectors:
+
+- **Benefits are**:
+  - Eliminates the influence of document length on similarity calculations
+  - Makes documents comparable regardless of their size
+  - Simplifies computational complexity
+  - Focuses on term distribution patterns rather than absolute frequencies
+- **Similarity can be computed just using sum of $t_i\times qt_i$** when vectors are normalized, as the denominator in the cosine similarity formula becomes 1
+
+![](./img/2025-03-11-21-00-11.png)
+
+![](./img/2025-03-11-21-00-19.png)
+
+![](./img/2025-03-11-21-00-25.png)
+
+![](./img/2025-03-11-21-00-30.png)
+
+![](./img/2025-03-11-21-00-35.png)
+
+## Text Processing Pipeline
+
+The text processing pipeline is a series of steps applied to raw text to transform it into a format suitable for computational analysis:
+
+1. **Tokenization**: Breaking text into individual words or tokens. For example, "The cat sat on the mat" becomes ["The", "cat", "sat", "on", "the", "mat"].
+
+2. **Normalization**: Converting text to lowercase, removing accents, and standardizing characters. This ensures consistency in analysis by treating "Cat" and "cat" as the same token.
+
+3. **Stopword removal**: Eliminating common words with little semantic value (e.g., "the", "is", "and", "of") that occur frequently but contribute minimal meaning to the analysis.
+
+4. **Stemming/Lemmatization**: Reducing words to their root forms.
+   - Stemming: A heuristic process that chops off word endings (e.g., "running" → "run", "cats" → "cat")
+   - Lemmatization: A more sophisticated approach using vocabulary and morphological analysis to return the base dictionary form (e.g., "better" → "good", "was" → "be")
+
+5. **Feature extraction**: Converting processed text into numerical representations such as:
+   - Bag-of-Words (BoW): Counting word occurrences
+   - TF-IDF: Weighting terms by their importance
+   - Word embeddings: Representing words as dense vectors in a continuous vector space
+
+This systematic approach ensures consistency in text analysis and improves the quality of results in applications like search, classification, and clustering.
+
+![](./img/2025-03-11-21-01-13.png)
+
+## Term Weighting
+
+Term weighting is the process of assigning importance values to unique words (features) in a document, determining how significant each dimension is in the vector space model.
+
+### In documents, such as web pages:
+- If a word is repeated many times within a document, it generally indicates that the document focuses on that concept
+- Repetition is considered a signal of importance
+- Term frequency (TF) is often used as a basic weighting scheme, defined as:
+
+$$TF(t,d) = \frac{\text{Number of times term } t \text{ appears in document } d}{\text{Total number of terms in document } d}$$
+
+- More sophisticated approaches like TF-IDF (Term Frequency-Inverse Document Frequency) balance term frequency with how common the term is across all documents:
+
+$$TF\text{-}IDF(t,d,D) = TF(t,d) \times IDF(t,D)$$
+
+Where IDF is calculated as:
+
+$$IDF(t,D) = \log\frac{\text{Total number of documents in corpus } D}{\text{Number of documents containing term } t}$$
+
+### However, in tweets and short social media posts:
+- Words are rarely repeated due to the limited character count (typically 280 characters for Twitter)
+- The binary presence of a term is often more meaningful than its frequency
+- We typically assume all present words are equally important
+- If a word appears in the tweet, that dimension becomes active (value of 1) in the underlying vector representation
+- This binary representation works well for short text classification and clustering, and can be formalized as:
+
+$$weight(t,d) = \begin{cases} 
+1 & \text{if term } t \text{ appears in document } d \\
+0 & \text{otherwise}
+\end{cases}$$
+
+![](./img/2025-03-11-21-02-57.png)
+
+![](./img/2025-03-11-21-03-03.png)
+
+## Finding similar tweets
+
+### What is a cluster?
+
+In General Usage:
+- A cluster is simply a collection or group of similar things located close together: Example: a cluster of grapes, buildings, or ideas
+- In our context:
+  - A group of similar tweets grouped together based on certain characteristics or features
+  - Tweets sharing common words, topics, or semantic meaning
+  - Documents that are close to each other in the vector space representation
+  
+### Clustering in Text Analysis
+- Clustering organizes tweets into meaningful groups without predefined categories (unsupervised learning)
+- Each cluster contains tweets that are more similar to each other than to tweets in other clusters
+- Similarity is typically measured using distance metrics like cosine similarity in the vector space
+- The goal is to maximize intra-cluster similarity while minimizing inter-cluster similarity, which can be expressed mathematically as:
+  - Maximize: $\sum_{i=1}^{k} \sum_{x \in C_i} similarity(x, \mu_i)$ where $\mu_i$ is the centroid of cluster $C_i$
+  - Minimize: $\sum_{i=1}^{k} \sum_{j=1, j \neq i}^{k} similarity(\mu_i, \mu_j)$ for all pairs of cluster centroids
+
+### Applications of Tweet Clustering
+- Topic detection: Identifying emerging topics or trends in social media
+- Event detection: Recognizing real-world events based on sudden clusters of related tweets
+- Information summarization: Condensing large volumes of tweets into representative groups
+- Anomaly detection: Identifying outliers that don't fit well into any cluster
+- Geographic analysis: Finding location-based patterns when combined with geolocation data
+
+
+## Single-pass clustering
+- Requires a single, sequential pass over the set of documents it attempts to cluster
+- The idea is to group similar documents (tweets) as and when they arrive: sequential nature
+- The algorithm classifies a document (the next one) in the sequence
+  - Based on the current set of clusters and
+  - According to a condition on the similarity function employed
+  
+- At every stage, the algorithm decides on whether a newly seen document should become a member of an already defined cluster or the center of a new one
+  - In its most simple form, the similarity function gets defined based on
+  - Just some similarity (or alternatively, dissimilarity) measure
+  - Between document-feature vectors
+- Cosine similarity is commonly used, defined as:
+
+$$similarity(A, B) = \cos(\theta) = \frac{A \cdot B}{||A|| \times ||B||} = \frac{\sum_{i=1}^{n} A_i B_i}{\sqrt{\sum_{i=1}^{n} A_i^2} \times \sqrt{\sum_{i=1}^{n} B_i^2}}$$
+
+Where $A$ and $B$ are the vector representations of two documents.
+
+## Cluster centroid
+
+Given a set of documents (tweets) in a cluster $C = \{D_1, D_2, ..., D_n\}$:
+- We take the average of the vector representation as a representation of the cluster/group
+- The centroid $\mu_C$ is calculated as:
+
+$$\mu_C = \frac{1}{|C|} \sum_{D \in C} D$$
+
+Where:
+- $|C|$ is the number of documents in cluster $C$
+- $D$ is the vector representation of a document
+
+Remember, we are grouping based on the content representation:
+- Hence, we assume the documents are similar
+- In terms of word similarity and hence
+- Semantic similarity
+
+Cluster centroid is the representation of group/cluster:
+- Think of it as a "virtual document" that represents the average content of all documents in the cluster
+- It may not correspond to any actual document in the cluster, but serves as an abstract representation of the cluster's central theme
+
+![](./img/2025-03-11-21-09-30.png)
+
+## Stream of tweets
+
+Twitter generates approximately 500 million tweets per day (about 6,000 tweets per second). These tweets arrive one after another in a continuous stream.
+
+We want to cluster them as they arrive, which presents several challenges:
+- Limited memory: Cannot store all tweets in memory
+- Real-time processing: Need to make decisions quickly
+- Evolving topics: Clusters may change over time
+- One-pass constraint: Cannot revisit all previous tweets
+
+## Single Pass Clustering Steps
+
+The general algorithm is as follows:
+1. Step 1
+   1. Assign the first document $D_1$ as the representative of the first cluster $C_1$
+   2. Document vector becomes the cluster vector/centroid
+2. Step 2
+   1. For each incoming document $D_i$, calculate the similarity $S$ with the representative for each existing cluster
+   2. Document vector $D_i$ is compared to each cluster centroid
+      1. We need a cluster centroid - or an average representation of documents in the cluster
+   3. Let $S_{max}$ be the maximum similarity between the incoming document and any existing cluster:
+      $$S_{max} = \max_{j} \{similarity(D_i, \mu_{C_j})\}$$
+3. Step 3
+   1. If $S_{max}$ is greater than a predefined threshold value $S_{T}$
+      1. Add the item to the corresponding cluster $C_j$ -> we need to make sure the similarity is substantial
+      2. Recalculate the cluster representative (centroid):
+         $$\mu_{C_j}^{new} = \frac{|C_j| \times \mu_{C_j}^{old} + D_i}{|C_j| + 1}$$
+   2. Otherwise, use $D_i$ to initiate a new cluster $C_{k+1}$ where $k$ is the current number of clusters
+4. Step 4
+   1. For a new item $D_{i+1}$ to be clustered, return to step 2
+
+## How to group tweets
+
+The key components for effective tweet clustering are:
+
+1. **Cosine similarity**: Measures the angle between two document vectors, providing a value between -1 and 1 (though with non-negative weights, the range is typically 0 to 1).
+
+2. **Similarity Threshold** ($S_T$): A critical parameter that determines when to create a new cluster versus adding to an existing one. Typically set between 0.3 and 0.7, depending on:
+   - Desired granularity of clusters
+   - Nature of the data
+   - Specific application requirements
+
+The threshold can be determined empirically through experimentation or by domain knowledge.
+
+## Comments
+
+The single pass method is particularly simple (and useful in this scenario):
+   - It requires that the dataset be processed only once
+   - It handles data as it arrives (streaming)
+   - It has O(nk) time complexity, where n is the number of documents and k is the number of clusters
+
+Obviously, the results for this method are highly dependent:
+- On the similarity threshold that is used
+- The order in which documents are processed
+
+
+## Comments & Observations
+
+It tends to produce large clusters early in the clustering pass:
+- The clusters formed are not independent of the order in which the dataset is processed
+  - Because similar documents arriving in different order would create different clusters
+  - You should use your judgment in setting the threshold so that you are left with a reasonable number of clusters
+- Post-processing tips:
+  - Use to form the groups initially, which are used to reallocate/create new clusters
+  - If we get large noisy clusters of tweets, we could re-cluster them
+  - Consider periodic rebalancing of clusters to improve quality
+
+## Moving average
+
+Moving average is a calculation technique used to analyze data points by creating a series of averages of different subsets of the full dataset. In the context of clustering tweets, moving averages can help adapt to evolving topics and trends.
+
+The simple moving average (SMA) of a cluster centroid can be calculated as:
+
+$$\mu_{C,t} = \frac{1}{w} \sum_{i=t-w+1}^{t} D_i$$
+
+Where:
+- $\mu_{C,t}$ is the centroid at time t
+- $w$ is the window size (number of recent documents to consider)
+- $D_i$ represents the document vectors in the cluster
+
+The exponential moving average (EMA) gives more weight to recent documents:
+
+$$\mu_{C,t} = \alpha \times D_t + (1-\alpha) \times \mu_{C,t-1}$$
+
+Where:
+- $\alpha$ is the smoothing factor (typically between 0.1 and 0.3)
+- $D_t$ is the newest document
+- $\mu_{C,t-1}$ is the previous centroid
+
+How moving averages affect our clusters:
+
+1. **Temporal relevance**: Recent tweets have more influence on cluster representation
+2. **Drift adaptation**: Clusters can gradually shift to follow evolving topics
+3. **Noise reduction**: Smooths out random fluctuations in cluster centroids
+4. **Memory efficiency**: Only need to store the current centroid and smoothing parameters, not all historical tweets
+5. **Concept decay**: Older content gradually loses influence, reflecting the natural lifecycle of topics on social media
+
+By incorporating moving averages, the clustering algorithm becomes more responsive to current trends while maintaining computational efficiency in a streaming environment.
+
+![](./img/Credibility%20&%20Newsworthiness%20(可信度与新闻价值)%20⭐⭐⭐⭐.png)
