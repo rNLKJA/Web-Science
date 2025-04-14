@@ -71,133 +71,88 @@
     - [紧急响应](#紧急响应)
     - [Traffic Incident Detection](#traffic-incident-detection)
     - [交通事件检测](#交通事件检测)
-- [Social Media Data – Twitter/X](#social-media-data--twitterx)
-- [社交媒体数据 – Twitter/X](#社交媒体数据--twitterx)
-  - [Importance of X platform](#importance-of-x-platform)
-  - [X平台的重要性](#x平台的重要性)
-  - [Demographics](#demographics)
-  - [人口统计](#人口统计)
-  - [Income distribution - above average?](#income-distribution---above-average)
-  - [收入分布 - 高于平均水平？](#收入分布---高于平均水平)
-  - [Political Beliefs](#political-beliefs)
-  - [政治信仰](#政治信仰)
-  - [Bias in data](#bias-in-data)
-  - [数据偏见](#数据偏见)
-  - [It's not about Twitter but about data](#its-not-about-twitter-but-about-data)
-  - [这不仅仅是关于Twitter，而是关于数据](#这不仅仅是关于twitter，而是关于数据)
-  - [Data Structure](#data-structure)
-  - [数据结构](#数据结构)
-  - [Tweet Structure and Metadata](#tweet-structure-and-metadata)
-  - [推文结构和元数据](#推文结构和元数据)
-    - [Basic Tweet Structure](#basic-tweet-structure)
-    - [基本推文结构](#基本推文结构)
+- [Week 1 Social Media Data – Twitter/X  社交媒体数据 – Twitter/X](#week-1-social-media-data--twitterx--社交媒体数据--twitterx)
+  - [Importance of X platform X平台的重要性](#importance-of-x-platform-x平台的重要性)
+  - [Demographics 人口统计](#demographics-人口统计)
+  - [Income distribution - above average? 收入分布 - 高于平均水平？](#income-distribution---above-average-收入分布---高于平均水平)
+  - [Political Beliefs 政治信仰](#political-beliefs-政治信仰)
+  - [Bias in data 数据偏见](#bias-in-data-数据偏见)
+  - [It's not about Twitter but about data 这不是关于Twitter而是关于数据](#its-not-about-twitter-but-about-data-这不是关于twitter而是关于数据)
+  - [Data Structure 数据结构](#data-structure-数据结构)
+  - [Tweet Structure and Metadata 推文结构和元数据](#tweet-structure-and-metadata-推文结构和元数据)
+    - [Basic Tweet Structure 基本推文结构](#basic-tweet-structure-基本推文结构)
       - [Example of Basic Tweet JSON Structure](#example-of-basic-tweet-json-structure)
-      - [基本推文JSON结构示例](#基本推文json结构示例)
     - [Communication Elements](#communication-elements)
-    - [通信元素](#通信元素)
     - [Metadata for Geolocation](#metadata-for-geolocation)
-    - [地理定位的元数据](#地理定位的元数据)
       - [Example: Tweet with Only Place Object (No Precise Coordinates)](#example-tweet-with-only-place-object-no-precise-coordinates)
-      - [示例：仅带地点对象的推文（无精确坐标）](#示例仅带地点对象的推文无精确坐标)
+      - [示例：仅包含地点对象的推文（无精确坐标）](#示例仅包含地点对象的推文无精确坐标)
       - [Example: Tweet with Location Mentioned in Text (No Explicit Geolocation)](#example-tweet-with-location-mentioned-in-text-no-explicit-geolocation)
-      - [示例：文本中提到位置的推文（无明确地理定位）](#示例文本中提到位置的推文无明确地理定位)
-    - [Data Structure for Analysis](#data-structure-for-analysis)
-    - [分析的数据结构](#分析的数据结构)
+      - [示例：在文本中提到位置的推文（无明确地理定位）](#示例在文本中提到位置的推文无明确地理定位)
+    - [Data Structure for Analysis 分析的数据结构](#data-structure-for-analysis-分析的数据结构)
       - [Example: Structured Data for Geolocation Analysis](#example-structured-data-for-geolocation-analysis)
-      - [示例：用于地理定位分析的结构化数据](#示例用于地理定位分析的结构化数据)
-  - [Place Object](#place-object)
-  - [地点对象](#地点对象)
-    - [Detailed Place Object Example](#detailed-place-object-example)
-    - [详细地点对象示例](#详细地点对象示例)
-    - [Example: Tweet with Credibility Indicators for Geolocation](#example-tweet-with-credibility-indicators-for-geolocation)
-    - [示例：带有地理定位可信度指标的推文](#示例带有地理定位可信度指标的推文)
-  - [Tutorial Questions and Answers](#tutorial-questions-and-answers)
-  - [教程问题与答案](#教程问题与答案)
-    - [Why do you think location information is important?](#why-do-you-think-location-information-is-important)
-    - [你认为位置信息重要的原因是什么？](#你认为位置信息重要的原因是什么？)
-    - [What are the benefits of location information?](#what-are-the-benefits-of-location-information)
-    - [位置信息的好处是什么？](#位置信息的好处是什么？)
-    - [How does Twitter encode location information \& their advantages and limitations?](#how-does-twitter-encode-location-information--their-advantages-and-limitations)
-    - [Twitter如何编码位置信息及其优缺点？](#twitter如何编码位置信息及其优缺点)
-    - [Summary of Twitter Geolocation Data](#summary-of-twitter-geolocation-data)
-- [Content Processing](#content-processing)
-- [内容处理](#内容处理)
-  - [Processing and Cleansing Social Media Data](#processing-and-cleansing-social-media-data)
-  - [处理和清理社交媒体数据](#处理和清理社交媒体数据)
-    - [Text Preprocessing Pipeline](#text-preprocessing-pipeline)
-    - [文本预处理管道](#文本预处理管道)
-  - [Text Vector Representation](#text-vector-representation)
-  - [文本向量表示](#文本向量表示)
-    - [Vector Space Model for Documents and Queries](#vector-space-model-for-documents-and-queries)
-    - [文档和查询的向量空间模型](#文档和查询的向量空间模型)
-    - [Binary Representation Approach](#binary-representation-approach)
-    - [二进制表示方法](#二进制表示方法)
-  - [Similar Documents](#similar-documents)
-  - [相似文档](#相似文档)
-  - [Cosine Similarity Measure](#cosine-similarity-measure)
-  - [余弦相似度测量](#余弦相似度测量)
-  - [Length of a Vector](#length-of-a-vector)
-  - [向量的长度](#向量的长度)
-  - [Unit Vector](#unit-vector)
-  - [单位向量](#单位向量)
-  - [Similarity Computation](#similarity-computation)
-  - [相似性计算](#相似性计算)
-    - [Cosine Similarity](#cosine-similarity)
-    - [余弦相似度](#余弦相似度)
-    - [Similarity vs. Dissimilarity (Distance)](#similarity-vs-dissimilarity-distance)
-    - [相似性与不相似性（距离）](#相似性与不相似性距离)
-    - [Working with Normalized Vectors:](#working-with-normalized-vectors)
-    - [处理归一化向量：](#处理归一化向量)
+      - [示例：地理定位分析的结构化数据](#示例地理定位分析的结构化数据)
+  - [Place Object 地点对象](#place-object-地点对象)
+    - [Detailed Place Object Example 详细地点对象示例](#detailed-place-object-example-详细地点对象示例)
+    - [Example: Tweet with Credibility Indicators for Geolocation 示例：具有地理定位可信度指标的推文](#example-tweet-with-credibility-indicators-for-geolocation-示例具有地理定位可信度指标的推文)
+  - [Tutorial Questions and Answers 教程问题与答案](#tutorial-questions-and-answers-教程问题与答案)
+    - [Why do you think location information is important? 你认为位置信息为什么重要？](#why-do-you-think-location-information-is-important-你认为位置信息为什么重要)
+    - [What are the benefits of location information? 位置信息的好处是什么？](#what-are-the-benefits-of-location-information-位置信息的好处是什么)
+    - [How does Twitter encode location information \& their advantages and limitations? Twitter如何编码位置信息及其优缺点？](#how-does-twitter-encode-location-information--their-advantages-and-limitations-twitter如何编码位置信息及其优缺点)
+    - [Twitter Geolocation Data Summary 推特地理位置数据总结](#twitter-geolocation-data-summary-推特地理位置数据总结)
+    - [**Effective Geolocation Analysis** 有效的地理位置分析](#effective-geolocation-analysis-有效的地理位置分析)
+    - [**Fine-Grained vs. Coarse-Grained Approaches** 精细与粗略定位方法](#fine-grained-vs-coarse-grained-approaches-精细与粗略定位方法)
+- [Week 2 Content Processing](#week-2-content-processing)
+  - [Processing and Cleansing Social Media Data 处理和清理社交媒体数据](#processing-and-cleansing-social-media-data-处理和清理社交媒体数据)
+    - [Text Preprocessing Pipeline 文本预处理流程](#text-preprocessing-pipeline-文本预处理流程)
+  - [Text Vector Representation 文本向量表示](#text-vector-representation-文本向量表示)
+    - [Vector Space Model for Documents and Queries 文档和查询的向量空间模型](#vector-space-model-for-documents-and-queries-文档和查询的向量空间模型)
+    - [Binary Representation Approach 二进制表示方法](#binary-representation-approach-二进制表示方法)
+  - [Similar Documents 相似文档](#similar-documents-相似文档)
+  - [Cosine Similarity Measure 余弦相似性度量](#cosine-similarity-measure-余弦相似性度量)
+  - [Length of a Vector 向量的长度](#length-of-a-vector-向量的长度)
+  - [Unit Vector 单位向量](#unit-vector-单位向量)
+  - [Similarity Computation 相似性计算](#similarity-computation-相似性计算)
+    - [Cosine Similarity 余弦相似性](#cosine-similarity-余弦相似性)
+    - [Similarity vs. Dissimilarity (Distance) 相似性与不相似性（距离）](#similarity-vs-dissimilarity-distance-相似性与不相似性距离)
+    - [Working with Normalized Vectors 使用归一化向量:](#working-with-normalized-vectors-使用归一化向量)
   - [Text Processing Pipeline](#text-processing-pipeline)
   - [文本处理管道](#文本处理管道)
-  - [Term Weighting](#term-weighting)
-  - [术语加权](#术语加权)
-    - [In documents, such as web pages:](#in-documents-such-as-web-pages)
-    - [在文档中，例如网页：](#在文档中例如网页)
+  - [Term Weighting 术语加权](#term-weighting-术语加权)
+    - [In documents, such as web pages 在文档中，例如网页:](#in-documents-such-as-web-pages-在文档中例如网页)
     - [However, in tweets and short social media posts:](#however-in-tweets-and-short-social-media-posts)
-    - [然而，在推文和短社交媒体帖子中：](#然而在推文和短社交媒体帖子中)
-  - [Finding similar tweets](#finding-similar-tweets)
-  - [查找相似推文](#查找相似推文)
-    - [What is a cluster?](#what-is-a-cluster)
-    - [什么是聚类？](#什么是聚类)
-    - [Clustering in Text Analysis](#clustering-in-text-analysis)
-    - [文本分析中的聚类](#文本分析中的聚类)
-    - [Applications of Tweet Clustering](#applications-of-tweet-clustering)
-    - [推文聚类的应用](#推文聚类的应用)
-  - [Single-pass clustering](#single-pass-clustering)
-  - [单次聚类](#单次聚类)
-  - [Cluster centroid](#cluster-centroid)
-  - [聚类质心](#聚类质心)
-  - [Stream of tweets](#stream-of-tweets)
-  - [推文流](#推文流)
-  - [Single Pass Clustering Steps](#single-pass-clustering-steps)
-  - [单次聚类步骤](#单次聚类步骤)
-  - [How to group tweets](#how-to-group-tweets)
-  - [如何分组推文](#如何分组推文)
-  - [Comments](#comments)
-  - [评论](#评论)
-  - [Comments \& Observations](#comments--observations)
-  - [评论与观察](#评论与观察)
-  - [Moving average](#moving-average)
-  - [移动平均](#移动平均)
-  - [Credibility \& Newsworthiness Notes](#credibility--newsworthiness-notes)
-    - [1. Defining Credibility in Social Media](#1-defining-credibility-in-social-media)
-    - [2. Calculating Credibility Scores](#2-calculating-credibility-scores)
-    - [3. Newsworthiness Factors](#3-newsworthiness-factors)
-    - [4. Credibility-Weighted Geolocation](#4-credibility-weighted-geolocation)
-    - [5. Credibility Indicators in Twitter Data](#5-credibility-indicators-in-twitter-data)
-    - [6. Relationship Between Credibility and Accuracy](#6-relationship-between-credibility-and-accuracy)
-    - [7. Key Takeaways](#7-key-takeaways)
-  - [Online Brand Communities: Hate and Conflict Analysis Notes](#online-brand-communities-hate-and-conflict-analysis-notes)
-    - [1. Foundational Definitions](#1-foundational-definitions)
-    - [2. Typology of Online Brand Communities](#2-typology-of-online-brand-communities)
-    - [3. Conflict Detection and Analysis Framework](#3-conflict-detection-and-analysis-framework)
-    - [4. Hate Speech Detection Methodologies](#4-hate-speech-detection-methodologies)
-    - [5. Brand Community Conflict Dynamics](#5-brand-community-conflict-dynamics)
-    - [6. Methodological Approaches to Studying Brand Community Conflict](#6-methodological-approaches-to-studying-brand-community-conflict)
-    - [7. Impact of Conflict on Brand Communities](#7-impact-of-conflict-on-brand-communities)
-    - [8. Ethical Considerations and Governance](#8-ethical-considerations-and-governance)
-  - [LLM Methods and Prompting Notes](#llm-methods-and-prompting-notes)
+    - [然而，在推文和简短的社交媒体帖子中：](#然而在推文和简短的社交媒体帖子中)
+  - [Finding similar tweets 查找相似的推文](#finding-similar-tweets-查找相似的推文)
+    - [What is a cluster? 什么是聚类？](#what-is-a-cluster-什么是聚类)
+    - [Clustering in Text Analysis 文本分析中的聚类](#clustering-in-text-analysis-文本分析中的聚类)
+    - [Applications of Tweet Clustering 推文聚类的应用](#applications-of-tweet-clustering-推文聚类的应用)
+  - [Single-pass clustering 单次聚类](#single-pass-clustering-单次聚类)
+  - [Cluster centroid 聚类质心](#cluster-centroid-聚类质心)
+  - [Stream of tweets 推文流](#stream-of-tweets-推文流)
+  - [Single Pass Clustering Steps 单次聚类步骤](#single-pass-clustering-steps-单次聚类步骤)
+  - [How to group tweets 如何分组推文](#how-to-group-tweets-如何分组推文)
+  - [Comments 评论](#comments-评论)
+  - [Comments \& Observations 评论与观察](#comments--observations-评论与观察)
+  - [Moving average 移动平均](#moving-average-移动平均)
+- [Week 3 Credibility \& Newsworthiness Notes 信誉和新闻价值](#week-3-credibility--newsworthiness-notes-信誉和新闻价值)
+  - [1. Social Media Data Characteristics](#1-social-media-data-characteristics)
+  - [2. Newsworthiness Concept](#2-newsworthiness-concept)
+  - [3. Requirements for Newsworthiness Scoring](#3-requirements-for-newsworthiness-scoring)
+  - [4. Distant Supervision Approach](#4-distant-supervision-approach)
+  - [5. User Credibility Features](#5-user-credibility-features)
+    - [5.1 Description Weight](#51-description-weight)
+    - [5.2 Account Age Weight](#52-account-age-weight)
+    - [5.3 Followers Weight](#53-followers-weight)
+    - [5.4 Verified Status Weight](#54-verified-status-weight)
+    - [5.5 Profile Image Weight](#55-profile-image-weight)
+  - [6. Quality Score Calculation](#6-quality-score-calculation)
+  - [7. Newsworthiness Scoring Model](#7-newsworthiness-scoring-model)
+    - [7.1 Document Models](#71-document-models)
+    - [7.2 Term Importance](#72-term-importance)
+    - [7.3 Term Significance](#73-term-significance)
+    - [7.4 Newsworthiness Score](#74-newsworthiness-score)
+  - [8. Practical Examples](#8-practical-examples)
+  - [9. Benefits of Newsworthiness Scoring](#9-benefits-of-newsworthiness-scoring)
+- [LLM Methods and Prompting Notes](#llm-methods-and-prompting-notes)
     - [1. Foundational Definitions and Models](#1-foundational-definitions-and-models)
     - [2. LLM Architectures and Taxonomy](#2-llm-architectures-and-taxonomy)
     - [3. Prompting Methodologies and Frameworks](#3-prompting-methodologies-and-frameworks)
@@ -205,7 +160,7 @@
     - [5. Applications in Web Science](#5-applications-in-web-science)
     - [6. Prompt Engineering for Social Media Research](#6-prompt-engineering-for-social-media-research)
     - [7. Ethical and Methodological Considerations](#7-ethical-and-methodological-considerations)
-  - [Machine Learning and Deep Learning Applications Notes](#machine-learning-and-deep-learning-applications-notes)
+- [Machine Learning and Deep Learning Applications Notes](#machine-learning-and-deep-learning-applications-notes)
     - [1. Foundational Definitions and Concepts](#1-foundational-definitions-and-concepts)
     - [2. Deep Learning Architectures for Social Media Analysis](#2-deep-learning-architectures-for-social-media-analysis)
     - [3. Machine Learning for Social Media Tasks](#3-machine-learning-for-social-media-tasks)
@@ -213,7 +168,7 @@
     - [5. Methodological Challenges and Solutions](#5-methodological-challenges-and-solutions)
     - [6. Applications in Social Media Research](#6-applications-in-social-media-research)
     - [7. Ethical and Responsible ML for Social Media](#7-ethical-and-responsible-ml-for-social-media)
-  - [Emotion Analysis Notes](#emotion-analysis-notes)
+- [Emotion Analysis Notes](#emotion-analysis-notes)
     - [1. Foundational Definitions and Theoretical Frameworks](#1-foundational-definitions-and-theoretical-frameworks)
     - [2. Computational Approaches to Emotion Detection](#2-computational-approaches-to-emotion-detection)
     - [3. Emotion Analysis in Social Media](#3-emotion-analysis-in-social-media)
@@ -221,7 +176,7 @@
     - [5. Methodological Challenges and Solutions](#5-methodological-challenges-and-solutions-1)
     - [6. Ethical Considerations in Emotion Analysis](#6-ethical-considerations-in-emotion-analysis)
     - [7. Future Directions in Social Media Emotion Analysis](#7-future-directions-in-social-media-emotion-analysis)
-  - [Knowledge Graphs Notes](#knowledge-graphs-notes)
+- [Knowledge Graphs Notes](#knowledge-graphs-notes)
     - [1. Foundational Definitions and Concepts](#1-foundational-definitions-and-concepts-1)
     - [2. Knowledge Graph Construction and Population](#2-knowledge-graph-construction-and-population)
     - [3. Knowledge Graph Completion](#3-knowledge-graph-completion)
@@ -230,6 +185,16 @@
     - [6. Applications of Knowledge Graphs in Web Science](#6-applications-of-knowledge-graphs-in-web-science)
     - [7. Challenges and Methodological Considerations](#7-challenges-and-methodological-considerations)
     - [8. Ethical and Social Implications](#8-ethical-and-social-implications)
+- [Reddit Network Analysis](#reddit-network-analysis)
+  - [1. Reddit Platform Overview](#1-reddit-platform-overview)
+  - [2. Social Support Concept](#2-social-support-concept)
+  - [3. Network Analysis Approach](#3-network-analysis-approach)
+  - [4. Creating Interaction Graphs](#4-creating-interaction-graphs)
+  - [5. Key Network Metrics](#5-key-network-metrics)
+  - [6. Case Study Findings: Mental Health Subreddits](#6-case-study-findings-mental-health-subreddits)
+  - [7. Temporal Analysis Methods](#7-temporal-analysis-methods)
+  - [8. Research Questions Addressed](#8-research-questions-addressed)
+  - [9. Support Seeker vs. Support Giver](#9-support-seeker-vs-support-giver)
 
 ## Introduction to Geolocalisation
 
@@ -1650,9 +1615,9 @@ A tweet contains rich structured and unstructured data that can be leveraged for
 - The user has not enabled geolocation (`geo_enabled: false`)
 - 用户没有启用地理定位（`geo_enabled: false`）
 - However, the tweet text mentions specific locations: "Buchanan Street station" and "Glasgow city center"
-- 然而，推文文本提到了具体位置：“Buchanan Street station”和“Glasgow city center”
+- 然而，推文文本提到了具体位置："Buchanan Street station"和"Glasgow city center"
 - The tweet also includes a hashtag "#Glasgow"
-- 推文还包括一个标签“#Glasgow”
+- 推文还包括一个标签"#Glasgow"
 - For geolocation analysis, natural language processing techniques would be needed to extract these location references from the text
 - 对于地理定位分析，需要使用自然语言处理技术从文本中提取这些位置引用
 
@@ -2393,18 +2358,18 @@ The text processing pipeline is a series of steps applied to raw text to transfo
 文本处理管道是一系列应用于原始文本的步骤，将其转换为适合计算分析的格式：
 
 1. **Tokenization**: Breaking text into individual words or tokens. For example, "The cat sat on the mat" becomes ["The", "cat", "sat", "on", "the", "mat"].
-   **分词**：将文本分解为单个单词或标记。例如，“The cat sat on the mat” 变为 ["The", "cat", "sat", "on", "the", "mat"]。
+   **分词**：将文本分解为单个单词或标记。例如，"The cat sat on the mat" 变为 ["The", "cat", "sat", "on", "the", "mat"]。
 2. **Normalization**: Converting text to lowercase, removing accents, and standardizing characters. This ensures consistency in analysis by treating "Cat" and "cat" as the same token.
    **规范化**：将文本转换为小写，去除重音并标准化字符。这通过将 "Cat" 和 "cat" 视为相同的标记来确保分析的一致性。
 3. **Stopword removal**: Eliminating common words with little semantic value (e.g., "the", "is", "and", "of") that occur frequently but contribute minimal meaning to the analysis.
-   **停用词去除**：消除具有较少语义价值的常见词（例如，“the”、“is”、“and”、“of”），这些词频繁出现但对分析贡献最小的意义。
+   **停用词去除**：消除具有较少语义价值的常见词（例如，"the"、"is"、"and"、"of"），这些词频繁出现但对分析贡献最小的意义。
 4. **Stemming/Lemmatization**: Reducing words to their root forms.
    **词干提取/词形还原**：将单词还原为其根形式。
 
    - Stemming: A heuristic process that chops off word endings (e.g., "running" → "run", "cats" → "cat")
-   - 词干提取：一种启发式过程，去掉单词的结尾（例如，“running” → “run”，“cats” → “cat”）
+   - 词干提取：一种启发式过程，去掉单词的结尾（例如，"running" → "run"，"cats" → "cat"）
    - Lemmatization: A more sophisticated approach using vocabulary and morphological analysis to return the base dictionary form (e.g., "better" → "good", "was" → "be")
-   - 词形还原：一种更复杂的方法，使用词汇和形态分析返回基本词典形式（例如，“better” → “good”，“was” → “be”）
+   - 词形还原：一种更复杂的方法，使用词汇和形态分析返回基本词典形式（例如，"better" → "good"，"was" → "be"）
 5. **Feature extraction**: Converting processed text into numerical representations such as:
    **特征提取**：将处理后的文本转换为数值表示，例如：
 
@@ -2580,7 +2545,7 @@ Cluster centroid is the representation of group/cluster:
 聚类质心是组/聚类的表示：
 
 - Think of it as a "virtual document" that represents the average content of all documents in the cluster
-- 可以将其视为代表聚类中所有文档平均内容的“虚拟文档”
+- 可以将其视为代表聚类中所有文档平均内容的"虚拟文档"
 - It may not correspond to any actual document in the cluster, but serves as an abstract representation of the cluster's central theme
 - 它可能不对应于聚类中的任何实际文档，但作为聚类中心主题的抽象表示
 
@@ -2757,329 +2722,174 @@ How moving averages affect our clusters:
 By incorporating moving averages, the clustering algorithm becomes more responsive to current trends while maintaining computational efficiency in a streaming environment.
 通过结合移动平均，聚类算法在流式环境中保持计算效率的同时，对当前趋势变得更加敏感。
 
-![](./img/Credibility%20&%20Newsworthiness%20(可信度与新闻价值)%20⭐⭐⭐⭐.png)
+![](./img/Credibility%20&%20Newsworthiness%20in%20Web%20Science%20(可信度与新闻价值)%20⭐⭐⭐⭐.png)
 
 # Week 3 Credibility & Newsworthiness Notes 信誉和新闻价值
 
-### 1. Defining Credibility in Social Media 定义社交媒体中的可信度
-
-**Source Credibility 信息来源可信度**
-
-**The perceived trustworthiness and expertise of the information source**
-信息来源的可信度取决于其被感知的可信性和专业性。
-
-* **User verification status (blue checkmark)** 用户验证状态（蓝色认证标记）
-* **Account age and consistency** 账户年龄及一致性
-* **Follower count and engagement metrics** 粉丝数量及互动指标
-* **Prior accuracy record** 过往准确性记录
-
-**Content Credibility 信息内容可信度**
-
-**The believability of the information itself**
-信息内容的可信度取决于其本身的可信性。
-
-* **Internal consistency** 内部一致性
-* **External corroboration** 外部证据支持
-* **Specificity and detail level** 信息的具体性和细节程度
-* **Evidence presentation (photos, links, citations)** 证据呈现（照片、链接、引用）
-
-**Contextual Credibility 情境可信度**
-
-**How credible the information appears in a specific context**
-信息在特定情境下的可信度。
-
-* **Temporal relevance (recency)** 时间相关性（信息的最新性）
-* **Geographic proximity to events** 地理位置与事件的接近程度
-* **Expertise relevance to topic** 专业性与话题相关性
-* **Network confirmation (retweets by other credible sources)** 网络确认（被其他可信来源转发）
-
-### 2. Calculating Credibility Scores
-
-Credibility can be quantified through weighted formulas:
-
-$$
-\text{Credibility}(\text{User}) = w_1 \times \text{ActivityScore} + w_2 \times \text{RelevanceScore} + w_3 \times \text{VerificationScore} + w_4 \times \text{HistoricalAccuracyScore} + w_5 \times \text{AccountAgeScore}
-$$
-
-Where:
-
-- ActivityScore: Frequency and consistency of posting
-- RelevanceScore: Topic-specific expertise
-- VerificationScore: Official verification status (binary or scaled)
-- HistoricalAccuracyScore: Prior accuracy of information
-- AccountAgeScore: Age and establishment of account
-
-**Normalization approach**:
-
-```
-NormalizedCredibility(User) = (Credibility(User) - MinCredibility) / (MaxCredibility - MinCredibility)
-```
-
-### 3. Newsworthiness Factors
-
-Newsworthiness is determined by:
-
-- **Timeliness**: Recency of information
-
-  - Breaking news receives higher scores
-  - First reports of events have special significance
-- **Impact/Significance**: Potential effect on population
-
-  - Number of people affected
-  - Severity of consequences
-  - Duration of impact
-- **Proximity**: Geographic or cultural relevance
-
-  - Local events for local audiences
-  - Cultural significance to target community
-- **Prominence**: Involvement of well-known entities
-
-  - Public figures
-  - Major organizations
-  - Famous locations
-- **Unexpectedness**: Surprise or novelty value
-
-  - Unusual events
-  - Unexpected developments
-  - Statistical outliers
-- **Conflict**: Presence of controversy or tension
-
-  - Disputes between parties
-  - Competing narratives
-  - Social or political divisions
-
-### 4. Credibility-Weighted Geolocation
-
-For geolocation using credibility weights:
-
-1. **Basic approach**:
-
-   ```python
-   def predict_location_with_credibility(query_tweet, reference_tweets, user_credibility):
-       location_scores = {}
-       for tweet in reference_tweets:
-           similarity = calculate_similarity(query_tweet, tweet)
-           credibility = user_credibility.get(tweet.user_id, 0.5)  # Default to 0.5 if unknown
-           location = tweet.location
-
-           if location not in location_scores:
-               location_scores[location] = 0
-
-           # Weight the vote by both similarity and credibility
-           location_scores[location] += similarity * credibility
-
-       return max(location_scores, key=location_scores.get)
-   ```
-2. **Formula**:
-
-   ```
-   Score(Location_i) = Σ(Similarity(Q, Tj) × Credibility(Tj) × I(Tj, Location_i))
-   ```
-
-   Where:
-
-   - Q is the query tweet
-   - Tj is the jth retrieved tweet
-   - I(Tj, Location_i) is an indicator function (1 if tweet Tj is from Location_i, 0 otherwise)
-
-### 5. Credibility Indicators in Twitter Data
-
-- **User Verification**: Official verified accounts (✓)
-- **Follower Count**: High follower numbers suggest authority
-- **Account Description**: Official status claims that can be verified
-- **Content Consistency**: Consistent topic focus
-- **External Links**: Links to credible websites
-- **Media Attachments**: Photographic evidence
-- **Source Application**: Posts from official organization apps
-
-### 6. Relationship Between Credibility and Accuracy
-
-- Credibility ≠ Accuracy (credible sources can be wrong)
-- Higher credibility correlates with higher accuracy probability
-- Credibility serves as a useful proxy when ground truth is unavailable
-- Credibility should be continually reassessed based on performance
-
-### 7. Key Takeaways
-
-- Credibility is multi-dimensional and context-dependent
-- Newsworthiness affects what information gets shared and amplified
-- Weighted approaches using credibility improve geolocation accuracy
-- Balancing multiple credibility factors is crucial for robust systems
-- Credibility assessment must account for demographic and platform biases
-- Implementing credibility in algorithms requires both technical and ethical considerations
-
----
-
-<img src="./img/Online Brand Communities_ Hate and Conflict Analysis ⭐⭐⭐⭐.png"/>
-
-## Online Brand Communities: Hate and Conflict Analysis Notes 
-
-### 1. Foundational Definitions
-
-- **Online Brand Community (OBC)**: A specialized, non-geographically bound, digital collective based on structured social relationships among admirers of a brand, characterized by a shared consciousness, rituals, traditions, and moral responsibility toward fellow members and the brand itself.
-
-  - *Formal definition*: "A virtual social aggregation that emerges when sufficient people with emotional attachment to a commercial entity engage in public online interactions centered on brand affiliation, creating networks of relationships with identifiable boundaries."
-- **Hate Speech**: Content that promotes violence against, directly attacks, or dehumanizes individuals or groups based on protected attributes such as race, ethnicity, gender, religion, sexual orientation, disability, or serious disease.
-
-  - *Technical definition*: "Public communication that expresses extreme dislike or hostility toward a person or group of people because of a characteristic they share, or a position they hold, utilizing derogatory language that has the potential to encourage discrimination, hostility, or violence."
-- **Online Conflict**: A state of discord caused by the actual or perceived opposition of needs, values, interests, or communication patterns between brand community members or between community members and external entities.
-
-  - *Operational definition*: "A sustained sequence of contentious digital interactions characterized by increased emotional intensity, persisting beyond a single exchange, and exhibiting clear opposing positions."
-
-### 2. Typology of Online Brand Communities
-
-1. **Consumer-initiated vs. Brand-initiated**
-
-   - *Consumer-initiated*: Organically formed by brand enthusiasts (e.g., unofficial subreddits)
-   - *Brand-initiated*: Officially created and moderated by the brand organization (e.g., official Facebook pages)
-2. **Engagement-level Classification**
-
-   - *Transactional communities*: Focused on information exchange and problem-solving
-   - *Relational communities*: Emphasizing emotional connections and identity formation
-   - *Transformational communities*: Aiming to create social impact beyond consumption
-3. **Platform Architecture Types**
-
-   - *Centralized communities*: Single-platform focused (e.g., dedicated forums)
-   - *Distributed communities*: Spread across multiple platforms (e.g., hashtag communities)
-   - *Hybrid communities*: Combining official and unofficial spaces
-
-### 3. Conflict Detection and Analysis Framework
-
-- **Lexical Indicators of Conflict**
-
-  - Profanity density: Ratio of profane words to total words
-  - Negative sentiment intensity: Strength of negative emotion expressions
-  - Imperative commands: Use of directives in communication
-  - Disagreement markers: Words signaling opposition (e.g., "but," "however," "actually")
-- **Social Network Analysis Indicators**
-
-  - *Conflict networks*: Networks where edges represent hostile interactions
-  - *Community polarization*: Formation of distinct oppositional subgroups
-  - *Conflict centrality*: Tendency of certain nodes to be involved in conflicts
-  - *Mathematical formula*: Conflict Centrality (CC) of node i = Σ(conflict_weight(i,j)) / (n-1) where j ranges over all other nodes
-- **Temporal Patterns of Conflict**
-
-  - Escalation curves: Rate at which linguistic hostility increases
-  - Cyclical patterns: Recurring conflict around specific triggers
-  - Contagion effects: Spread of conflict to initially uninvolved members
-  - Resolution timelines: Duration from initiation to de-escalation
-
-### 4. Hate Speech Detection Methodologies
-
-1. **Computational Approaches**
-
-   - *Rule-based systems*: Using predefined lexicons and linguistic rules
-   - *Machine learning classifiers*: Supervised learning with labeled training data
-     * Feature extraction → Classification → Post-processing
-   - *Deep learning methods*: Neural networks for contextual understanding
-     * Word embeddings (e.g., Word2Vec, GloVe)
-     * Transformer models (e.g., BERT, RoBERTa)
-   - *Multimodal analysis*: Combining text, image, and metadata signals
-2. **Performance Metrics**
-
-   - Precision: Ratio of true positives to all predicted positives
-   - Recall: Ratio of true positives to all actual positives
-   - F1 Score: Harmonic mean of precision and recall
-   - Area Under ROC Curve (AUC): Discrimination ability at various thresholds
-3. **Challenges in Detection**
-
-   - *Contextual ambiguity*: Same words can be hateful or non-hateful depending on context
-   - *Evolving language*: Emergence of new coded language to evade detection
-   - *Cultural specificity*: Variation in what constitutes hate across cultures
-   - *Class imbalance*: Relatively low prevalence of hate speech in most datasets
-
-### 5. Brand Community Conflict Dynamics
-
-- **Conflict Trajectory Model**
-
-  1. *Latent phase*: Underlying tensions without overt expression
-  2. *Triggering event*: Specific incident catalyzing open conflict
-  3. *Escalation phase*: Increasing hostility and participant involvement
-  4. *Stalemate phase*: Entrenched positions with continued hostility
-  5. *De-escalation phase*: Gradual reduction in conflict intensity
-  6. *Resolution/transformation phase*: Return to community equilibrium or restructuring
-- **Conflict Participant Roles**
-
-  - *Instigators*: Members who initiate conflicts (high out-degree in conflict networks)
-  - *Amplifiers*: Members who escalate existing conflicts (high betweenness centrality)
-  - *Mediators*: Members who attempt to resolve conflicts (bridging structural holes)
-  - *Spectators*: Members who observe without active participation (peripheral nodes)
-- **Brand Response Strategies**
-
-  1. *Avoidance*: Non-engagement with conflictual content
-  2. *Accommodation*: Adapting to demands from conflicting parties
-  3. *Competition*: Asserting authority to control the narrative
-  4. *Collaboration*: Working with community to find mutually beneficial solutions
-  5. *Compromise*: Finding middle ground between opposing positions
-
-### 6. Methodological Approaches to Studying Brand Community Conflict
-
-1. **Data Collection Methods**
-
-   - *API-based scraping*: Using platform APIs to collect posts and interactions
-   - *Custom crawlers*: Programmatic collection of publicly available data
-   - *Longitudinal tracking*: Monitoring communities over extended periods
-   - *Event-triggered collection*: Intensified data gathering during crisis events
-2. **Analytical Techniques**
-
-   - *Content analysis*: Systematic coding of textual and visual material
-   - *Discourse analysis*: Examination of language patterns and power relations
-   - *Network analysis*: Mapping relationship structures and interaction patterns
-   - *Sentiment analysis*: Quantifying emotional valence in community content
-   - *Topic modeling*: Identifying recurring themes in community discourse
-3. **Mixed Methods Approaches**
-
-   - *Sequential explanatory design*: Quantitative analysis followed by qualitative interpretation
-   - *Concurrent triangulation*: Simultaneous collection of quantitative and qualitative data
-   - *Embedded design*: One method nested within the predominant approach
-
-### 7. Impact of Conflict on Brand Communities
-
-- **Community Level Effects**
-
-  - *Membership turnover*: Rate at which members leave during/after conflicts
-  - *Participation inequality*: Concentration of activity among fewer members
-  - *Trust erosion*: Decreased willingness to share personal information
-  - *Community fragmentation*: Formation of splinter groups or subcultures
-- **Brand Level Effects**
-
-  - *Reputation damage*: Negative perception among existing and potential customers
-  - *Engagement volatility*: Unpredictable fluctuations in community interaction
-  - *Resource drain*: Increased moderation and management requirements
-  - *Strategic uncertainty*: Difficulty in planning community initiatives
-- **Quantification Approaches**
-
-  - *Brand sentiment index*: Composite measure of sentiment across platforms
-  - *Community health metrics*: Growth rate, retention rate, engagement quality
-  - *Conflict incidence rate*: Conflicts per 1,000 interactions
-  - *Resolution effectiveness*: Percentage of conflicts successfully mediated
-
-### 8. Ethical Considerations and Governance
-
-1. **Ethical Frameworks for Intervention**
-
-   - *Harm reduction*: Minimizing negative impacts while preserving dialogue
-   - *Free speech balancing*: Weighing expression rights against community harm
-   - *Care ethics*: Prioritizing relationships and well-being over abstract principles
-   - *Distributive justice*: Ensuring fair treatment across community segments
-2. **Governance Models**
-
-   - *Top-down moderation*: Centralized control by brand representatives
-   - *Community self-governance*: Member-led regulation through established norms
-   - *Algorithmic governance*: Automated content filtering and moderation
-   - *Hybrid approaches*: Combining human judgment with algorithmic assistance
-3. **Intervention Strategies**
-
-   - *Pre-emptive*: Community guidelines, onboarding education, norm-setting
-   - *Real-time*: Content filtering, cooling-off periods, interaction limitations
-   - *Reactive*: Content removal, member warnings, temporary/permanent bans
-   - *Restorative*: Mediation processes, community dialogue, reconciliation forums
+## 1. Social Media Data Characteristics
+
+- **Data Volume**: Large amount of data generated on social media platforms
+- **Data Types**: Two main categories
+  - Bragging/marketing tweets (noisy tweets)
+  - Informative tweets
+- **Challenges**:
+  - Filtering out spam
+  - Removing marketing content
+  - Identifying content with no substance
+
+## 2. Newsworthiness Concept
+
+- **Definition**: A tweet is newsworthy if it discusses topics of interest to news media
+- **Challenges in Identification**:
+  - Unstructured tweets
+  - Informal nature
+  - Unpredictable nature of news
+  - Short composition time
+- **Scale**: From less relevant to highly relevant
+
+## 3. Requirements for Newsworthiness Scoring
+
+- **Real-time Processing**: Tweets should be scored as soon as they arrive
+- **Generalizability**: Should handle any types of events, not just previously seen ones
+- **Adaptivity**: New information should be incorporated as it arrives
+
+## 4. Distant Supervision Approach
+
+- **Definition**: Semi-automatic labelling using heuristics
+- **Process**:
+  - Using heuristics to identify high and low quality content
+  - Creates enough data to model quality
+- **Advantages**:
+  - Minimal effort in creating dataset
+  - Real-life data - incremental and generalizable
+  - Easily integrated into algorithms like event detection
+
+## 5. User Credibility Features
+
+### 5.1 Description Weight
+- **News & Journalism Terms**: Weight = 2.0
+  - Terms: 'news', 'report', 'journal', 'write', 'editor', etc.
+- **Spam Terms**: Weight = 0.1
+  - Terms: 'ebay', 'review', 'shopping', 'deal', 'sale', etc.
+- **Other Terms**: Weight = 1.0
+- **Normalization**: Sum of term weights / maxWeight
+
+### 5.2 Account Age Weight
+- < 1 day: Weight = 0.05
+- < 30 days: Weight = 0.10
+- < 90 days: Weight = 0.25
+- > 90 days: Weight = 1.0
+
+### 5.3 Followers Weight
+- < 50 followers: Weight = 0.5
+- < 5,000 followers: Weight = 1.0
+- < 10,000 followers: Weight = 1.5
+- < 100,000 followers: Weight = 2.0
+- < 200,000 followers: Weight = 2.5
+- > 200,000 followers: Weight = 3.0
+- Normalized by dividing by 3
+
+### 5.4 Verified Status Weight
+- Verified account: Weight = 1.5
+- Non-verified account: Weight = 1.0
+- Normalized by dividing by 1.5
+- Approximately 290,000 verified accounts (41% news, politicians, public figures, journalists)
+
+### 5.5 Profile Image Weight
+- Default profile image: Weight = 0.5 (potentially 'throwaway' accounts)
+- Custom profile image: Weight = 1.0
+
+## 6. Quality Score Calculation
+
+- **Formula**: qualityScore = (profileWeight + verifiedWeight + followersWeight + accountAgeWeight + descriptionWeight)/5
+- **Range**: [0 to 1]
+- **Thresholds**:
+  - High quality: > 0.65
+  - Low quality: < 0.45
+
+## 7. Newsworthiness Scoring Model
+
+### 7.1 Document Models
+- **High-quality Model**: All documents in high quality text
+- **Low-quality Model**: All documents in low quality text
+- **Background Model**: Randomly selected tweets
+
+### 7.2 Term Importance
+- **Relative Importance R(t)**: Likelihood ratio for each term
+  - Formula from PDF:
+  
+  $$R_{HQ}(t) = \frac{P(t|HQ)}{P(t|BG)} = \frac{tf_{t,HQ}/F_{HQ}}{tf_{t,BG}/F_{BG}}$$
+  
+  $$R_{LQ}(t) = \frac{P(t|LQ)}{P(t|BG)} = \frac{tf_{t,LQ}/F_{LQ}}{tf_{t,BG}/F_{BG}}$$
+
+  - Where:
+    - $tf_t$ is term frequency of term t in respective model
+    - F is the raw frequency of all terms in the model
+    - HQ = High Quality model
+    - LQ = Low Quality Model
+    - BG = Background models
+
+- **Interpretation**:
+  - R > 1: Term more common in model than random
+  - R < 1: Term less common in model than random
+
+### 7.3 Term Significance
+- **High Quality Term Weight**:
+  
+  $$s_{HQ}(t) = \begin{cases}
+  R_{HQ}(t), & \text{if } R_{HQ}(t) \geq 2.0 \\
+  0, & \text{otherwise}
+  \end{cases}$$
+
+- **Low Quality Term Weight**:
+  
+  $$s_{LQ}(t) = \begin{cases}
+  R_{LQ}(t), & \text{if } R_{LQ}(t) \geq 2.0 \\
+  0, & \text{otherwise}
+  \end{cases}$$
+
+- Prevents terms with no clear association from affecting overall content
+
+### 7.4 Newsworthiness Score
+- **Formula**:
+  
+  $$N_d = \log_2 \frac{1+\sum_{t \in d} (s_{HQ}(t))}{1+\sum_{t \in d} (s_{LQ}(t))} = \log_2 \frac{1+\sum_{t \in d} (s_{HQ}(t))}{1+\sum_{t \in d} (s_{LQ}(t))}$$
+
+  - Where t refers to a term in document d
+  
+- **Interpretation**: 
+  - Positive score (>0): Document is newsworthy
+  - Negative score (<0): Document is not newsworthy
+
+## 8. Practical Examples
+
+The lecture provides several examples of tweets with their calculated scores:
+
+- Example 1: "Eco-warrior Greta Thunberg carried away by police at anti-coal mine demo"
+  - Terms analyzed: 'anticoal', 'away', 'carried', 'demo', 'ecowarrior', 'greta', 'mine', 'police', 'thunberg'
+  - Significant terms: 'carried' (high quality), 'thunberg' (low quality)
+  - nScore: 0.346 (newsworthy)
+
+- Example 2: "Real Madrid vs Barcelona : Supercopa de Espania Final El Clasico 2023"
+  - Contains multiple terms with high low-quality significance: 'barcelona', 'link', 'live', 'madrid'
+  - nScore: -5.817 (not newsworthy)
+
+- Example 3: "The minority speaker supporting anti choice and anti labor? Embarrassing"
+  - No terms with significant weights
+  - nScore: 0.0 (neutral)
+
+## 9. Benefits of Newsworthiness Scoring
+
+- Helps in downstream applications like event detection
+- Makes event detection approaches more efficient
+- Requires fewer tweets for analysis
+- Real-time and adaptive to changing content
 
 ---
 
 <img src="./img/LLM Methods and Prompting ⭐⭐⭐⭐⭐.png" />
 
-## LLM Methods and Prompting Notes
+# LLM Methods and Prompting Notes
 
 ### 1. Foundational Definitions and Models
 
@@ -3373,7 +3183,7 @@ For geolocation using credibility weights:
 
 <img src="img/Machine Learning and Deep Learning Applications ⭐⭐⭐⭐.png" />
 
-## Machine Learning and Deep Learning Applications Notes
+# Machine Learning and Deep Learning Applications Notes
 
 ### 1. Foundational Definitions and Concepts
 
@@ -3743,7 +3553,7 @@ For geolocation using credibility weights:
 
 <img src="./img/Emotion Analysis ⭐⭐⭐⭐.png" />
 
-## Emotion Analysis Notes
+# Emotion Analysis Notes
 
 ### 1. Foundational Definitions and Theoretical Frameworks
 
@@ -4144,7 +3954,7 @@ For geolocation using credibility weights:
 
 <img src="./img/Knowledge Graphs ⭐⭐⭐⭐.png" />
 
-## Knowledge Graphs Notes
+# Knowledge Graphs Notes
 
 ### 1. Foundational Definitions and Concepts
 
@@ -4526,3 +4336,126 @@ For geolocation using credibility weights:
      * Cultural contextualization of facts
      * Multiple ontological frameworks
      * Participatory design approaches
+
+![](./img/Reddit%20Network%20Analysis%20⭐⭐⭐⭐.png)
+
+# Reddit Network Analysis
+
+## 1. Reddit Platform Overview
+> "Reddit represents a unique digital ecosystem where community-driven content creation and semi-anonymous interactions create rich datasets for social network analysis. Unlike traditional social media platforms that emphasize personal connections, Reddit's structure facilitates interest-based communities with distinct interaction patterns and hierarchies."
+
+- Reddit is a social news site with 1.2+ billion monthly active users
+- Contains 100,000+ active subreddit communities
+- Users can make submissions (original posts) and comments (replies)
+- Data structure uses parent_id field (t1_ for comments, t3_ for submissions)
+- Semi-anonymous user identifiers
+
+## 2. Social Support Concept
+> "Social support refers to the psychological and material resources provided through social interaction that can help individuals cope with stress and enhance their well-being, often manifesting as informational, emotional, or instrumental assistance."
+
+- Reddit interactions reflect shared interests rather than intentional social networking
+- Users reply based on interest in content, not necessarily to form social ties
+- Replying often indicates superior expertise compared to the original poster
+- Creates a community expertise network
+
+## 3. Network Analysis Approach
+> "Network analysis is a set of techniques used to study relationships between discrete objects, representing them as graphs consisting of nodes (entities) and edges (relationships), enabling the quantification of structural patterns and dynamics within complex systems."
+
+- Analyzing Reddit from a network perspective rather than content analysis
+- Graph G = (V, E): Vertices (users) and Edges (interactions)
+- User interaction graph is directed (B replies to A creates edge from B to A)
+- Measures:
+  - Degree: Number of connections (in-degree + out-degree)
+  - In-degree: Number of replies received
+  - Out-degree: Number of replies sent
+
+## 4. Creating Interaction Graphs
+> "Interaction graphs transform conversational data into visual and mathematical representations where users become nodes and their communications become edges, allowing researchers to identify influential users, community boundaries, and conversation flow patterns beyond what content analysis alone can reveal."
+
+- Node: Individual Reddit user
+- Edge: Reply relationship between users
+- Node size can represent number of replies sent
+- Using NetworkX package for graph creation and analysis
+- Converting pandas DataFrames to network graphs using nx.from_pandas_edgelist()
+
+## 5. Key Network Metrics
+- **Largest Connected Component (LCC)**:
+  > "The largest connected component is the maximal subgraph where every node can reach every other node through some path, serving as a critical indicator of network cohesion and community structure."
+  
+  - Measures community cohesion
+  - Weekly LCC analysis shows temporal cohesion
+
+- **Sensitivity Analysis**:
+  > "Sensitivity analysis in network science involves systematically removing nodes or edges to observe changes in network properties, helping identify critical elements that maintain structural integrity."
+  
+  - Removing nodes by degree (highest first)
+  - Measures impact on network connectivity
+  - Shows importance of super users to community structure
+
+- **Rich-Club Coefficient**:
+  > "The rich-club coefficient quantifies the tendency of high-degree nodes to form tightly interconnected communities, revealing hierarchical structures and preferential attachment patterns within networks."
+  
+  - Formula: φ(k) = 2E>k / [N>k(N>k-1)]
+  - Measures if high-degree nodes connect preferentially to each other
+  - φ(k) > 1: Rich club effect (super users talk mainly to super users)
+  - φ(k) < 1: Anti-rich club effect (super users interact more with regular users)
+
+- **Z-score Analysis**:
+  > "Z-score analysis normalizes observed behaviors against expected random distributions, enabling the identification of statistically significant patterns in user interaction roles and tendencies."
+  
+  - Measures user behavior as help-seeker vs help-giver
+  - Modeling interactions as a Bernoulli process
+  - Z = (a - mean)/standard deviation
+  - Z > 0: Support giver (answers more than asks)
+  - Z < 0: Help seeker (asks more than answers)
+
+## 6. Case Study Findings: Mental Health Subreddits
+> "Mental health subreddits provide valuable natural experiments for studying support dynamics, as they represent self-organizing communities where individuals with similar challenges exchange information, emotional support, and coping strategies without professional mediation."
+
+- Compared SuicideWatch and PTSD communities over 121 days
+- Activity statistics:
+  - SuicideWatch: 27,017 posts (99% with replies)
+  - PTSD: 2,713 posts (99% with replies)
+  - SuicideWatch: 90.6 average posts per user
+  - PTSD: 2.4 average posts per user
+
+- Super User Impact:
+  > "Super users are highly active community members who contribute disproportionately to content generation and interaction, often serving as structural backbones for online communities through their consistent engagement."
+  
+  - 1-5% of users generate ~70% of content
+  - Removing top 1% drops connectivity to 59%
+  - Removing top 2% reduces links by 85%
+  - Top 10% of nodes responsible for most community cohesion
+
+- Anti-Rich Club Effect:
+  > "The anti-rich club effect occurs when high-degree nodes preferentially connect to low-degree nodes rather than to each other, often indicating a healthy support network where experienced members actively engage with newcomers or help-seekers."
+  
+  - Coefficient consistently below 1
+  - Super users interact more with non-super users
+  - Indicates experts helping those with questions
+  - Shows healthy support community structure
+
+## 7. Temporal Analysis Methods
+> "Temporal analysis examines how network structures and user behaviors evolve over time, revealing patterns of community growth, user engagement cycles, and the stability of social structures."
+
+- Weekly activity patterns show community engagement
+- Cumulative post frequency tracks growth
+- Average posts per user per week measures individual activity
+- LCC analysis on weekly graphs shows cohesion over time
+
+## 8. Research Questions Addressed
+> "Research questions in social network analysis serve as organizing frameworks for investigation, guiding methodological choices and establishing criteria for evaluating the significance of findings in relation to both theoretical constructs and practical applications."
+
+- How central are super users to community cohesiveness?
+- How do users on support communities behave over time?
+- How exclusive are super users in their behavior?
+- Do posting activities follow temporal patterns?
+- How resilient is the community structure?
+
+## 9. Support Seeker vs. Support Giver
+> "In online support communities, users typically adopt roles as either support seekers (those requesting help or sharing problems) or support givers (those offering advice, information, or emotional assistance), with these roles often quantifiable through interaction patterns."
+
+- Support seeker: User who begins a thread with a question
+- Support giver: User who responds to posts
+- Z-score analysis quantifies user propensity toward either role
+- Mental health communities show clear patterns of support exchange
