@@ -2414,117 +2414,201 @@ For evaluating geolocalisation techniques, establishing reliable ground truth da
 By establishing reliable ground truth data and following rigorous evaluation methodologies, researchers can accurately assess the performance of different geolocalisation techniques and make meaningful comparisons between approaches.
 通过建立可靠的真实数据并遵循严格的评估方法，研究人员可以准确评估不同地理定位技术的性能，并在方法之间进行有意义的比较。
 
-## Real-world Applications
+## Real-world Applications 现实世界应用
 
-## 现实世界应用
+### Emergency Response 紧急响应
 
-### Emergency Response
+Geolocalisation plays a critical role in emergency response scenarios.地理定位在紧急响应场景中发挥着关键作用。
 
-### 紧急响应
-
-Geolocalisation plays a critical role in emergency response scenarios:
-地理定位在紧急响应场景中发挥着关键作用：
-
-1. **Disaster Management**:
-2. **灾害管理**：
-
-   - Identifying affected areas through social media posts
-   - 通过社交媒体帖子识别受影响区域
-   - Monitoring the spread of disasters (floods, fires, earthquakes) in real-time
-   - 实时监测灾害（洪水、火灾、地震）的传播
-   - Example: During hurricanes, geolocated tweets can help identify areas with flooding or damage
-   - 示例：在飓风期间，地理定位的推文可以帮助识别洪水或损坏的区域
-3. **Resource Allocation**:
-4. **资源分配**：
-
-   - Prioritizing areas with the most urgent needs
-   - 优先考虑最紧急需求的区域
-   - Directing emergency services to specific locations
-   - 将紧急服务指向特定位置
-   - Optimizing evacuation routes based on real-time information
-   - 根据实时信息优化撤离路线
-5. **Public Safety Alerts**:
-6. **公共安全警报**：
-
-   - Sending targeted warnings to people in specific areas
-   - 向特定区域的人发送有针对性的警告
-   - Providing location-specific instructions during emergencies
-   - 在紧急情况下提供特定位置的指示
-   - Reaching people who might not have access to traditional media
-   - 接触可能无法访问传统媒体的人
-7. **Implementation Challenges**:
-8. **实施挑战**：
-
-   - Need for real-time processing with minimal latency
-   - 需要实时处理，延迟最小
-   - Handling misinformation during crisis situations
-   - 在危机情况下处理错误信息
-   - Ensuring system reliability when infrastructure may be compromised
-   - 确保系统可靠性，当基础设施可能受到损害时
-9. **Case Study Example**:
-10. **案例研究示例**：
-
-    - During the London Elephant & Castle fire (mentioned in the lecture), fine-grained geolocalisation of tweets helped emergency services understand the situation and respond appropriately
-    - 在伦敦大象与城堡火灾（在讲座中提到）期间，推文的细粒度地理定位帮助紧急服务了解情况并做出适当响应
+- **Disaster Management** 灾害管理
+  Identifying affected areas through social media posts. 通过社交媒体帖子识别受影响区域。
+  Monitoring the spread of disasters (floods, fires, earthquakes) in real-time. 实时监测灾害（洪水、火灾、地震）的传播。
+  Example: During hurricanes, geolocated tweets can help identify areas with flooding or damage. 示例：在飓风期间，地理定位的推文可以帮助识别洪水或损坏的区域。
+- **Resource Allocation** 资源分配
+  Prioritizing areas with the most urgent needs. 优先考虑最紧急需求的区域。
+  Directing emergency services to specific locations. 将紧急服务指向特定位置。
+  Optimizing evacuation routes based on real-time information. 根据实时信息优化撤离路线。
+- **Public Safety Alerts** 公共安全警报
+  Sending targeted warnings to people in specific areas. 向特定区域的人发送有针对性的警告。
+  Providing location-specific instructions during emergencies. 在紧急情况下提供特定位置的指示。
+  Reaching people who might not have access to traditional media. 接触可能无法访问传统媒体的人。
+- **Implementation Challenges** 实施挑战
+  Need for real-time processing with minimal latency. 需要实时处理，延迟最小。
+  Handling misinformation during crisis situations. 在危机情况下处理错误信息。
+  Ensuring system reliability when infrastructure may be compromised. 确保系统可靠性，当基础设施可能受到损害时。
+- **Case Study Example** 案例研究示例
+  During the London Elephant & Castle fire, fine-grained geolocalisation of tweets helped emergency services understand the situation and respond appropriately. 在伦敦大象与城堡火灾期间，推文的细粒度地理定位帮助紧急服务了解情况并做出适当响应。
 
 Fine-grained geolocalisation is particularly valuable in emergency scenarios where precise location information can save lives and optimize resource allocation.
-细粒度地理定位在紧急情况下特别有价值，在这些情况下，精确的位置数据可以挽救生命并优化资源分配。
+细粒度地理定位在紧急情况下特别有价值，精确的位置数据可以挽救生命并优化资源分配。
 
-### Traffic Incident Detection
+### Traffic Incident Detection 交通事件检测
 
-### 交通事件检测
+Geolocalisation enables advanced traffic monitoring and incident detection.地理定位使得先进的交通监控和事件检测成为可能。
 
-Geolocalisation enables advanced traffic monitoring and incident detection:
-地理定位使得先进的交通监控和事件检测成为可能：
-
-1. **Real-time Traffic Monitoring**:
-2. **实时交通监控**：
-
-   - Detecting traffic incidents through geolocated social media posts
-   - 通过地理定位的社交媒体帖子检测交通事件
-   - Complementing traditional sensors with crowdsourced information
-   - 用众包信息补充传统传感器
-   - Providing earlier detection than official reporting systems
-   - 提供比官方报告系统更早的检测
-3. **Incident Verification**:
-4. **事件验证**：
-
-   - Cross-referencing multiple geolocated reports
-   - 交叉引用多个地理定位报告
-   - Using credibility scores to filter reliable information
-   - 使用可信度分数过滤可靠信息
-   - Combining social media data with official traffic data
-   - 将社交媒体数据与官方交通数据结合
-5. **Traffic Management**:
-6. **交通管理**：
-
-   - Rerouting traffic based on incident locations
-   - 根据事件位置重新规划交通
-   - Estimating incident duration and impact
-   - 估计事件的持续时间和影响
-   - Providing location-specific alternative route suggestions
-   - 提供特定位置的替代路线建议
-7. **Research Applications**:
-8. **研究应用**：
-
-   - The paper "On fine-grained geolocalisation of tweets and real-time traffic incident detection" demonstrates how tweet geolocalisation can be used for traffic incident detection
-   - 论文"关于推文的细粒度地理定位和实时交通事件检测"展示了如何使用推文地理定位进行交通事件检测
-   - Such systems can detect incidents faster than traditional methods
-   - 这样的系统可以比传统方法更快地检测事件
-9. **Implementation Example**:
-10. **实施示例**：
-
-    - Monitor tweets containing traffic-related terms
-    - 监控包含交通相关术语的推文
-    - Apply fine-grained geolocalisation to determine precise incident location
-    - 应用细粒度地理定位以确定精确的事件位置
-    - Verify through multiple sources and credibility assessment
-    - 通过多个来源和可信度评估进行验证
-    - Integrate with traffic management systems
-    - 与交通管理系统集成
+- **Real-time Traffic Monitoring** 实时交通监控
+  Detecting traffic incidents through geolocated social media posts. 通过地理定位的社交媒体帖子检测交通事件。
+  Complementing traditional sensors with crowdsourced information. 用众包信息补充传统传感器。
+  Providing earlier detection than official reporting systems. 提供比官方报告系统更早的检测。
+- **Incident Verification** 事件验证
+  Cross-referencing multiple geolocated reports. 交叉引用多个地理定位报告。
+  Using credibility scores to filter reliable information. 使用可信度分数过滤可靠信息。
+  Combining social media data with official traffic data. 将社交媒体数据与官方交通数据结合。
+- **Traffic Management** 交通管理
+  Rerouting traffic based on incident locations. 根据事件位置重新规划交通。
+  Estimating incident duration and impact. 估计事件的持续时间和影响。
+  Providing location-specific alternative route suggestions. 提供特定位置的替代路线建议。
+- **Research Applications** 研究应用
+  The paper "On fine-grained geolocalisation of tweets and real-time traffic incident detection" demonstrates how tweet geolocalisation can be used for traffic incident detection. 论文《关于推文的细粒度地理定位和实时交通事件检测》展示了如何使用推文地理定位进行交通事件检测。
+  Such systems can detect incidents faster than traditional methods. 这样的系统可以比传统方法更快地检测事件。
+- **Implementation Example** 实施示例
+  Monitor tweets containing traffic-related terms. 监控包含交通相关术语的推文。
+  Apply fine-grained geolocalisation to determine precise incident location. 应用细粒度地理定位以确定精确的事件位置。
+  Verify through multiple sources and credibility assessment. 通过多个来源和可信度评估进行验证。
+  Integrate with traffic management systems. 与交通管理系统集成。
 
 This application demonstrates how social media geolocalisation can complement traditional sensor networks to improve urban mobility and safety.
 该应用展示了社交媒体地理定位如何补充传统传感器网络，以改善城市流动性和安全性。
+
+# Week 5 Reddit Network Analysis
+
+![](./img/Reddit%20Network%20Analysis%20⭐⭐⭐⭐.png)
+
+## 1. Reddit Platform Overview
+
+> "Reddit represents a unique digital ecosystem where community-driven content creation and semi-anonymous interactions create rich datasets for social network analysis. Unlike traditional social media platforms that emphasize personal connections, Reddit's structure facilitates interest-based communities with distinct interaction patterns and hierarchies."
+
+- Reddit is a social news site with 1.2+ billion monthly active users
+- Contains 100,000+ active subreddit communities
+- Users can make submissions (original posts) and comments (replies)
+- Data structure uses parent_id field (t1_ for comments, t3_ for submissions)
+- Semi-anonymous user identifiers
+
+## 2. Social Support Concept
+
+> "Social support refers to the psychological and material resources provided through social interaction that can help individuals cope with stress and enhance their well-being, often manifesting as informational, emotional, or instrumental assistance."
+
+- Reddit interactions reflect shared interests rather than intentional social networking
+- Users reply based on interest in content, not necessarily to form social ties
+- Replying often indicates superior expertise compared to the original poster
+- Creates a community expertise network
+
+## 3. Network Analysis Approach
+
+> "Network analysis is a set of techniques used to study relationships between discrete objects, representing them as graphs consisting of nodes (entities) and edges (relationships), enabling the quantification of structural patterns and dynamics within complex systems."
+
+- Analyzing Reddit from a network perspective rather than content analysis
+- Graph G = (V, E): Vertices (users) and Edges (interactions)
+- User interaction graph is directed (B replies to A creates edge from B to A)
+- Measures:
+  - Degree: Number of connections (in-degree + out-degree)
+  - In-degree: Number of replies received
+  - Out-degree: Number of replies sent
+
+## 4. Creating Interaction Graphs
+
+> "Interaction graphs transform conversational data into visual and mathematical representations where users become nodes and their communications become edges, allowing researchers to identify influential users, community boundaries, and conversation flow patterns beyond what content analysis alone can reveal."
+
+- Node: Individual Reddit user
+- Edge: Reply relationship between users
+- Node size can represent number of replies sent
+- Using NetworkX package for graph creation and analysis
+- Converting pandas DataFrames to network graphs using nx.from_pandas_edgelist()
+
+## 5. Key Network Metrics
+
+- **Largest Connected Component (LCC)**:
+
+  > "The largest connected component is the maximal subgraph where every node can reach every other node through some path, serving as a critical indicator of network cohesion and community structure."
+  >
+
+  - Measures community cohesion
+  - Weekly LCC analysis shows temporal cohesion
+- **Sensitivity Analysis**:
+
+  > "Sensitivity analysis in network science involves systematically removing nodes or edges to observe changes in network properties, helping identify critical elements that maintain structural integrity."
+  >
+
+  - Removing nodes by degree (highest first)
+  - Measures impact on network connectivity
+  - Shows importance of super users to community structure
+- **Rich-Club Coefficient**:
+
+  > "The rich-club coefficient quantifies the tendency of high-degree nodes to form tightly interconnected communities, revealing hierarchical structures and preferential attachment patterns within networks."
+  >
+
+  - Formula: φ(k) = 2E>k / [N>k(N>k-1)]
+  - Measures if high-degree nodes connect preferentially to each other
+  - φ(k) > 1: Rich club effect (super users talk mainly to super users)
+  - φ(k) < 1: Anti-rich club effect (super users interact more with regular users)
+- **Z-score Analysis**:
+
+  > "Z-score analysis normalizes observed behaviors against expected random distributions, enabling the identification of statistically significant patterns in user interaction roles and tendencies."
+  >
+
+  - Measures user behavior as help-seeker vs help-giver
+  - Modeling interactions as a Bernoulli process
+  - Z = (a - mean)/standard deviation
+  - Z > 0: Support giver (answers more than asks)
+  - Z < 0: Help seeker (asks more than answers)
+
+## 6. Case Study Findings: Mental Health Subreddits
+
+> "Mental health subreddits provide valuable natural experiments for studying support dynamics, as they represent self-organizing communities where individuals with similar challenges exchange information, emotional support, and coping strategies without professional mediation."
+
+- Compared SuicideWatch and PTSD communities over 121 days
+- Activity statistics:
+
+  - SuicideWatch: 27,017 posts (99% with replies)
+  - PTSD: 2,713 posts (99% with replies)
+  - SuicideWatch: 90.6 average posts per user
+  - PTSD: 2.4 average posts per user
+- Super User Impact:
+
+  > "Super users are highly active community members who contribute disproportionately to content generation and interaction, often serving as structural backbones for online communities through their consistent engagement."
+  >
+
+  - 1-5% of users generate ~70% of content
+  - Removing top 1% drops connectivity to 59%
+  - Removing top 2% reduces links by 85%
+  - Top 10% of nodes responsible for most community cohesion
+- Anti-Rich Club Effect:
+
+  > "The anti-rich club effect occurs when high-degree nodes preferentially connect to low-degree nodes rather than to each other, often indicating a healthy support network where experienced members actively engage with newcomers or help-seekers."
+  >
+
+  - Coefficient consistently below 1
+  - Super users interact more with non-super users
+  - Indicates experts helping those with questions
+  - Shows healthy support community structure
+
+## 7. Temporal Analysis Methods
+
+> "Temporal analysis examines how network structures and user behaviors evolve over time, revealing patterns of community growth, user engagement cycles, and the stability of social structures."
+
+- Weekly activity patterns show community engagement
+- Cumulative post frequency tracks growth
+- Average posts per user per week measures individual activity
+- LCC analysis on weekly graphs shows cohesion over time
+
+## 8. Research Questions Addressed
+
+> "Research questions in social network analysis serve as organizing frameworks for investigation, guiding methodological choices and establishing criteria for evaluating the significance of findings in relation to both theoretical constructs and practical applications."
+
+- How central are super users to community cohesiveness?
+- How do users on support communities behave over time?
+- How exclusive are super users in their behavior?
+- Do posting activities follow temporal patterns?
+- How resilient is the community structure?
+
+## 9. Support Seeker vs. Support Giver
+
+> "In online support communities, users typically adopt roles as either support seekers (those requesting help or sharing problems) or support givers (those offering advice, information, or emotional assistance), with these roles often quantifiable through interaction patterns."
+
+- Support seeker: User who begins a thread with a question
+- Support giver: User who responds to posts
+- Z-score analysis quantifies user propensity toward either role
+- Mental health communities show clear patterns of support exchange
 
 # LLM Methods and Prompting Notes
 
@@ -3976,7 +4060,7 @@ This application demonstrates how social media geolocalisation can complement tr
 
 ![](./img/Reddit%20Network%20Analysis%20⭐⭐⭐⭐.png)
 
-# Reddit Network Analysis
+# Week 5 Reddit Network Analysis
 
 ## 1. Reddit Platform Overview
 
