@@ -1,5 +1,7 @@
 # Week 1 Social Media Data – Twitter/X  社交媒体数据 – Twitter/X
 
+![1745277895907](images/README/1745277895907.png)
+
 ## Importance of X platform X平台的重要性
 
 - Vital communications platform in times of disasters
@@ -1505,9 +1507,9 @@ How moving averages affect our clusters:
 By incorporating moving averages, the clustering algorithm becomes more responsive to current trends while maintaining computational efficiency in a streaming environment.
 通过结合移动平均，聚类算法在流式环境中保持计算效率的同时，对当前趋势变得更加敏感。
 
-![](./img/Credibility%20&%20Newsworthiness%20in%20Web%20Science%20(可信度与新闻价值)%20⭐⭐⭐⭐.png)
-
 # Week 3 Credibility & Newsworthiness Notes 信誉和新闻价值
+
+![](./img/Credibility%20&%20Newsworthiness%20in%20Web%20Science%20(可信度与新闻价值)%20⭐⭐⭐⭐.png)
 
 ## 1. Social Media Data Characteristics 社交媒体数据特征
 
@@ -2683,7 +2685,7 @@ This application demonstrates how social media geolocalisation can complement tr
      > “无需显式建模奖励函数，直接优化模型输出以匹配人类偏好的训练方法，简化RLHF流程且达到类似对齐效果。”
      >
 
-### 1. Prompt Engineering & Basic Guidelines 工程与基本准则 
+### 1. Prompt Engineering & Basic Guidelines 工程与基本准则
 
 * **Prompt formatting sensitivity** 提示词格式敏感性
 * **Slight modifications in prompt format templating may lead to significantly different model performance for a given task. 提示词格式的微小修改会导致模型表现有显著差异。**
@@ -2805,7 +2807,6 @@ Malted AI方法结合少量标注、AI增强训练数据和知识蒸馏，训练
 * New methods like prompt tuning and Malted AI leverage automation and model efficiency for high-quality, scalable, and affordable solutions.
   新方法如提示微调和Malted AI利用自动化和模型高效性，提供高质量、易扩展且成本低的解决方案。
 
-
 ### 5. Ethical and Methodological Considerations 伦理与方法论考量
 
 #### 1. ‘Jailbreak’ Prompts | “越狱”提示词
@@ -2888,7 +2889,6 @@ Support Vector Machine (SVM) maximizes the margin between classes and uses kerne
 
 - **Example:** Image classification with high-dimensional data
   **示例：** 高维数据的图像分类
-
 
 ## 6. Model Evaluation | 模型评估
 
@@ -3012,6 +3012,54 @@ Transfer learning adapts a pre-trained model to a new task through fine-tuning o
 - **Evaluate and deploy:** Validate and test before deployment.
   **评估与部署：** 验证、测试后再部署。
 
+### Training and Fine-tuning
+
+* Fine-tuning involves taking a pre-trained model and further training it on a specific dataset to improve its performance on a particular task.
+* 微调是指在预训练模型基础上，针对特定数据集进一步训练，以提升特定任务表现。
+* Fine-tuning uses the weights of a pre-trained model as a starting point for further training on a smaller dataset of examples that more directly reflect the specific tasks and use cases the model will be utilized for.
+* 微调以预训练模型权重为起点，在更小且更贴近实际任务的数据集上继续训练。
+* During fine-tuning, the model adjusts its weights and parameters to better suit the specific patterns and nuances of your task.
+* 微调过程中，模型会调整权重和参数，更好地适应你的任务模式和细节。
+
+### Transfer Learning
+
+* Transfer learning has revolutionized the field of natural language processing (NLP).
+* 迁移学习彻底改变了自然语言处理（NLP）领域。
+* This approach involves taking a model that has been pre-trained on a large and diverse dataset and then fine-tuning it for a specific task.
+* 这种方法是在大规模多样化数据集上预训练模型，然后针对特定任务进行微调。
+* The biggest benefits of transfer learning is its efficiency.
+* 迁移学习最大的优势是高效。
+
+#### Transfer Learning vs Fine-Tuning
+
+* Transfer learning involves taking a pre-trained model (usually trained on a large dataset) and using it as a starting point for a new task.
+* 迁移学习是指采用在大数据集上训练的预训练模型，将其作为新任务的起点。
+* Fine-tuning is a specific type of transfer learning where you not only use the pre-trained model but also continue training it on the new dataset.
+* 微调是迁移学习的一种特殊形式，不仅使用预训练模型，还要在新数据集上继续训练。
+* Fine-tuning is useful when the new task is similar to the original task but requires more precise adjustments.
+* 当新任务与原任务相似但需要更精细调整时，微调非常有用。
+
+### Practical Steps for Transfer Learning
+
+* Collect destination dataset, often much smaller in size. 收集目标数据集，通常规模较小。
+* Divide into training, validation, and test sets. 划分为训练、验证和测试集。
+* Freeze some or all layers of the pre-trained model (the earlier layers, which capture general features).
+* 冻结预训练模型的部分或全部层（通常是前面的通用特征层）。
+* Add task-specific layers (e.g., classification heads or fully connected layers) on top of the pre-trained architecture.
+* 在预训练架构顶部添加特定任务层（如分类头或全连接层）。
+* Use a smaller learning rate for the pre-trained layers to avoid drastic changes; use a higher learning rate for the new layers.
+* 对预训练层使用较小学习率以避免权重剧烈变化，对新加层使用较大学习率。
+* Monitor key metrics like accuracy, precision, recall, or F1 score. 监控关键指标，如准确率、精确率、召回率或F1分数。
+* If the model performs well, proceed to deploy it; otherwise, consider collecting more data or revisiting fine-tuning.
+* 如果模型表现良好，则部署；否则考虑收集更多数据或重新微调。
+
+### Summary
+
+* Training a model from the ground up to understand language is a resource-intensive endeavour.
+* 从零开始训练一个理解语言的模型非常耗费资源。
+* By utilizing a pre-trained & fine-tuned model, much of this foundational training is already in place.
+* 通过利用预训练和微调的模型，大部分基础训练已经完成。
+
 ## 12. Reinforcement Learning and Transformers | 强化学习与 Transformer
 
 Reinforcement learning (RL) trains agents to maximize rewards in an environment; transformers can be used for sequence modeling in RL.强化学习训练智能体在环境中最大化奖励；transformer 可用于 RL 的序列建模。
@@ -3023,926 +3071,1515 @@ Reinforcement learning (RL) trains agents to maximize rewards in an environment;
 - **RLHF:** Reinforcement learning from human feedback
   **RLHF：** 基于人类反馈的强化学习
 
-# Emotion Analysis Notes
+# Week 8 Emotion Analysis Notes 情感分析
 
-### 1. Foundational Definitions and Theoretical Frameworks
+![1745259334407](images/README/1745259334407.png)
 
-- **Emotion**:
-
-  > "A complex psychological state that involves three distinct components: a subjective experience, physiological response, and behavioral or expressive response."
-  >
+## 1. Introduction to Emotion Analysis and Applications and Scenarios情感分析简介和应用场景
 
-  - Distinguished from mood (longer-lasting, less intense)
-  - Characterized by valence (positive/negative) and arousal (level of intensity)
-  - Functions as an adaptive response to environmental stimuli
-- **Sentiment Analysis vs. Emotion Analysis**:
-
-  > "While sentiment analysis typically focuses on polarity classification (positive, negative, neutral), emotion analysis aims to detect and classify specific emotional states (joy, anger, fear, etc.) expressed in content, requiring finer-grained understanding of affective language."
-  >
-
-  - Sentiment: General orientation (positive/negative/neutral)
-  - Emotion: Specific affective states (happiness, sadness, fear, anger, etc.)
-  - Comparison:
-    * Sentiment is broader, emotions are more specific
-    * Emotions provide more nuanced understanding of user states
-    * Emotions better capture human experience complexity
-- **Emotion Classification Models**
-
-  1. **Basic Emotions Model (Ekman)**:
-
-     > "A theoretical framework positing that humans universally experience and recognize six basic emotions: happiness, sadness, fear, disgust, anger, and surprise."
-     >
-
-     - Characterized by distinct facial expressions
-     - Cross-cultural recognition
-     - Biological and evolutionary basis
-  2. **Dimensional Models (Valence-Arousal-Dominance)**:
-
-     > "A framework conceptualizing emotions as points in a continuous multidimensional space rather than discrete categories, typically including dimensions of valence (pleasure-displeasure), arousal (activation-deactivation), and sometimes dominance (control-lack of control)."
-     >
-
-     - Valence: Pleasant to unpleasant
-     - Arousal: Calm to excited
-     - Dominance: Feeling in control to feeling controlled
-     - Mathematical representation: E = f(v, a, d) where E is emotion, v is valence, a is arousal, d is dominance
-  3. **Plutchik's Wheel of Emotions**:
-
-     > "A psychoevolutionary classification approach organizing emotions into eight primary bipolar emotions (joy vs. sadness, anger vs. fear, trust vs. disgust, surprise vs. anticipation) arranged as four pairs of opposites, with varying intensities and combinations forming complex emotions."
-     >
-
-     - Primary emotions can combine to form complex emotions
-     - Intensity dimension represented by depth
-     - Adjacent emotions can blend (e.g., joy + trust = love)
-
-### 2. Computational Approaches to Emotion Detection
-
-1. **Lexicon-Based Methods**
-
-   > "Approaches that detect emotions in text by matching words or phrases against pre-compiled dictionaries of terms associated with specific emotional states, often with corresponding intensity scores."
-   >
-
-   - **Emotion lexicons**:
-
-     * NRC Emotion Lexicon: 14,000+ words mapped to Plutchik's eight emotions
-     * EmoLex: Multi-language emotion associations
-     * LIWC (Linguistic Inquiry and Word Count): Psychological dimensions including emotions
-   - **Calculation formula**:
-
-     ```
-     EmotionScore(text, emotion) = Σ(word_i × emotion_weight_i) / n
-     ```
-
-     where word_i is a match in the lexicon and n is the number of words in text
-   - **Advantages and limitations**:
-
-     * Advantages: Interpretable, no training data required, computationally efficient
-     * Limitations: Misses context, sarcasm, negation; limited vocabulary coverage
-2. **Machine Learning Approaches**
-
-   - **Traditional ML approaches**:
-
-     > "Supervised learning methods that extract lexical, syntactic, and semantic features from text to train classifiers capable of recognizing emotional content based on labeled examples."
-     >
-
-     * Feature engineering approaches:
-       - Bag-of-words, TF-IDF representations
-       - N-grams and part-of-speech patterns
-       - Syntactic and dependency features
-     * Classification algorithms:
-       - Support Vector Machines (SVMs)
-       - Random Forests
-       - Gradient Boosting methods
-     * Performance metrics: Precision, recall, F1-score, macro/micro averaging
-   - **Deep Learning models**:
+### Introduction to Emotion Analysis 情感分析介绍
 
-     > "Neural network architectures that learn hierarchical representations of emotional content directly from data, often capturing complex linguistic patterns and semantic relationships."
-     >
+Emotion analysis aims to extract actionable insights from text by detecting attitudes and emotions, such as positivity/negativity or specific feelings like anger or excitement. It is widely used to understand public opinions about politicians, products, countries, and ideas.
+情感分析的目标是通过分析文本，获取可操作的信息，识别出人们的态度和具体情感（如愤怒、兴奋等），不仅仅局限于正面或负面。它广泛应用于了解公众对政治人物、产品、国家和观点的看法。
 
-     * Common architectures:
-       - CNNs for feature extraction
-       - RNNs/LSTMs/GRUs for sequential processing
-       - Attention mechanisms for focusing on emotion-relevant words
-       - Transformer models (BERT, RoBERTa) with emotion fine-tuning
-     * Transfer learning approaches:
-       - Pre-trained language models adapted to emotion tasks
-       - Multi-task learning with related affective tasks
-     * State-of-the-art performance comparison:
-       - Transformer-based models typically achieve F1 scores of 0.70-0.85 on benchmark datasets
-       - Performance varies by emotion (happiness typically easiest, disgust and fear often hardest)
-3. **Multimodal Emotion Recognition**
-
-   > "Techniques that combine multiple information channels (text, audio, visual, physiological) to detect emotions, mirroring how humans perceive emotional states through multiple cues."
-   >
-
-   - **Modalities in social media**:
-     * Text: Content, stylistic features, emojis
-     * Images: Facial expressions, color schemes, visual symbols
-     * Audio (in videos): Prosodic features, voice quality
-     * Metadata: Temporal patterns, interaction signals
-   - **Fusion strategies**:
-     * Early fusion: Feature-level integration
-     * Late fusion: Decision-level integration
-     * Hybrid fusion: Multi-level integration
-   - **Challenges**:
-     * Alignment across modalities
-     * Missing modality handling
-     * Modality importance weighting
+### Application and scenarios 应用场景
 
-### 3. Emotion Analysis in Social Media
+Emotion analysis can be used in various scenarios 应用场景情感分析应用非常广泛，例如:
 
-1. **Platform-Specific Considerations**
+* Detecting caller frustration in helplines 检测热线求助者的挫败感
+* Generating emotions for storybook tutors or video games 为儿童故事书或电子游戏生成情绪氛围
+* Matching dialogue system personalities to users 让对话系统根据用户调整“性格”
+* Predicting stock market movements based on social media mood 通过社交媒体情绪预测股市走势
 
-   - **Twitter/X emotion analysis**:
+### Sentiment Analysis and Its Variants 情感分析及其变体
 
-     > "The computational extraction of emotional states from short-form messages, considering platform-specific features like hashtags, emojis, and character limitations that affect emotional expression."
-     >
+Sentiment analysis classifies text as positive, negative, or neutral. It also measures intensity (e.g., [-1,1] or [-100,100]) and can focus on specific targets or aspects (aspect-based sentiment analysis, ABSA).
+情感分析可以对文本进行正面、负面或中性分类，还可以衡量情感强度（如[-1,1]）。ABSA（基于方面的情感分析）能够针对文本中不同实体或方面分别判定情感极性，实现更细致的分析。
 
-     * Character limitations influence emotion expression
-     * Hashtags often serve as emotional labels (#happy, #frustrated)
-     * Temporal dynamics (real-time emotional reactions)
-   - **Facebook/Instagram**:
+### Opinion & Stance Analysis 意见与立场分析
 
-     > "Emotion analysis approaches tailored to platforms with richer media content and social connections, often incorporating reaction data, images, and comment threads."
-     >
+Opinion mining determines the speaker’s attitude and its target, while stance analysis identifies whether the author is in favor of, against, or neutral toward a given proposition or entity.
+意见挖掘关注说话者的观点及其指向对象；立场分析则判断作者对某一议题或对象是支持、反对还是中立。
 
-     * Reaction buttons provide explicit emotion signals
-     * Longer content allows for emotional narratives
-     * Strong social context influences expression
-   - **Reddit/Forum communities**:
+## 2. Stance Analysis 立场分析
 
-     > "Methods for analyzing emotions in community-oriented platforms characterized by threaded discussions, specialized vocabularies, and strong group norms."
-     >
+### 1. Stance Detection 立场检测
 
-     * Community-specific emotional norms and language
-     * Threaded conversations show emotion evolution
-     * Subreddit context influences interpretation
-2. **Social Signals and Context**
+**Stance analysis** determines whether the author of a text is **in favour of**, **against**, or **neutral** towards a specific proposition or target. 立场分析用于判断文本作者对某一命题或对象是**支持**、**反对**还是**中立**。
 
-   - **Social context factors**:
+* **Example:** For the Brexit agreement, stance analysis can answer “Are people supportive?” 例如：针对英国脱欧协议，可以分析“人们是否支持？”
+* **Given a news headline about the House of Commons speaker under pressure after a Gaza debate** 给定一则关于下议院议长在加沙停火辩论后压力增大的新闻:
+  * If someone tweets “Stand by the speaker amidst Gaza chaos!” → In favour of speaker 如果有人发推“支持议长应对加沙混乱！” → 支持议长
+  * “Speaker's failure worsens Gaza ceasefire chaos.” → Against speaker “议长的失败加剧了加沙停火混乱。” → 反对议长
+  * “Pressure mounts on speaker amid Gaza debate chaos.” → Neutral towards speaker “加沙辩论混乱中议长压力增加。” → 对议长中立
 
-     * Conversation structure (replies, threads)
-     * Community norms and expectations
-     * Audience and self-presentation concerns
-     * Temporal context (current events, trends)
-   - **Contextual emotion analysis**:
+**Stance detection** is the task of **automatically determining** from text whether the author is in favour of, against, or neutral towards a proposition or target. 立场检测是指**自动判断**文本作者对某一命题或目标是支持、反对还是中立的任务。
 
-     > "Approaches that consider the broader conversational, social, and temporal context in which emotional expressions occur, rather than analyzing isolated utterances."
-     >
+* **Targets can be a person, organization, policy, movement, or product.** 目标可以是个人、组织、政策、运动或产品。
+* **Example:** Inferring from Boris Johnson’s speeches that he supports Brexit; analyzing tweets to identify those in favour of leadership change. 例子：从前首相鲍里斯·约翰逊的演讲中推断他支持脱欧；分析推文识别支持领导层变更的人。
 
-     * Methods:
-       - Conversation modeling for emotion flows
-       - User modeling for individual baselines
-       - Topic-emotion associations
-3. **Temporal Emotion Dynamics**
+### 2. Sentiment vs Stance 情感与立场的区别
 
-   - **Emotion tracking over time**:
+Sentiment analysis focuses on the emotional polarity (positive, negative, or neutral) expressed in a text.
+情感分析关注文本中表达的情感极性（正面、负面或中性）。
 
-     > "The analysis of how emotions evolve temporally in social media discourse, revealing patterns related to events, interventions, or natural conversation dynamics."
-     >
+Stance analysis identifies the author’s position (in favour, against, or neutral) toward a specific target or proposition.
+立场分析则判断作者对特定目标或命题的立场（支持、反对或中立）。
 
-     * Time series analysis of emotion signals
-     * Change point detection for emotional shifts
-     * Cyclical patterns (daily, weekly, seasonal)
-   - **Event-triggered emotions**:
+Sentiment is about how the author feels in general, regardless of the topic’s direction.
+情感分析关注的是作者的整体情绪，与具体议题的方向无关。
 
-     > "The study of emotional responses to specific events as they unfold on social media, capturing initial reactions, emotional contagion, and the return to baseline emotional states."
-     >
+Stance is about what the author thinks or believes about a particular issue, often requiring context and the identification of the target.
+立场分析关注的是作者对特定问题的看法或信念，通常需要结合上下文和目标。
 
-     * Emotional shock and attenuating patterns
-     * Diffusion of emotions through networks
-     * Duration of emotional impact
+The same sentiment can correspond to different stances depending on the target.
+相同的情感在不同目标下可能对应不同的立场。
 
-### 4. Applications in Social Media Research
+For example, a negative sentiment in a text may express opposition to one target but support for another.
+例如，文本中的负面情感可能表示对某个目标的反对，但也可能代表对另一个目标的支持。
 
-1. **Public Mood and Wellbeing Monitoring**
+Sentiment analysis does not always reveal the author’s stance; stance analysis provides deeper insight into opinions on specific issues.
+情感分析不一定能揭示作者的立场；立场分析能更深入了解作者对具体问题的看法。
 
-   - **Population-level emotion tracking**:
+### 3. Aspect Based Sentiment Analysis 基于方面的情感分析（ABSA）
 
-     > "The use of aggregated emotion analysis from social media to monitor public mood and mental wellbeing at scale, providing insights into societal trends and responses to events."
-     >
+* A sentence can mention multiple entities, each with a different sentiment.
+  一句话可能包含多个实体，每个实体的情感极性可能不同。
+* **Example / 例子：**
+  * “Great food but the service is dreadful!”
+    “食物很棒，但服务很糟糕！”
+  * Sentiment towards “food” is positive; towards “service” is negative.
+    对“食物”的情感为正面，对“服务”的情感为负面。
+* Compared to sentence-level sentiment analysis, ABSA provides more precise and fine-grained information about each entity/aspect.
+  与句子级情感分析相比，ABSA能提供更精细的实体/方面情感信息。
+* You need to identify both the aspect and the sentiment towards it.
+  需要同时识别方面和对应情感。
+* ABSA is an evolving research topic.
+  ABSA是一个不断发展的研究方向。
 
-     * Applications:
-       - Mental health surveillance
-       - Crisis response emotional impact
-       - Cultural mood differences
-     * Measurement approaches:
-       - Gross National Happiness Index
-       - Hedonometer (average happiness score)
-       - Emotion ratio metrics (positive:negative ratio)
-   - **Emotional well-being indices**:
+### 4. Limitations of Sentiment Classification 情感分类的局限性
 
-     > "Composite metrics derived from social media emotion analysis that quantify aspects of collective well-being, often tracking changes over time or comparing across demographics."
-     >
+Traditional sentiment classification is limited; it cannot capture complex emotions, mixed feelings, or nuanced interpersonal meanings such as mood, personality, or credibility.
+传统的情感分类方法存在局限，难以揭示复杂情绪、混合情感以及如心情、个性、可信度等更细腻的人际含义。
 
-     * Formula example:
+## 3. Emotion Anaylsis 情感分析
 
-       ```
-       Wellbeing(t) = α×positive_emotions(t) - β×negative_emotions(t) + γ×engagement(t)
-       ```
+### 1. What are emotions? 什么是情感？
 
-       where α, β, and γ are weighting parameters
-2. **Brand and Consumer Emotion Analysis**
-
-   - **Brand emotion monitoring**:
-
-     > "The application of emotion analysis to track consumer emotional responses to brands, products, and marketing campaigns on social media platforms."
-     >
-
-     * Emotional brand associations
-     * Campaign emotional impact
-     * Competitive emotional positioning
-   - **Emotional customer journey mapping**:
-
-     > "Techniques for tracking customer emotions throughout their interactions with products and services, identifying pain points and moments of delight."
-     >
-
-     * Touchpoint emotion analysis
-     * Emotional friction identification
-     * Journey-based intervention design
-3. **Crisis and Emergency Management**
-
-   - **Disaster emotional response**:
-
-     > "The analysis of emotional patterns during natural disasters or other crises to inform emergency response, mental health interventions, and communication strategies."
-     >
-
-     * Fear and uncertainty tracking
-     * Resilience and coping signals
-     * Information needs assessment
-   - **Emotion-aware crisis communication**:
-
-     > "Communication approaches that adapt messaging based on the prevalent emotional states detected in social media during emergencies."
-     >
-
-     * Emotion-matched messaging
-     * Calibrating reassurance vs. urgency
-     * Addressing specific emotional concerns
-
-### 5. Methodological Challenges and Solutions
-
-1. **Sarcasm, Irony, and Figurative Language**
-
-   - **Detection approaches**:
-
-     > "Methods for identifying non-literal language that may invert or complicate emotion detection, often relying on contextual cues, contrast patterns, or pragmatic incongruity."
-     >
-
-     * Contextual incongruity detection
-     * User history-based baselines
-     * Multi-phase models (literal → contextual)
-   - **Impact on emotion analysis**:
-
-     * False positives for opposite emotions
-     * Misinterpreted intensity levels
-     * Cultural and linguistic variations
-2. **Cultural and Linguistic Variations**
-
-   - **Cross-cultural emotion expression**:
-
-     > "Variations in how emotions are expressed and interpreted across different cultures, affecting the generalizability of emotion detection models trained on culturally specific data."
-     >
-
-     * Display rules (cultural norms for expression)
-     * Emotion vocabulary differences
-     * Collectivist vs. individualist expressions
-   - **Multilingual considerations**:
-
-     > "Approaches for developing emotion analysis systems that work across multiple languages, addressing the challenges of linguistic differences in emotional expression."
-     >
-
-     * Cross-lingual emotion lexicons
-     * Transfer learning across languages
-     * Culture-specific emotion models
-3. **Annotation and Ground Truth**
-
-   - **Annotation challenges**:
-
-     > "The difficulties in creating reliable ground truth data for emotion analysis, including subjectivity, annotator disagreement, and the multidimensional nature of emotional experience."
-     >
-
-     * Subjectivity of emotion perception
-     * Contextual dependencies
-     * Mixed and complex emotions
-   - **Annotation schemes**:
-
-     * Categorical vs. dimensional labeling
-     * Single vs. multiple emotion labels
-     * Intensity scaling
-     * Annotation reliability metrics:
-       - Cohen's Kappa for inter-annotator agreement
-       - Krippendorff's Alpha for multiple annotators
-
-### 6. Ethical Considerations in Emotion Analysis
-
-1. **Privacy and Consent**
-
-   - **Emotional privacy**:
-
-     > "The right of individuals to control access to and use of their emotional data, which may reveal sensitive psychological states not intentionally shared."
-     >
-
-     * Emotion data as sensitive personal information
-     * Implications for user consent models
-     * Emotion profiling concerns
-   - **Ethical frameworks**:
-
-     * Informed consent considerations
-     * Opt-in vs. opt-out for emotional analysis
-     * Data minimization principles
-     * Purpose limitation
-2. **Bias and Fairness**
-
-   - **Emotion recognition bias**:
-
-     > "Systematic errors in emotion detection systems that affect different demographic groups disproportionately, resulting in less accurate or potentially harmful analyses."
-     >
-
-     * Gender-based emotion stereotypes
-     * Cultural bias in emotion interpretation
-     * Age and generational expression differences
-   - **Fairness metrics**:
-
-     * Balanced accuracy across groups
-     * Disparate impact assessment
-     * Equity in error rates
-3. **Manipulation and Exploitation**
-
-   - **Emotional targeting**:
-
-     > "The use of emotion analysis to identify and exploit individuals' emotional states for commercial or political purposes, raising ethical concerns about autonomy and manipulation."
-     >
-
-     * Vulnerability during negative emotional states
-     * Mood-based marketing
-     * Emotional contagion studies
-   - **Safeguards and guidelines**:
-
-     * Ethical review processes
-     * Transparency in deployment
-     * User control over emotional data
-
-### 7. Future Directions in Social Media Emotion Analysis
-
-1. **Integration with Other Fields**
-
-   - **Emotion + Network Science**:
-
-     > "The combined analysis of emotional states and social network structures to understand how emotions spread, cluster, and influence social dynamics."
-     >
-
-     * Emotional contagion patterns
-     * Network structures of emotional support
-     * Community-level emotional climates
-   - **Emotion + Cognitive Science**:
-
-     > "Approaches that incorporate findings from cognitive science about emotion formation, regulation, and expression to improve computational emotion analysis."
-     >
-
-     * Cognitive appraisal theories in detection
-     * Emotion regulation identification
-     * Mental model influence on expression
-2. **Advanced Technical Approaches**
-
-   - **Few-shot emotion detection**:
-
-     > "Learning methods that can recognize new emotional states or variations with minimal labeled examples, addressing the challenge of emerging emotional expressions in social media."
-     >
-
-     * Meta-learning for new emotion categories
-     * Cross-domain transfer of emotion knowledge
-     * Active learning for emerging expressions
-   - **Self-supervised emotion learning**:
-
-     > "Techniques that leverage the natural structure of social media data to learn emotion representations without requiring extensive manual annotation."
-     >
-
-     * Reaction-based pseudo-labeling
-     * Contrastive learning for emotion embeddings
-     * Emoji/hashtag supervision
-
----
-
-<img src="./img/Knowledge Graphs ⭐⭐⭐⭐.png" />
-
-# Knowledge Graphs Notes
-
-### 1. Foundational Definitions and Concepts
-
-- **Knowledge Graph**:
-
-  > "A knowledge graph is a graph-structured knowledge base that integrates data from various sources and represents entities as nodes, their attributes as node properties, and relationships between entities as edges, enabling semantic queries across heterogeneous information."
-  >
-
-  - Formal components:
-    * Entities (nodes): Real-world objects, concepts, or events
-    * Relationships (edges): Semantic connections between entities
-    * Attributes: Properties describing entities
-    * Schema/Ontology: Formal specification of concepts and relationships
-  - Distinguished from traditional databases by:
-    * Flexible, graph-based structure vs. rigid schemas
-    * Focus on entity relationships vs. tabular data
-    * Semantic integration capabilities
-    * Support for inference and reasoning
-- **Semantic Web**:
-
-  > "An extension of the World Wide Web that provides a standardized way of expressing relationships between web pages, to allow machines to understand the meaning of published information."
-  >
-
-  - Key technologies:
-    * RDF (Resource Description Framework)
-    * OWL (Web Ontology Language)
-    * SPARQL (Query language for RDF)
-    * Linked Data principles
-- **RDF (Resource Description Framework)**:
-
-  > "A standard model for data interchange on the Web consisting of subject-predicate-object expressions called triples, where resources are described in terms of their properties and property values."
-  >
-
-  - Formal structure: Triple of (subject, predicate, object)
-    * Example: (Glasgow, isLocatedIn, Scotland)
-  - Mathematical foundation: Labeled, directed multi-graph
-  - Serialization formats: RDF/XML, Turtle, JSON-LD
-- **Ontology**:
-
-  > "An explicit, formal specification of a shared conceptualization, providing a controlled vocabulary that describes objects and their relationships in a specific domain, supporting knowledge integration and inference."
-  >
-
-  - Components:
-    * Classes (concepts in the domain)
-    * Properties (features and attributes of classes)
-    * Relations (ways classes can relate to one another)
-    * Formal axioms (logical statements that constrain interpretation)
-  - Examples: FOAF (Friend of a Friend), GeoNames, Schema.org
-
-### 2. Knowledge Graph Construction and Population
-
-1. **Information Extraction from Text**
-
-   - **Named Entity Recognition (NER)**:
-
-     > "The task of identifying and classifying named entities in text into predefined categories such as persons, organizations, locations, time expressions, and quantities."
-     >
-
-     * Approaches:
-       - Rule-based systems (pattern matching, gazetteers)
-       - Statistical models (CRF, HMM)
-       - Neural approaches (BiLSTM-CRF, Transformers)
-     * Evaluation metrics: Precision, Recall, F1-score
-   - **Relation Extraction**:
-
-     > "The task of detecting and classifying semantic relationships between entities within text, essential for constructing the edges in knowledge graphs."
-     >
-
-     * Methods:
-       - Pattern-based approaches
-       - Supervised classification
-       - Distant supervision
-       - Open information extraction
-     * Mathematical formulation:
-       * P(relation|entity1, entity2, context) in supervised setting
-       * REBEL (Relation Extraction By End-to-end Language generation) in modern approaches
-   - **Entity Linking**:
-
-     > "The process of determining the identity of entities mentioned in text by connecting them to their corresponding nodes in a knowledge graph."
-     >
-
-     * Key steps:
-       - Mention detection
-       - Candidate generation
-       - Entity disambiguation
-     * Challenges:
-       - Name variations and abbreviations
-       - Ambiguity (one mention, multiple entities)
-       - Absence of entities in the reference knowledge base
-2. **Knowledge Fusion and Integration**
-
-   - **Entity Resolution**:
-
-     > "The task of identifying and merging records or nodes that refer to the same real-world entity across different data sources or within a single dataset."
-     >
-
-     * Methods:
-       - Similarity-based matching
-       - Probabilistic matching
-       - Graph-based approaches
-     * Blocking techniques for efficiency
-     * Mathematical framework:
-       * Pairwise matching: sim(e1, e2) > threshold
-       * Collective entity resolution using graph context
-   - **Schema Alignment**:
-
-     > "The process of identifying and resolving semantic and structural heterogeneity between different data sources or ontologies to enable integrated knowledge representation."
-     >
-
-     * Approaches:
-       - Lexical matching (string similarity)
-       - Structural matching (graph patterns)
-       - Instance-based matching
-       - Hybrid methods
-     * Formal measure:
-       * Alignment quality: precision, recall, F1-score of matched elements
-   - **Conflicting Information Resolution**:
-
-     > "Methods for reconciling contradictory facts about entities from different sources, selecting the most reliable information to maintain knowledge base consistency."
-     >
-
-     * Strategies:
-       - Trust-based (source reliability assessment)
-       - Voting-based (majority rule)
-       - Temporal-based (recency preference)
-       - Provenance-aware reconciliation
-
-### 3. Knowledge Graph Completion
-
-1. **Link Prediction**
-
-   > "The task of inferring missing edges in a knowledge graph by exploiting patterns in existing connections, essential for completing partial knowledge."
-   >
-
-   - **Approaches**:
-     * Statistical relational learning
-     * Path-based methods
-     * Embedding-based methods
-   - **Evaluation metrics**:
-     * Mean Rank (MR)
-     * Mean Reciprocal Rank (MRR)
-     * Hits@k (proportion of correct entities in top k predictions)
-2. **Knowledge Graph Embeddings**
-
-   > "Representation learning techniques that project entities and relations from a knowledge graph into continuous vector spaces while preserving graph structure, enabling machine learning on graph data."
-   >
-
-   - **Major models**:
-     * TransE: Translations in vector space (h + r ≈ t)
-     * ComplEx: Complex-valued embeddings for asymmetric relations
-     * RotatE: Relation as rotation in complex space
-     * BERT-based contextual KG embeddings
-   - **Applications**:
-     * Link prediction
-     * Entity classification
-     * Graph completion
-     * Reasoning
-
-### 4. Knowledge Graphs for Social Media Analysis
-
-1. **Entity and Event Extraction from Social Media**
-
-   - **Challenges unique to social media**:
-     * Informal language and non-standard grammar
-     * Abbreviations and platform-specific conventions
-     * Short text context
-     * Multilingual content
-     * Real-time processing requirements
-   - **Specialized approaches**:
-     * Noise-robust NER models
-     * Context-augmented extraction
-     * Multimodal entity recognition (text + images)
-     * Social-context-aware relation extraction
-2. **User Profiling and Social Knowledge Graphs**
-
-   > "The construction of graph-structured representations of social media users, their attributes, behaviors, and interconnections, enabling advanced user modeling and social network analysis."
-   >
-
-   - **Components**:
-     * User nodes with demographic and behavioral attributes
-     * Social relationship edges (follows, friends, interacts)
-     * Content interaction edges (posts, likes, shares)
-     * Temporal dynamics (evolving interests and connections)
-   - **Applications**:
-     * Personalization systems
-     * Influence analysis
-     * Community detection
-     * Behavior prediction
-3. **Domain-Specific Knowledge Graphs**
-
-   - **Event Knowledge Graphs**:
-
-     > "Graph structures that represent events, their participants, temporal and spatial attributes, and causal relationships, particularly useful for analyzing unfolding situations on social media."
-     >
-
-     * Structure: events as first-class entities with temporal relations
-     * Applications: crisis mapping, news summarization, event prediction
-   - **Brand and Product Knowledge Graphs**:
-
-     > "Specialized knowledge graphs capturing entities related to commercial products, their attributes, relationships, and consumer interactions, supporting business intelligence from social media."
-     >
-
-     * Components: products, features, opinions, sentiment
-     * Applications: competitive analysis, trend detection, reputation monitoring
-
-### 5. Reasoning and Inference with Knowledge Graphs
-
-1. **Logical Reasoning Methods**
-
-   > "Formal deductive approaches that apply logical rules to existing facts in a knowledge graph to derive new information, typically using first-order logic or description logics."
-   >
-
-   - **Reasoning types**:
-     * Deductive reasoning (applying rules to derive conclusions)
-     * Abductive reasoning (inferring most likely explanation)
-     * Inductive reasoning (identifying patterns for generalization)
-   - **Implementation approaches**:
-     * Rule-based systems
-     * Description logic reasoners
-     * Probabilistic logic programming
-   - **Formal representation**:
-     * Horn clauses: parent(X,Y) ∧ parent(Y,Z) → grandparent(X,Z)
-     * OWL axioms for ontological reasoning
-2. **Path-Based Reasoning**
-
-   > "Methods that exploit multi-hop paths in knowledge graphs to discover latent relationships between entities, based on the compositional patterns of existing relationships."
-   >
-
-   - **Approaches**:
-     * Path ranking algorithm (PRA)
-     * Random walk methods
-     * Neural multi-hop reasoning
-   - **Mathematical formulation**:
-     * Path feature extraction: φ(h, t) = f(paths between h and t)
-     * Path pattern scoring: P(r|path pattern) based on frequency or learning
-3. **Neural-Symbolic Reasoning**
-
-   > "Hybrid approaches that combine neural network learning capabilities with symbolic reasoning systems to perform complex inference over knowledge graphs."
-   >
-
-   - **Key components**:
-     * Neural components for representation learning
-     * Symbolic components for explicit reasoning
-     * Integration mechanisms between sub-systems
-   - **Paradigms**:
-     * Neuro-symbolic concept learners
-     * Logic tensor networks
-     * Neural theorem provers
-   - **Advantages**:
-     * Combines statistical pattern recognition with formal logic
-     * Handles uncertainty while maintaining interpretability
-     * Leverages both data-driven and knowledge-driven approaches
-
-### 6. Applications of Knowledge Graphs in Web Science
-
-1. **Enhanced Search and Retrieval**
-
-   > "Applications of knowledge graphs that improve information retrieval by understanding the semantic meaning of queries and indexing content based on entities and relationships rather than keywords alone."
-   >
-
-   - **Implementation approaches**:
-     * Entity-centric search
-     * Question answering over knowledge graphs
-     * Fact verification systems
-   - **Performance metrics**:
-     * Mean Average Precision (MAP)
-     * Normalized Discounted Cumulative Gain (nDCG)
-     * Answer accuracy
-2. **Recommendation Systems**
-
-   > "Applications that leverage knowledge graphs to provide contextually relevant and explainable recommendations by modeling items, users, and their interactions within a rich semantic structure."
-   >
-
-   - **Advantages over traditional methods**:
-     * Rich feature representation
-     * Path-based explanations
-     * Cross-domain recommendations
-     * Cold-start problem mitigation
-   - **Implementation approaches**:
-     * Path-based recommendation
-     * Embedding-based recommendation
-     * Hybrid approaches combining collaborative filtering with KG information
-3. **Content Analysis and Understanding**
-
-   > "The use of knowledge graphs to provide structured contextual information for analyzing documents, social media posts, or multimedia content, enabling deeper semantic understanding."
-   >
-
-   - **Applications**:
-     * Document classification with KG enrichment
-     * Topic modeling with entity linking
-     * Stance detection with contextual knowledge
-     * Multimodal content analysis (text + image + knowledge)
-
-### 7. Challenges and Methodological Considerations
-
-1. **Knowledge Quality and Evaluation**
-
-   - **Quality dimensions**:
-     * Accuracy: Correctness of represented facts
-     * Completeness: Coverage of relevant entities and relations
-     * Consistency: Absence of contradictions
-     * Timeliness: Currency of information
-   - **Evaluation methodologies**:
-     * Gold standard comparison
-     * Application-based evaluation
-     * User studies for utility assessment
-     * Intrinsic consistency checking
-2. **Scalability and Computational Efficiency**
-
-   > "Challenges and solutions related to building, querying, and reasoning over knowledge graphs that may contain billions of entities and relationships."
-   >
-
-   - **Technical challenges**:
-     * Storage optimization for graph data
-     * Distributed processing of large-scale graphs
-     * Efficient query processing and optimization
-     * Incremental updating and maintenance
-   - **Solution approaches**:
-     * Graph partitioning and distributed storage
-     * Approximate query processing
-     * Hierarchical indexing structures
-     * Hardware acceleration (GPU, specialized processors)
-3. **Explainability and Transparency**
-
-   > "Methods for making knowledge graph operations, particularly complex reasoning and inference processes, understandable and transparent to human users."
-   >
-
-   - **Explainability dimensions**:
-     * Source traceability
-     * Inference path visualization
-     * Confidence scoring
-     * Alternative explanation generation
-   - **Implementation approaches**:
-     * Path-based explanations for predictions
-     * Provenance tracking
-     * Uncertainty quantification
-     * Interactive exploration interfaces
-
-### 8. Ethical and Social Implications
-
-1. **Privacy and Consent Issues**
-
-   - **Personal data in knowledge graphs**:
-     * Identification of sensitive information
-     * Risks of unintended inference
-     * Re-identification through graph patterns
-   - **Mitigation approaches**:
-     * Privacy-preserving knowledge graph construction
-     * Access control mechanisms
-     * Differential privacy for statistical queries
-     * Consent management frameworks
-2. **Bias in Knowledge Representation**
-
-   > "Systematic distortions in knowledge graphs that may arise from source data biases, extraction processes, or modeling choices, potentially leading to unfair or misleading applications."
-   >
-
-   - **Bias types**:
-     * Selection bias in source data
-     * Extraction bias from NLP systems
-     * Representation bias in ontologies
-     * Temporal bias from outdated information
-   - **Detection and mitigation**:
-     * Bias auditing frameworks
-     * Diverse source integration
-     * Fair representation learning
-     * Regular bias assessment and correction
-3. **Inclusive Knowledge Representation**
-
-   > "Approaches to ensure that knowledge graphs represent diverse perspectives, cultures, and knowledge systems, avoiding Western-centric or otherwise limited worldviews."
-   >
-
-   - **Challenges**:
-     * Cultural and linguistic diversity
-     * Indigenous knowledge integration
-     * Representation of minority perspectives
-     * Epistemological pluralism
-   - **Best practices**:
-     * Collaborative knowledge engineering
-     * Cultural contextualization of facts
-     * Multiple ontological frameworks
-     * Participatory design approaches
-
-![](./img/Reddit%20Network%20Analysis%20⭐⭐⭐⭐.png)
-
-# Week 5 Reddit Network Analysis
-
-## 1. Reddit Platform Overview
-
-> "Reddit represents a unique digital ecosystem where community-driven content creation and semi-anonymous interactions create rich datasets for social network analysis. Unlike traditional social media platforms that emphasize personal connections, Reddit's structure facilitates interest-based communities with distinct interaction patterns and hierarchies."
-
-- Reddit is a social news site with 1.2+ billion monthly active users
-- Contains 100,000+ active subreddit communities
-- Users can make submissions (original posts) and comments (replies)
-- Data structure uses parent_id field (t1_ for comments, t3_ for submissions)
-- Semi-anonymous user identifiers
-
-## 2. Social Support Concept
-
-> "Social support refers to the psychological and material resources provided through social interaction that can help individuals cope with stress and enhance their well-being, often manifesting as informational, emotional, or instrumental assistance."
-
-- Reddit interactions reflect shared interests rather than intentional social networking
-- Users reply based on interest in content, not necessarily to form social ties
-- Replying often indicates superior expertise compared to the original poster
-- Creates a community expertise network
-
-## 3. Network Analysis Approach
-
-> "Network analysis is a set of techniques used to study relationships between discrete objects, representing them as graphs consisting of nodes (entities) and edges (relationships), enabling the quantification of structural patterns and dynamics within complex systems."
-
-- Analyzing Reddit from a network perspective rather than content analysis
-- Graph G = (V, E): Vertices (users) and Edges (interactions)
-- User interaction graph is directed (B replies to A creates edge from B to A)
-- Measures:
-  - Degree: Number of connections (in-degree + out-degree)
-  - In-degree: Number of replies received
-  - Out-degree: Number of replies sent
-
-## 4. Creating Interaction Graphs
-
-> "Interaction graphs transform conversational data into visual and mathematical representations where users become nodes and their communications become edges, allowing researchers to identify influential users, community boundaries, and conversation flow patterns beyond what content analysis alone can reveal."
-
-- Node: Individual Reddit user
-- Edge: Reply relationship between users
-- Node size can represent number of replies sent
-- Using NetworkX package for graph creation and analysis
-- Converting pandas DataFrames to network graphs using nx.from_pandas_edgelist()
-
-## 5. Key Network Metrics
-
-- **Largest Connected Component (LCC)**:
-
-  > "The largest connected component is the maximal subgraph where every node can reach every other node through some path, serving as a critical indicator of network cohesion and community structure."
-  >
-
-  - Measures community cohesion
-  - Weekly LCC analysis shows temporal cohesion
-- **Sensitivity Analysis**:
-
-  > "Sensitivity analysis in network science involves systematically removing nodes or edges to observe changes in network properties, helping identify critical elements that maintain structural integrity."
-  >
-
-  - Removing nodes by degree (highest first)
-  - Measures impact on network connectivity
-  - Shows importance of super users to community structure
-- **Rich-Club Coefficient**:
-
-  > "The rich-club coefficient quantifies the tendency of high-degree nodes to form tightly interconnected communities, revealing hierarchical structures and preferential attachment patterns within networks."
-  >
-
-  - Formula: φ(k) = 2E>k / [N>k(N>k-1)]
-  - Measures if high-degree nodes connect preferentially to each other
-  - φ(k) > 1: Rich club effect (super users talk mainly to super users)
-  - φ(k) < 1: Anti-rich club effect (super users interact more with regular users)
-- **Z-score Analysis**:
-
-  > "Z-score analysis normalizes observed behaviors against expected random distributions, enabling the identification of statistically significant patterns in user interaction roles and tendencies."
-  >
-
-  - Measures user behavior as help-seeker vs help-giver
-  - Modeling interactions as a Bernoulli process
-  - Z = (a - mean)/standard deviation
-  - Z > 0: Support giver (answers more than asks)
-  - Z < 0: Help seeker (asks more than answers)
-
-## 6. Case Study Findings: Mental Health Subreddits
-
-> "Mental health subreddits provide valuable natural experiments for studying support dynamics, as they represent self-organizing communities where individuals with similar challenges exchange information, emotional support, and coping strategies without professional mediation."
-
-- Compared SuicideWatch and PTSD communities over 121 days
-- Activity statistics:
-
-  - SuicideWatch: 27,017 posts (99% with replies)
-  - PTSD: 2,713 posts (99% with replies)
-  - SuicideWatch: 90.6 average posts per user
-  - PTSD: 2.4 average posts per user
-- Super User Impact:
-
-  > "Super users are highly active community members who contribute disproportionately to content generation and interaction, often serving as structural backbones for online communities through their consistent engagement."
-  >
-
-  - 1-5% of users generate ~70% of content
-  - Removing top 1% drops connectivity to 59%
-  - Removing top 2% reduces links by 85%
-  - Top 10% of nodes responsible for most community cohesion
-- Anti-Rich Club Effect:
-
-  > "The anti-rich club effect occurs when high-degree nodes preferentially connect to low-degree nodes rather than to each other, often indicating a healthy support network where experienced members actively engage with newcomers or help-seekers."
-  >
-
-  - Coefficient consistently below 1
-  - Super users interact more with non-super users
-  - Indicates experts helping those with questions
-  - Shows healthy support community structure
-
-## 7. Temporal Analysis Methods
-
-> "Temporal analysis examines how network structures and user behaviors evolve over time, revealing patterns of community growth, user engagement cycles, and the stability of social structures."
-
-- Weekly activity patterns show community engagement
-- Cumulative post frequency tracks growth
-- Average posts per user per week measures individual activity
-- LCC analysis on weekly graphs shows cohesion over time
-
-## 8. Research Questions Addressed
-
-> "Research questions in social network analysis serve as organizing frameworks for investigation, guiding methodological choices and establishing criteria for evaluating the significance of findings in relation to both theoretical constructs and practical applications."
-
-- How central are super users to community cohesiveness?
-- How do users on support communities behave over time?
-- How exclusive are super users in their behavior?
-- Do posting activities follow temporal patterns?
-- How resilient is the community structure?
-
-## 9. Support Seeker vs. Support Giver
-
-> "In online support communities, users typically adopt roles as either support seekers (those requesting help or sharing problems) or support givers (those offering advice, information, or emotional assistance), with these roles often quantifiable through interaction patterns."
-
-- Support seeker: User who begins a thread with a question
-- Support giver: User who responds to posts
-- Z-score analysis quantifies user propensity toward either role
-- Mental health communities show clear patterns of support exchange
+* Emotions are episodes of interrelated, synchronized changes in the states of multiple subsystems in response to important events.
+  情感是多个子系统状态之间相互关联、同步变化的事件，通常是对重要事件的反应。
+* These subsystems include information processing, support, executive, action, and monitoring.
+  这些子系统包括信息处理、支持、执行、行动和监控。
+* Emotions arise when an external or internal event is evaluated as relevant to the organism’s major concerns.
+  当外部或内部事件被认为与个体的主要关切相关时，就会产生情感。
+* Emotional behaviors and experiences can help explore human-centered problems in fields like healthcare, education, politics, and arts.
+  情感行为和体验有助于探索医疗、教育、政治和艺术等以人为中心的问题。
+
+### 2. Textual emotion 文本情感
+
+* Psychological research suggests people have a limited set of basic emotional responses (e.g., happy, sad, anger, disgust, fear).
+  心理学研究认为人们有有限的基本情感反应（如快乐、悲伤、愤怒、厌恶和恐惧）。
+* The goal is to analyze and detect emotions in text, either as expressed by the author or as potentially felt by the reader.
+  目标是分析和检测文本中的情感，无论是作者表达的还是读者可能感受到的。
+* Linguistic sensing of emotions can help understand social issues expressed on social media.
+  通过语言感知情感有助于理解社交媒体上的社会问题。
+* Example 举例：
+  * "Really happy with this purchase" expresses a strong positive emotion about a product.
+    “非常满意这次购买”表达了对产品的强烈正面情感。
+  * The word "Really" intensifies the emotion.
+    “非常”一词加强了情感表达。
+  * "Really disappointed. Alexa has to be plug-in..." expresses a negative emotion about a product.
+    “非常失望。Alexa必须一直插电……”表达了对产品的负面情感。
+
+### 3. Emotion paradox 情感悖论
+
+* People think they can easily recognize emotions as distinct events, but science lacks clear criteria for when an emotion is present.
+  人们认为自己能轻易识别情感，但科学上并没有明确标准区分情感何时存在。
+* One solution: People experience emotion when they conceptualize a feeling as an emotion.
+  一种解释是：当人们将某种感受归类为情感时，他们就体验到了情感。
+* This view sees emotional experience as an act of categorization, influenced by embodied knowledge.
+  这种观点认为情感体验是一种分类行为，受身体经验影响。
+* This model aligns with social psychology’s understanding of person perception.
+  这种模型与社会心理学中的人物感知理论类似。
+
+### 4. Emotion categorical 情感分类
+
+#### 1. Categorical approach 分类法
+
+* Emotions are placed into basic, universally recognized categories.
+  情感被划分为基本且普遍认可的类别。
+* Paul Ekman proposed six universal emotions: happiness, surprise, fear, sadness, disgust, and anger.
+  Paul Ekman 提出了六种基本情感：快乐、惊讶、恐惧、悲伤、厌恶和愤怒。
+* These emotions are considered independent and innate across cultures.
+  这些情感被认为是独立的、跨文化与生俱来的。
+
+#### 2. OCC model OCC模型
+
+* Extends Ekman’s six emotions to a total of 22 by adding 16 more (e.g., envy, relief, appreciation, shame, pity, admiration, disappointment, grief, hope, like, dislike, etc.).
+  在Ekman六种基本情感基础上，OCC模型又补充了16种（如嫉妒、宽慰、感激、羞愧、同情、钦佩、失望、悲伤、希望、喜欢、不喜欢等），共22种情感。
+
+#### 3. Criticism of categorical approach 分类法的批评
+
+* Categorical approach restricts emotions to a limited number of types, making it hard to address complex or mixed emotions.
+  分类法将情感限制在少数类型，难以处理复杂或混合情感。
+* Appraisal theory suggests that the same event can elicit different emotions in different people or at different times.
+  评价理论认为，同一事件在不同人或不同时间会引发不同情感。
+* Our evaluation of a situation leads to emotional responses.
+  我们对情境的评价决定了情感反应。
+
+#### 4. Dimensional approach—Russell’s circumplex model 维度法——Russell圆环模型
+
+* Emotions are not independent but related, represented in a two-dimensional space: arousal (激活度) and valence (愉快度)。
+  情感不是独立的，而是相互关联的，可用两维度表示：激活度（兴奋/平静）和愉快度（正面/负面）。
+* Arousal: how excited or apathetic an emotion is. 激活度：情感有多激动或冷漠。
+* Valence: how positive or negative an emotion is. 愉快度：情感有多正面或负面。
+
+### 5. Sentiment vs emotion 情感倾向 vs. 具体情感
+
+* Sentiments are long-lasting and target-centered (positive, negative, neutral).
+  情感倾向（sentiment）持续时间较长且有明确对象（正面、负面、中性）。
+* Emotions are brief, not necessarily target-centered, and a text can contain multiple emotions.
+  具体情感（emotion）通常是短暂的，不一定有明确对象，一段文本可包含多种情感。
+* Only one sentiment per text, but multiple emotions can co-exist.
+  一段文本通常只有一种情感倾向，但可包含多种具体情感。
+
+## 4. Emotion detection 情感检测
+
+* The goal is to identify users’ emotional states from short texts by classifying them into fixed categories (anger, fear, happy, sad, disgust, surprise).目标是将用户的短文本情感归类到有限的类别中（愤怒、恐惧、快乐、悲伤、厌恶、惊讶）。
+* Emotion distribution can be assigned, meaning a text can have multiple emotions with different proportions.
+  可以为文本分配情感分布，即一段文本可能包含多种情感及其比例。
+* 示例：
+  * “guy is a crazy guy”：厌恶50%，惊讶50%
+  * “7 dead in apartment building fire”：愤怒10%，厌恶1%，恐惧30%，悲伤50%，惊讶5%
+  * “Teacher charged with sexual assault”：愤怒20%，厌恶45%，恐惧10%，悲伤15%，惊讶10%
+
+### 1. Motivation 动机
+
+* Due to the vagueness and ambiguity of human language, emotion detection can be highly context-sensitive and complex.
+  由于人类语言天生的模糊和歧义，情感检测高度依赖上下文且非常复杂。
+* Emotion analysis is a convoluted task, even for human beings.
+  情感分析即使对人类来说也是一项复杂的任务。
+  * The task will be much easier when emotion is expressed explicitly, but in reality, most texts are subtle and ambiguous.
+    当情感表达直接时任务会简单很多，但现实中大多数文本都很隐晦和模糊。
+* Some words have more than one meaning, more than one word can express the same emotion, and some emotions can exist simultaneously.
+  有些词有多重含义，多个词可以表达同一种情感，且有时多种情感可以同时存在。
+* Due to various cultures, gender, and context of the authors, emotion expression in texts can vary.
+  由于作者的文化、性别和语境等差异，文本中的情感表达也会不同。
+
+### 2. Applications 应用
+
+* 分析事件（如议会混乱）时，可以研究人们的反应和情感分布。
+  When analyzing events (e.g., chaos in parliament), we can study people's reactions and emotion distribution.
+* 经济报告、股票评论等可以用来分析经济情绪和预测价格波动。
+  Economic reports and stock comments can help analyze economic mood and predict price movements.
+* 通过分析评论（如赛马评论），模型可以根据情感信息做出预测。
+  By analyzing comments (e.g., horse racing), models can make predictions based on emotional information.
+
+## 5. Emotion classification 情感分类
+
+* 情感分析可以使用词典法、机器学习或规则法。
+  Sentiment analysis can use lexicon-based methods, machine learning, or rule-based approaches.
+* 情感识别常用方法包括：
+  Common approaches for emotion recognition include:
+  * 基于关键词检测（如用WordNet查找同义词、反义词）
+    Keyword-based detection (using WordNet for synonyms/antonyms)
+  * 基于学习/机器学习的方法
+    Learning-based detection / Machine Learning
+
+### Lexicon-based Approaches 词典法方法
+
+* **Lexicons are linguistic tools for automated analysis of text.**
+  词典是用于自动化文本分析的语言工具。
+* **Most common:**
+  最常见的做法包括：
+  * **Simple list of terms associated to a certain class of interest.**
+    将术语简单地归类到某一类别。
+  * **Terms can be weighted according to their strength of association with a given class.**
+    术语可以根据与类别的关联强度赋予权重。
+  * **Classification by counting.**
+    通过计数进行分类。
+
+### EmoLex
+
+* **Each word is associated with one or more emotions.**
+  每个词都与一种或多种情感相关联。
+* **Example: The word "aback" has zero association with all emotions.**
+  例如：“aback”与所有情感的关联度为0。
+* ![1745195446619](images/README/1745195446619.png)
+
+### NRC Hashtag Lexicon
+
+* **Contains the number of times a term appears in positive (Npos) or negative (Nneg) classes and its sentiment score.**
+  包含词语在正面（Npos）或负面（Nneg）类别中的出现次数及其情感分数。
+* **Sentiment score is calculated by PMI: score = PMI(w, pos) - PMI(w, neg).**
+  情感分数通过PMI（点互信息）计算：score = PMI(w, pos) - PMI(w, neg)。
+* **PMI measures the association between a word and a sentiment class.**
+  PMI衡量词语与情感类别之间的相关性。
+* ![1745195400503](images/README/1745195400503.png)
+
+### What is PMI? 什么是PMI？
+
+- **Pointwise Mutual Information (PMI) measures how much the actual co-occurrence of two outcomes (x, y) differs from what would be expected if they were independent.**
+  PMI（点互信息）衡量两个结果(x, y)的实际共现概率与它们独立时的期望概率的差异。
+- **Formula:**
+  $$
+  \mathrm{pmi}(x; y) = \log_2 \frac{p(x, y)}{p(x)p(y)}
+  $$
+
+### Lexicon based approaches 词典法举例
+
+- **Example sentence: "I love horror books"**
+- ![1745195535450](images/README/1745195535450.png)
+- **For each sentiment, sum the weights of the words:** 针对每个情感类别，将词语的权重相加 ：
+  - **Positive:** $f(love) \times 1.0 + f(horror) \times 0.3 + f(books) \times 0.5 = 1.8$
+  - **Negative:**$f(love) \times 0.0 + f(horror) \times 0.7 + f(books) \times 0.5 = 1.2$
+- **The sentiment with the highest score is chosen.**
+  选择得分最高的类别作为结果。
+- **Advantage: Each prediction can be explained by analyzing the terms used.**
+  优点：每个预测都可以通过分析用到的词项进行解释。
+
+### Pros & Cons 优缺点
+
+* **Limited Vocabulary Coverage | 词汇覆盖有限：**
+  * **Lexicon-based approaches rely on predefined emotion lexicons, which may not cover the full spectrum of human emotions or culturally specific expressions.**
+    词典法依赖预定义情感词典，无法覆盖全部人类情感或文化表达。
+  * **This can lead to difficulties in accurately detecting and categorizing emotions, especially those outside the lexicon.**
+    这会导致对词典之外的情感检测和分类不准确。
+* **Lack of Context Sensitivity | 缺乏上下文敏感性:**
+  * **These approaches often do not take into account the context in which words are used, leading to misinterpretation of emotion.**
+    这些方法通常不考虑词语的具体语境，容易误判情感。
+  * **For example, "kill" might be negative in general, but in "I killed it in my presentation," it means success.**
+    例如，“kill”通常是负面，但在“I killed it in my presentation”中表示成功。
+* **Difficulty with Ambiguity and Polysemy | 歧义和多义问题:**
+  * **Words can have multiple meanings and can be associated with different emotions depending on the context.**
+    同一词在不同语境下可能有多种含义和情感。
+  * **Lexicon-based approaches may struggle to disambiguate such cases accurately.**
+    词典法难以准确区分这类情况。
+
+#### **补充说明 | Additional Notes**
+
+* Lexicon-based approaches are transparent and interpretable, making them suitable for applications needing explainability.
+  词典法具有高度可解释性，适合需要结果解释的场景。
+* However, they are less effective for nuanced, context-dependent, or creative language use, where machine learning or deep learning models may perform better.
+  但在处理复杂、依赖语境或创造性语言时，词典法效果有限，机器学习/深度学习模型更有优势。
+* Lexicon resources like EmoLex and NRC are widely used, but always check their language and cultural coverage before applying.
+  EmoLex和NRC等词典资源应用广泛，但实际使用前需关注其语言和文化适用范围。
+
+## 6. Datasets for evaluation 用于评估的数据集
+
+### 1. Basic Emotion Categories 基础情感分类
+
+**Basic (primary) emotions 基础（主要）情感**
+
+* ‘Pure’ emotional states “纯粹”的情感状态
+* E.g. Ekman’s Big 6 例如 Ekman 的六大基本情感:
+  * Fear, anger, happiness, sadness, surprise, disgust
+    恐惧、愤怒、快乐、悲伤、惊讶、厌恶
+
+**Considered from text 从文本角度考虑**
+
+* Only one positive class – happiness 只有一个正面类别——快乐
+  * What about surprise? 那“惊讶”算什么？
+  * Surprise is an ambiguous emotion. It can be positive (pleasant surprise) or negative (shock), depending on the context. In many text analysis tasks, happiness is the only clearly positive emotion, while surprise is sometimes treated as neutral or context-dependent. 惊讶属于模糊情感，根据上下文可能是正向（惊喜），也可能是负向（震惊）。在多数文本分析任务中，快乐是唯一明确的正面情感，而惊讶有时被视为中性或依赖具体语境。
+
+**When analyzing text?分析文本时怎么办？**
+
+* When analyzing text, it is important to define how each emotion is categorized. Happiness is usually positive; sadness, anger, fear, and disgust are negative. Surprise requires special handling—either assign it as neutral, or use context to decide its polarity. 在分析文本时，需要明确每种情感的归类。快乐通常归为正向，悲伤、愤怒、恐惧、厌恶为负向。惊讶则需特别处理——可以设为中性，或结合上下文判断其倾向。
+
+### 3. Classes 情感类别
+
+#### -ve（负面）
+
+* Anger 愤怒
+* Fear/anxiety 恐惧/焦虑
+* uninterested/nervous/sadness/unpleasant
+  无兴趣/紧张/悲伤/不愉快
+* How do we justify this? 如何解释这种归类？
+  * Degree of negativity 负面程度
+  * These emotions are grouped as negative because they are associated with unpleasant or distressing experiences. The justification is based on the **degree of negativity**—即根据情感体验的负面程度来划分。例如，愤怒和恐惧通常会让人感到不适或痛苦，因此归为负面情感。
+
+#### +ve（正面）
+
+* Excited 兴奋
+* Happy/love/joy 快乐/爱/喜悦
+* Surprise/Pleasant/Interest/grateful/Thankful
+  惊讶/愉快/感兴趣/感激/感谢
+* How could we justify this? 如何解释这种归类？
+  * These emotions are classified as positive because they are linked to pleasant, rewarding, or uplifting experiences. The justification is based on their **pleasantness or positivity**—即这些情感让人感觉愉快或有价值。例如，快乐和爱都能提升幸福感，因此归为正面情感。惊讶、兴趣等虽然有时较为中性，但在大多数情况下带有积极意味。
+
+### 4. Hierarchy of emotions 情感层级结构
+
+![1745196890870](images/README/1745196890870.png)
+
+解释 Explanation：
+
+情感可以分为两大类：正面（Positive）和负面（Negative）。
+正面情感下又细分为“快乐”（Happiness）、“感谢”（Thankfulness）、“爱”（Love）等。
+负面情感下细分为“恐惧”（Fear）、“愤怒”（Anger）、“悲伤”（Sadness）等。
+这种层级结构有助于多层次分析情感，既能粗略判断正负性，也能细致区分具体情感类型。
+
+### 5. Data Collection 数据收集
+
+1. **Capture ground truth 获取真实标签**
+
+   - **Data with corresponding annotations 有对应标注的数据**
+   - **We need quite large sets 需要相当大的数据集**
+2. **Manually doing is difficult! 手动完成很难！**
+3. **Automatic methods 自动化方法**
+
+   - **Labels from users 从用户处获取标签**
+   - **Similar to distant supervision we used!! 类似于我们用过的远程监督方法**
+4. **Problems in collection 收集真实标签会遇到的问题**
+
+   1. **Label ambiguity 标签模糊性**
+
+      - **Uncertainty 不确定性**
+      - **Incompleteness 不完整**
+      - **Mistakes among the ground truth label due to annotators' expertise or task’s difficulty 由于标注者经验或任务难度导致的真实标签错误**
+   2. **Cross-label interference 标签间干扰**
+
+      - **Happy vs. Surprise/Pleasant 快乐 vs. 惊讶/愉快**
+        > "Wow, I can't believe it! I just found out I won the lottery! This is the happiest day of my life!"
+        > “哇，我简直不敢相信！我刚刚知道我中了大奖！这是我生命中最快乐的一天！”
+        >
+      - **Anger vs. Fear 愤怒 vs. 恐惧**
+        > "Every time you lie to me, I can feel the rage boiling inside me, but beneath it all, there's this gnawing fear that I'll never be able to trust you again."
+        > “每次你对我撒谎，我都能感受到内心的愤怒在沸腾，但在这一切之下，还有一种挥之不去的恐惧，害怕再也无法信任你。”
+        >
+      - **Fear vs. Unpleasantness 恐惧 vs. 不愉快**
+        > "As the eerie shadows crept closer in the dimly lit alley, a shiver ran down my spine, filling me with a sense of unease and dread."
+        > “当幽暗巷子里的诡异阴影渐渐逼近时，一阵寒意顺着我的脊背蔓延，让我充满了不安和恐惧。”
+        >
+
+## 7. Hashtag based data collection 基于主题标签的数据收集
+
+### Data Labelling Process 数据标记过程
+
+#### 1. 确定情感标签（Identify Emotion Hashtags）
+
+1. **Identify hashtags 确定情感标签（hashtags）**
+2. **First need to define a list of emotion hashtags to collect emotion-labeled messages**
+   首先需要定义一组情感标签，用于收集带有情感标签的消息
+
+   * Emotion theories (e.g., Parrot’s Emotion Taxonomy, Circumplex Model) provide a set of emotion categories and related words.
+     情感理论（如Parrot的情感分类法、情感圆模型）提供了一组情感类别及相关词汇。
+   * Start with primary emotion categories, then expand to secondary and tertiary words.
+     首先从主要情感类别出发，然后扩展到二级和三级情感词。
+   * For example, under “anger” you might include: angry, annoyed, frustrated, furious, irritated, rage, etc.
+     例如，在“愤怒”类别下，可以包括：angry（愤怒的）、annoyed（恼怒的）、frustrated（沮丧的）、furious（狂怒的）、irritated（被激怒的）、rage（愤怒）。
+   * Use both theoretical models and empirical data (e.g., hashtags actually used on Twitter) to expand the list.
+     结合理论模型和实际数据（例如Twitter上实际使用的标签）来扩展词表。
+   * This results in a comprehensive list of emotion seed words for data collection.
+     这样可以得到一个全面的情感种子词列表，用于数据收集。
+3. **Collect tweets which contain one or more hashtags that fall in the defined list of emotions hashtags 收集包含一个或多个已定义情感标签的推文**
+
+#### 2. 通过API收集推文（Collect Labelled Tweets via Twitter API）
+
+* Twitter's REST API:
+  * Allows you to search terms or get tweets based on specific parameters.
+    允许你根据特定参数搜索关键词或获取推文。
+  * This doesn't give you live data. More useful if you want to do some analytics on historical data.
+    这不能提供实时数据。如果你想对历史数据做分析，这会更有用。
+* Twitter's Streaming API:
+  * Gives you live tweets data as per your request and keeps sending it until you ask it to stop.
+    按你的请求提供实时推文数据，并会持续发送，直到你要求停止。
+
+#### 3. Data Processing & Rules 数据处理与规则
+
+##### 1. 数据筛选与初步处理
+
+* Consider tweets only with hashtags at the end. 只考虑结尾有标签（hashtag）的推文。
+* If it is actually interleaved, then probably actual part of the content. 如果标签穿插在内容中，可能是内容的实际一部分。
+* Give direct access to author’s intent. 这样可以直接反映作者的意图。
+
+##### 2. Rule 1: Hashtag-based Annotation 规则1：基于标签的标注
+
+* If the text is annotated with a hashtag—for an emotion dimension. Give direct access to author’s intent.如果文本带有表示情感维度的标签。能直接反映作者的情感意图。
+
+  * Example: 例子：
+    I attract into my life what I am, not what I want. I am healthy, I am happy, I am loved, I am abundant. Be the energy of the life you desire. #love 我吸引到生活中的是我自身，而不是我想要的。我健康、快乐、被爱、富足。成为你渴望生活的能量。#love
+  * Assign the category love. 归为“love”类别。
+  * Any hashtag for that seed list, assign it to list. 只要是种子词列表中的标签，都分配到对应类别。
+* We can also use any of the hash-tagged seed terms—they all fall into same dimension. 任何带标签的种子词都可以用，它们都属于同一个情感维度。
+* For the class Excite: #excited, #energizing, ... 例如Excite类别可以包括 #excited, #energizing 等。
+* Through this, we will get diversity of expressions which are semantically closer. 这样可以获得语义上更接近的多样表达。
+* Just used seed words 仅使用种子词
+
+  * Seed words are grouped into categories like pleasant, excitement, happy, sad, angry, fear. 种子词被分为不同情感类别，如 pleasant, excitement, happy, sad, angry, fear。
+
+##### 3. Rule 2: Emoticon-based Annotation 规则2：基于表情符号的标注
+
+* Emoticons can also be exploited! 表情符号也可以被利用！
+* Similar emoticons grouped together. 相似的表情符号被归为一类。
+* Rule 2: Annotate using emoticons, if it is at the end. 规则2：如果结尾有表情符号，则用它进行标注。
+  * Emojies & Emoticons 表情符号与颜文字
+    * Tweets containing specific emojis can be mapped to certain emotions (e.g., crying face = cry, laughing face = funny). 包含特定表情的推文可以映射到特定情感（如哭脸=悲伤，笑脸=有趣）。
+
+##### 4. Rule 3: Lexicon-based Scoring 规则3：基于词典的打分
+
+* Extract the text. 提取文本。
+  * Look at the emotion association of terms. 查看每个词与情感的关联。
+  * Assign a score for each term. 给每个词分配一个分数。
+  * Sum up the score for all terms. 汇总所有词的得分。
+* Assign a score based on lexicon. 基于词典分配分数。
+* We can also use the NRC hashtag lexicon! 我们还可以用NRC hashtag词典！
+  * List of words and their associations to eight emotions (anger, fear, anticipation, trust, surprise, sadness, joy, disgust). 包含单词及其与八种情感（愤怒、恐惧、期待、信任、惊讶、悲伤、快乐、厌恶）的关联。
+  * Each term has an associationFlag (0 or 1). 每个词有一个关联标记（0或1）。
+  * Tweets with hashtags #happy, #anger, etc. All emoticons are retained in the data collection process and validated. 带有如#happy、#anger等标签的推文，所有表情符号在数据收集和验证过程中都被保留。
+  * Assigning weights to each emotion class for a tweet. 给每条推文的每个情感类别分配权重。
+  * $<score>$ is a real-valued sentiment score: score = PMI(w, pos) - PMI(w, neg), where PMI stands for Pointwise Mutual Information between a term w and the positive/negative class. <score> 是一个实数情感得分，score = PMI(w, pos) - PMI(w, neg)，PMI代表词w与正/负类别之间的点互信息。
+  * $<Npos>$ is the number of times the term appears in the positive class, i.e., in tweets with positive hashtags. <Npos> 是该词在正面类别（带正面标签的推文）中出现的次数。
+  * $<Nneg>$ is the number of times the term appears in the negative class, i.e., in tweets with negative hashtags. <Nneg> 是该词在负面类别（带负面标签的推文）中出现的次数。
+
+##### 5. Compute overall score 综合打分与标签选择
+
+* Hashtag at the end: Assign the label 结尾有标签：分配标签
+* Emoticon at the end: Assign the label 结尾有表情符号：分配标签
+* Lexicon score: For each feature (word/hashtag/emoticon), compute lexicon score 词典得分：对每个特征（词/标签/表情）计算词典得分
+* Select the label correspondingly, based on overall score 根据整体得分选择相应的标签
+
+##### 6. Emotion Labelling 流程
+
+1. input Tweet Text（推文文本）
+2. Extract words（提取单词）
+
+   * 操作：从推文中提取所有单词、标签（hashtags）、表情符号（emojis）。
+3. Emotion word found at the end?（结尾有情感词吗？）
+
+   * **判断**：推文结尾是否有情感相关的单词（如 happy, sad 等）。 **如果有（yes）**：
+   * 进入下一个判断：Hashtag found?（有标签吗？）
+     * **如果有标签（yes）**：
+       * **Add label based on hashtag lexicon（基于标签词典分配标签）**
+         根据已建立的标签情感词典，将相应的情感标签赋予推文。
+     * **如果没有标签（no）**：
+       * 进入下一个判断：Emoticon found at the end?（结尾有表情符号吗？）
+         * **如果有（yes）**：
+           * **Add label to respective lexicon（将标签加入对应词典）**
+             根据表情符号，将情感标签加入相应词典。
+         * **如果没有（no）**：
+           * 进入“Overall Lexicon score for words/tags/emojies”。
+4. Overall Lexicon score for words/tags/emojies（整体词典得分）
+5. Emotion with highest score assigned as class label（得分最高的情感被分配为类别标签）
+6. ![1745249608426](images/README/1745249608426.png)
+
+##### 总结：三大规则
+
+* **Rule 1:** If the text is annotated with a hashtag (for an emotion), assign the corresponding emotion label. 如果文本带有情感标签，则分配相应的情感类别。
+* **Rule 2:** Annotate using emoticons, if it is at the end. 如果结尾有表情符号，则用它进行标注。
+* **Rule 3:** Assign a score based on lexicon (NRC lexicon or hashtag lexicon), sum up the scores, and select the label with the highest score. 基于词典为每个特征赋分，汇总得分，选择得分最高的标签作为最终类别。
+
+#### 4. 得到带标签的数据集（Obtain Labelled Dataset）
+
+* **原文**：“The result is a set of tweets, each associated with an emotion label, forming a labelled dataset.”
+* **解释**：经过处理后，每条推文都带有情感标签，形成了带标签的数据集，可用于情感分析、机器学习模型训练等。
+
+#### 补充说明（Additional Notes）
+
+* **自动化优势（Automation Advantage **：“This process enables large-scale, automatic collection of labelled data with minimal manual effort.”
+* **标签体系扩展（Expanding Hashtag Set）**：可根据情感分类模型（如Parrot’s taxonomy）扩展标签词表，覆盖更多情感表达。
+* **适用范围（Applicability）**：不仅适用于情感分析任务，也可用于事件、主题等其他自动标注场景。
+
+#### 流程图（Flowchart）
+
+1. **确定情感标签**（Identify hashtags）
+   ↓
+2. **API采集推文**（Collect tweets via API）
+   ↓
+3. **数据清洗与处理**（Data cleaning & processing）
+   ↓
+4. **形成带标签的数据集**（Labelled dataset）
+
+## 8. Deep Learning Models 深度学习模型训练
+
+* **Create large datasets（创建大规模数据集）**
+* **Label them（对数据进行标注）**
+* **Train a classifier（训练分类器）**
+  * 80% of data（80%的数据用于训练）
+* **Validate the model（验证模型）**
+  * 10% of data（10%的数据用于验证）
+* **Test the model（测试模型）**
+  * 10% of data（10%的数据用于测试）
+
+### BERT (Bidirectional Encoder Representation with Transformers) BERT模型介绍
+
+* In 2018, Google published a paper titled “Pre-training of deep bidirectional transformers for language understanding”.
+  2018年，谷歌发表论文《用于语言理解的深度双向Transformer的预训练》。
+* They introduced a language model called BERT（提出了BERT模型）
+
+  * Bidirectional Encoder Representation with Transformers（双向编码器表示，基于Transformer结构）
+* That achieved state-of-the-art performance in tasks like（在以下任务取得了最优表现）：
+
+  * Question-Answering（问答任务）
+  * Natural Language Inference（自然语言推断）
+  * Classification（分类任务）
+  * General language understanding evaluation or (GLUE)（通用语言理解评测）
+* The OpenAI GPT and BERT use the Transformer architecture（OpenAI GPT和BERT都采用Transformer架构）
+
+  * Use a concept called attention（使用了“注意力”机制）
+* This enabled the architecture to take into account long-term dependencies（能够建模长期依赖关系）
+
+  * Through the self-attention mechanism that inherently changed the way we model sequential data（自注意力机制极大改变了序列数据建模方式）
+  * It uses an encoder-decoder architecture（采用编码器-解码器架构）
+
+#### Bert approach BERT方法
+
+* **BERT uses two training paradigms（BERT有两种训练范式）**：
+
+  * Pre-training（预训练）
+  * Fine-tuning（微调）
+* **During pre-training（预训练阶段）**:
+
+  * The model is trained on a large dataset to extract patterns（在大规模无标注数据上学习模式）
+  * Generally an unsupervised learning task（通常是无监督学习任务）
+* **During fine-tuning（微调阶段）**:
+
+  * The model is trained for downstream tasks（模型在下游具体任务上进行训练）
+  * Like Classification, Text-Generation, Language Translation, Question-Answering, etc.（如分类、文本生成、翻译、问答等）
+* Essentially, you can download a pre-trained model and then Transfer-learn the model on your data（可以直接下载预训练模型，然后迁移学习到你的数据上）
+
+##### 1. Data Preprocessing 数据预处理
+
+* **Making the sentences into lower case（将句子转为小写）**
+* **Creating vocabulary（创建词表）**
+  * Vocabulary is a list of unique words in the document（词表是文档中所有唯一单词的集合）
+
+##### 2. Special Token & Purpose 特殊Token及其用途
+
+* **[CLS]**:
+
+  * 句首分类标记。始终作为输入的第一个token，用于分类任务的整体句子表示。
+  * *The first token, always used for classification (sentence-level representation).*
+* **[SEP]**
+
+  * 句子分隔符。用于分隔两句话或句子组。
+  * *Separates two sentences.*
+* **[END]**
+
+  * 句子结束标记。标记句子的结尾（部分实现中可选）。
+  * *Indicates the end of a sentence (optional in some implementations).*
+* **[PAD]**
+
+  * 填充标记。用于将所有输入序列补齐到相同长度。
+  * *Used to pad/truncate sentences to equal length.*
+* **[MASK]**
+
+  * 掩码标记。用于掩盖词汇，进行掩码语言模型训练。
+  * *Used to mask words for masked language modeling.*
+
+##### 3. Embeddings 嵌入层
+
+* In the case of BERT, it creates three embeddings for（BERT有三种嵌入）：
+
+  * Token（词嵌入）
+
+    * **作用**：把每个单词（或子词、Token）转化为向量，便于神经网络处理。
+    * **例子**：
+      * 原句: `[CLS] the cat is walking [SEP] the dog is barking`
+      * Token化后变成一串id，如 `[1, 5, 7, 9, 10, 2, 5, 6, 9, 11]`
+      * 每个id查表得到一个向量（Token Embedding）
+  * Segments（句段嵌入）
+
+    * **作用**：区分同一个输入中的不同句子（如BERT的句子对任务）。
+    * **做法**：
+      * 第一部分（如第一个句子）用一组向量（如EA），第二部分（第二个句子）用另一组向量（如EB）。
+      * 这样模型能知道哪些Token属于哪个句子。
+  * Position（位置嵌入）
+
+    * **作用**：让模型知道每个词在句子中的具体顺序（Transformer本身不具备顺序感知）。
+    * **做法**：
+      * 对每个位置（第1、2、3...个Token）加上一个独特的向量（E0, E1, E2...）。
+      * 这样即使词相同，位置不同，最终输入也不同。
+  * **每个Token的最终输入向量** = Token Embedding + Segment Embedding + Position Embedding
+  * 例如：
+
+    * `[CLS]` 的输入 = `[CLS]`的词向量 + 句段A的向量 + 位置0的向量
+    * `dog` 的输入 = `dog`的词向量 + 句段B的向量 + 位置6的向量
+  * 图中展示了三层嵌入向量的相加过程，最终形成统一长度的输入序列，供BERT模型处理。
+  * 三种Embedding共同作用，把原始文本“翻译”成模型能理解的、包含词义、句段归属和位置信息的向量序列，是BERT输入处理的核心环节。
+  * ![1745254641721](images/README/1745254641721.png)
+
+##### 4.Padding 填充
+
+Padding is usually done to make sure that all the sentences are of equal length. 填充通常用于保证所有句子长度一致。
+
+example：
+
+* "The cat is walking. The dog is barking at the tree"
+* [CLS] The cat is walking [PAD] [PAD] [PAD].
+* [CLS] The dog is barking at the tree.
+* 这样，每一句的长度都变成了7，方便送入模型进行训练或推理。
+
+**为什么要Padding？**
+
+* 神经网络要求每一批（batch）输入的序列长度一致，否则无法并行计算。
+* 现实中句子长短不一，所以需要对短句子进行填充。
+
+Padding的本质作用是**保证输入数据格式统一**，让模型高效处理不同长度的句子，是深度学习文本处理中的基础环节。
+
+##### 5. Masking 掩码
+
+* **replace 15% of the words with [MASK] tokens, add padding. 将15%的单词替换为[MASK]标记（Token）补齐（Padding）到统一长度**
+* 为什么要Mask？
+  * 这是BERT等模型自监督学习的核心训练方式，叫做“Masked Language Modeling（MLM）”。
+  * 训练时随机选取输入句子中15%的词，用特殊的[MASK]标记替换。
+  * 模型的任务就是根据上下文预测这些被遮盖的词是什么。
+* Masking是BERT训练的关键步骤，通过随机遮盖部分词汇，让模型学会理解上下文并预测缺失的信息。Padding则保证输入格式统一，方便批量处理。
+
+##### 6. Training & Classification（训练与分类）
+
+左图：BERT训练（Masked Language Model）
+
+- **输入处理**：输入句子会随机将15%的词用[MASK]标记替换。
+- **训练目标**：模型需要根据上下文预测被[MASK]遮盖的词是什么。
+- **输出**：对于被遮盖的位置，BERT输出一个向量，通过全连接层（FFNN）和softmax，预测所有词汇表中每个词的概率，选概率最高的作为预测结果。
+- **举例**：
+  - 输入：[CLS] Let's stick to [MASK] in this skit
+  - 预测：[MASK] → improvisation
+
+右图：BERT用于分类任务
+
+- **输入**：加上[CLS]特殊标记，后接Token序列。
+- **输出**：BERT输出每个Token的向量，通常取[CLS]对应的向量作为整句话的表示。
+- **分类**：将[CLS]向量送入分类器（如全连接层），输出标签。
+
+![1745255039431](images/README/1745255039431.png)
+
+With PyTorch（用PyTorch实现BERT分类器）
+
+- **BertClassifier类**：继承自nn.Module
+- **初始化参数**：
+  - `model_name`：BERT模型名（如"bert-base-uncased"）
+  - `num_labels`：分类类别数
+  - `dropout_prob`：dropout概率
+  - `bert_hidden_size`：BERT输出向量的维度（如768）
+- **组件**：
+  - 加载预训练BERT模型
+  - Dropout层
+  - 线性分类层（nn.Linear）
+
+**代码片段简化版：**
+
+```
+class BertClassifier(nn.Module):
+    def __init__(self, model_name, num_labels, dropout_prob=0.5, bert_hidden_size=768):
+        super().__init__()
+        self.bert = BertModel.from_pretrained(model_name)
+        self.dropout = nn.Dropout(dropout_prob)
+        self.classifier = nn.Linear(bert_hidden_size, num_labels)
+```
+
+Forward Layer（前向传播）
+
+- **forward方法实现**：
+  - 输入：`input_ids`（Token序列），`attention_mask`（注意力掩码，避免对padding部分进行注意）
+  - 步骤：
+    1. 用BERT编码输入，得到输出和池化输出
+    2. 对池化输出做dropout
+    3. 送入线性层做分类
+    4. 用log_softmax输出概率分布
+  - **返回**：分类的概率分布
+
+**代码片段简化版：**
+
+```
+def forward(self, input_ids=None, attention_mask=None):
+    outputs = self.bert(input_ids, attention_mask=attention_mask)
+    pooled_output = outputs[1]
+    pooled_output = self.dropout(pooled_output)
+    logits = self.classifier(pooled_output)
+    return torch.log_softmax(logits, dim=1)
+```
+
+总结
+
+- **BERT训练**：通过掩码语言模型让模型学会理解上下文。
+- **BERT分类**：用[CLS]向量做下游分类任务。
+- **PyTorch实现**：定义分类器结构和前向传播，实现文本分类等任务。
+
+#### Using BERT to extract emotion
+
+* **数据集的使用**：使用已讨论的数据集。
+* **微调BERT模型进行情感分类**：
+
+  * 80%数据用于训练
+  * 10%数据用于验证（选择超参数）
+  * 10%数据用于测试模型效果
+* Four emotions **情感类型**
+
+  * Happiness（快乐）
+  * Sadness（悲伤）
+  * Fear/Surprise（恐惧/惊讶）
+  * Anger/Disgust（愤怒/厌恶）
+* Metrics 评估指标
+
+  * **基本概念**：
+    * True Positive (TP)：正样本被正确分类
+    * False Positive (FP)：负样本被误分类为正
+    * True Negative (TN)：负样本被正确分类
+    * False Negative (FN)：正样本被误分类为负
+  * **常用指标**：
+    * Accuracy（准确率）：(TP+TN)/(TP+TN+FP+FN)**(**TP**+**TN**)**/**(**TP**+**TN**+**FP**+**FN**)**
+    * Precision（精确率）：TP/(TP+FP)**TP**/**(**TP**+**FP**)**
+    * Recall（召回率）：TP/(TP+FN)**TP**/**(**TP**+**FN**)**
+    * F1分数：$2∗(Precision∗Recall)/(Precision+Recall)2∗(Precision∗Recall)/(Precision+Recall)$
+* Evalution 评估结果
+
+  * ![1745256418095](images/README/1745256418095.png)
+  * Why do we get poor results?（为什么结果不理想？）
+  * Misclassification of emotion（情感误分类）
+
+    * E.g., Anger as fear!（比如愤怒被分成恐惧）
+  * For sentiment classification: 80% or more（情感极性分类准确率通常≥80%）
+  * If we first classify as Positive or negative（如果先做正/负分类）
+  * Maybe the classification errors reduce!（也许分类错误会减少！）
+
+#### Improved Method 改进方法
+
+1. SASE model - Self-attentive sentence embedding model SASE模型——自注意力句子嵌入模型
+
+   * Word embedding 词嵌入
+   * biLSTM 双向长短时记忆网络
+   * Long short-term memory (LSTM) is an artificial recurrent neural network (RNN) architecture used in the field of deep learning. 长短时记忆网络（LSTM）是一种用于深度学习领域的人工循环神经网络（RNN）结构。
+   * SASE模型首先将文本转为词向量，经过双向LSTM提取上下文特征，再通过注意力机制和全连接层处理，最后输出分类结果。
+   * dense neural network 密集神经网络（全连接神经网络）
+
+     * layers are fully connected (dense) by the neurons in a network layer.  在神经网络的每一层中，神经元之间是全连接（密集连接）的。
+     * Each neuron in a layer receives an input from all the neurons present in the previous layer—thus, they're densely connected 每一层的每个神经元都会接收前一层所有神经元的输入，因此它们是密集连接的。
+     * **Dense（全连接）层**是神经网络中最常见的层类型之一。它的特点是：
+       * 在SASE模型中，Dense层用于对LSTM提取到的特征进行进一步处理和分类。
+       * 层内每个神经元都与前一层的所有神经元相连接。
+       * 这种结构有助于信息的充分融合与表达，适用于特征提取和分类等任务。
+   * softmax function
+
+     * also known as softargmax or normalized exponential function, 也被称为softargmax或归一化指数函数，
+     * is a function that takes as input a vector of K real numbers,  是一个以K个实数为输入的函数，
+     * and normalizes it into a probability distribution consisting of K probabilities proportional to the exponentials of the input numbers. 并将其归一化为一个概率分布，这个分布包含K个概率，每个概率与输入数值的指数成正比。
+     * **Softmax函数**常用于多分类神经网络的输出层。它的作用是将一个实数向量“压缩”为一个概率分布，使得每个输出值都在0到1之间，并且所有输出值的和为1。
+   * 流程：
+
+     1. **输入（Input）**：输入一句话或文本。
+     2. **词嵌入（Embedding）**：把每个词转成向量。
+     3. **双向LSTM（BiLSTM）**：前后一起分析句子，理解上下文。
+     4. **全连接层（Dense）**：进一步处理特征。
+     5. **Softmax/Sigmoid**：输出概率，进行分类。
+     6. **输出（Output）**：得到最终的情感分类结果。
+   * Hierarchical Approach 层次化方法
+
+     1. 三分支结构（完整版）
+
+     * **上方分支（Output\_PMul）**
+       * 负责判断文本是否为 **Happiness（快乐）** 情绪。
+     * **中间分支（Output\_Bi）**
+       * 进行 **二分类（Binary Classification）**，判断文本是否属于“快乐/非快乐”或类似的二元分类任务。
+     * **下方分支（Output\_NMul）**
+       * 负责区分 **Anger（愤怒）、Fear（恐惧）、Sadness（悲伤）** 等负面情绪。
+
+     **这种层次化情感分类方法**，先判断文本是否为快乐（正面情绪），如果不是，再进一步细分为愤怒、恐惧、悲伤等负面情绪。这样可以提高分类的准确率和解释性。
+
+     2. 两分支结构（简化版）
+
+     * **上方分支（Output\_Bi）**
+       * 二分类，通常用于判断是否为某种情绪（如快乐/非快乐）。
+     * **下方分支（Output\_NMul）**
+       * 多分类，用于区分不同的负面情绪（如愤怒、恐惧、悲伤）。
+
+     **这是一个简化版的层次化情感分类方法**，省略了快乐的单独分类分支，只保留了二分类和负面情绪的多分类。
+2. biGRU（双向门控循环单元）
+
+   Part A（输入与特征提取）
+
+   * **Input**：原始输入（如文本序列）。
+   * **Embedding**：将输入的词语转换为稠密的向量表示（词嵌入）。
+   * **Bidirectional\_GRU**：双向GRU层，能够捕捉文本的上下文信息，比普通GRU能获得更丰富的序列特征。
+
+   Part B（特征聚合）
+
+   * **Average\_Pooling**：对GRU输出做平均池化，提取整体特征。
+   * **Max\_Pooling**：对GRU输出做最大池化，提取最显著特征。
+   * **Concatenation**：将平均池化和最大池化的结果拼接起来，形成更全面的特征向量。
+
+   Part C（分类与输出）
+
+   * **Dense**：全连接层，对拼接后的特征进一步变换。
+   * **Dropout**：防止过拟合的正则化层。
+   * **Sigmoid / Softmax**：输出层激活函数。
+     * **Sigmoid**用于二分类任务。
+     * **Softmax**用于多分类任务。
+   * **Output**：最终的分类结果。
+
+   总结
+
+   * **biGRU**结构能够捕获文本序列的双向上下文信息。
+   * 采用**池化和拼接**，增强了特征表达能力。
+   * 结构简洁高效，适用于情感分析、文本分类等NLP任务。
+3. 2POS（二分类）**和**3POS（三分类）
+
+   * **Bert-H（层次化BERT）** 在2POS和3POS下都取得了最高的准确率和F1分数，说明层次化方法对分类有提升作用。
+     * 在2POS（二分类）任务中，表现最优。
+     * 在3POS（三分类）任务中依然保持领先，展现出较强的泛化能力。
+   * **普通BERT** 也表现较好，仅次于Bert-H。
+   * **SASE及BiGRU系列**的表现整体低于BERT系列，但层次化版本（-H）通常略优于非层次化。
+   * **三分类（3POS）任务整体分数略低于二分类（2POS）**，但Bert-H在3POS上依然表现突出。
+4. 总结：
+
+   * **类别数增加时，模型性能下降**
+     * 类别越多，准确率等指标越低
+   * **性能下降的原因可能是正向情感类别之间的“串扰”**
+     * 不同正向情感之间界限模糊，容易混淆
+   * **实际上：**
+     * 人们很少只描述某一种正向情感，往往会同时表达多种正向情感
+   * **结论：**
+     * 这意味着我们需要开发**更准确的标注数据集**，以获得更可靠的“真实标签”（ground truth）
+
+# Week 9 Knowledge Graph 知识图谱
+
+![1745277304449](images/README/1745277304449.png)
+
+## 1. What is a Knowledge Graph? 什么是知识图谱？
+
+* **A Knowledge Graph is a structured Knowledge Base.**
+  知识图谱是一个结构化的知识库。
+* **(i) Mainly describes real world entities and their interrelations, organized in a graph.**
+  (i) 主要描述现实世界中的实体及其关系，并以图的形式组织。
+* **(ii) Defines possible classes and relations of entities in a schema.**
+  (ii) 在模式中定义实体的可能类别和关系。
+* **(iii) Allows for potentially interrelating arbitrary entities with each other.**
+  (iii) 允许任意实体之间的潜在关联。
+* **(iv) Covers various topical domains.**
+  (iv) 涵盖多个主题领域。
+* **Example:**
+  - The knowledge graph can contain entities like "Barack Obama", "Michelle", "Honolulu", "United States", "Hawaii" etc., and their relations such as "wasBornIn", "isMarriedTo", "livesIn", "hasCapital", "locatedIn".
+    知识图谱可以包含如“Barack Obama”、“Michelle”、“Honolulu”、“United States”、“Hawaii”等实体，以及它们之间的关系，如“wasBornIn”（出生于）、“isMarriedTo”（已婚于）、“livesIn”（居住于）、“hasCapital”（首都）、“locatedIn”（位于）。
+
+## 2. Data to Knowledge 数据到知识
+
+* **Data generally represents a collection of facts.** 数据通常表示事实的集合。
+* **Filtering and transforming this data, we give it a structure and create Information.** 通过过滤和转换数据，赋予其结构，形成信息。
+* **The understanding derived from this information is called Knowledge.** 从信息中获得的理解称为知识。
+* **Example:**
+  - Raw data: "From capital city Edinburgh ... Edinburgh, Scotland beautiful places ..."
+    原始数据：“From capital city Edinburgh ... Edinburgh, Scotland beautiful places ...”
+  - Information: "Edinburgh is the capital of Scotland."
+    信息：“Edinburgh is the capital of Scotland.”
+  - Knowledge: "Edinburgh, CapitalOf, Scotland" (structured as a triple)
+    知识：“Edinburgh, CapitalOf, Scotland”（以三元组结构化）
+* **Wisdom:**
+  - The understanding that can be derived from this information is called Knowledge, which is higher-order than just having data or information.
+    从信息中获得的理解称为知识，这比单纯拥有数据或信息更高层次。
+
+## 3. Refined Definition & Architecture of Knowledge Graph 知识图谱的精确定义与架构
+
+* **A knowledge graph acquires and integrates information into an ontology and applies a reasoner to derive new knowledge.** 知识图谱将信息获取并集成到本体中，并通过推理引擎推导新知识。
+* **Architecture:**
+  - Data sources (Source 1, Source 2, ...) feed into a knowledge-based system.
+    数据源（Source 1, Source 2, ...）输入到知识系统中。
+  - The knowledge base (e.g., Ontology) stores structured knowledge.
+    知识库（如本体）存储结构化知识。
+  - A reasoning engine is used to infer new knowledge from existing facts.
+    推理引擎用于从已有事实中推导新知识。
+
+## 4. Knowledge Graph vs Ontology 知识图谱 vs 本体
+
+* **A knowledge graph is a representation of interconnected concepts, often derived from data sources.**
+  知识图谱是互联概念的表示，通常来源于数据。
+* **Ontologies are often carefully crafted, with human experts specifying the relationships and constraints.** 本体通常由专家精心设计，指定关系和约束。
+  - Unique vocabulary 独特的词汇
+  - Set of relationships 关系集合
+* **Knowledge graphs rely on ontologies to organize and structure data.**
+  知识图谱依赖本体来组织和结构化数据。
+
+
+## 5. Triples & Graph Structure 三元组与图结构
+
+* **A triple represents a couple of entities and a relation between them.**
+  三元组表示一对实体及它们之间的关系。
+* **Node A and Node B here are two different entities.**
+  这里的节点A和节点B是两个不同的实体。
+* **These nodes are connected by an edge that represents the relationship between the two nodes.**
+  这两个节点通过一条边相连，这条边代表它们之间的关系。
+* **A triple = (Subject, Predicate, Object).**
+  三元组 = （主语，谓语，宾语）。
+* **A node or an entity can have multiple relations as well.**
+  一个节点或实体也可以有多个关系。
+* **Example:**
+  * **"Rishi Sunak" — PrimeMinisterOf → "UK"**
+    “Rishi Sunak” — PrimeMinisterOf（英国首相）→ “UK”
+  * **"Rishi Sunak" — analystAt → "Goldman Sachs"**
+    “Rishi Sunak” — analystAt（分析师就职于）→ “Goldman Sachs”
+* **Relations form a graph.**
+  这些关系共同组成了一张图。
+* **The nodes refer to the “real” data or contain some literal.**
+  节点指向“真实”的数据或包含一些字面值。
+* **In a knowledge-graph, information represented in a particular formal ontology can be more easily accessible to automated information processing.**
+  在知识图谱中，用特定的形式化本体表示的信息更容易被自动化处理。
+
+## 6. Major Knowledge Graph Examples 主要知识图谱例子
+
+* **Wikidata:**
+  * **Wikidata is a free and open knowledge base that can be read and edited by both humans and machines.**
+    Wikidata是一个可以被人和机器读取和编辑的免费开放知识库。
+  * **Wikidata acts as central storage for the structured data of its Wikimedia sister projects including Wikipedia, Wikivoyage, Wiktionary, Wikisource, and others.**
+    Wikidata作为维基媒体项目（包括Wikipedia, Wikivoyage, Wiktionary, Wikisource等）的结构化数据中心存储库。
+* **DBpedia:**
+  * **Giving structure to Wikipedia.**
+    为维基百科赋予结构。
+  * **The 2016-04 release of the DBpedia data set consists of 9.5 billion RDF triples.**
+    2016年4月发布的DBpedia数据集包含95亿个RDF三元组。
+  * **6M entities: 1.5M people, 810K places, 301K species, 275K organizations, 135K music albums, 106K films, 20K video games, ...**
+    600万个实体：150万人物，81万地点，30.1万物种，27.5万组织，13.5万音乐专辑，10.6万电影，2万电子游戏等。
+  * **1.3 billion were extracted from the English edition of Wikipedia and 5.0 billion from other language editions.**
+    其中13亿来自英文维基百科，另外50亿来自其他语言版本。
+
+## 7. Entity & Named Entity & Named Entity Recognition(NER) 实体与命名实体与识别
+
+### 1. basic concept 基础概念
+
+* **Entity:** An entity is an object that exists.
+  实体是指客观存在的对象。
+* **Named entity:** A named entity is a real-world object, such as a person, location, organization, product, etc., that can be denoted with a proper name.
+  命名实体是指现实世界中的对象，如人、地点、组织、产品等，可以用专有名称表示。
+* **Named Entity Recognition (NER):**
+  * NER is a natural language processing technique that identifies predefined categories of objects in a body of text. 命名实体识别（NER）是一种自然语言处理技术，用于识别文本中预定义类别的对象。
+  * **NER is a sub-task of information extraction that seeks to locate and classify named entities in text into pre-defined categories.** NER是信息抽取的子任务，旨在定位并分类文本中的命名实体到预定义类别中。
+  * **Common categories:** Person, Organization, Location, Time, Quantity, Monetary values, Percentages, etc.
+    常见类别：人、组织、地点、时间、数量、货币值、百分比等。
+  * **Other names:** Entity identification, entity chunking, entity extraction.
+    其他名称：实体识别、实体切分、实体抽取。
+
+### 2. Entity Recognition, Typing & Linking 实体识别、分类与链接
+
+在自然语言处理中，理解文本的第一步通常是识别出文本中提到的“实体”（如人名、地名、组织等），并进一步对这些实体进行分类和链接。具体流程如下：
+
+#### 1. 实体识别（Entity Recognition）
+
+* **Identify token spans of entity mentions in text**
+  识别文本中实体出现的词语区间（可能是单词或短语）。
+* **Example**
+  Why [Kobe] is better than [Jordan]? 为什么 [Kobe] 比 [Jordan] 更好？
+  How long is a flight from [Los Angeles] to [London]? 从 [洛杉矶] 到 [伦敦] 的航班需要多长时间？
+
+#### 2. 实体分类（Typing）
+
+* **Classify them into predefined set of types of interest** 将识别出的实体分配到预定义的类型中（如人物、地点、机构等）。
+* **Typing:**
+  * [Kobe], [Jordan] → PERSON（人）
+  * [Los Angeles], [London] → LOCATION（地点）
+
+#### 3. 实体链接（Entity Linking）
+
+* **Link entity mentions to knowledge base entries for in-depth entity information**
+  将识别并分类后的实体，进一步链接到知识库中的具体条目（如维基百科、DBpedia、Wikidata等），以获得更丰富、结构化的信息。
+* **Linking Example:**
+  * [Kobe] → [https://dbpedia.org/page/Kobe\_Bryant](https://dbpedia.org/page/Kobe_Bryant)
+  * [Jordan] → [https://www.wikidata.org/wiki/Q25369](https://www.wikidata.org/wiki/Q25369)
+
+#### 4. 总结（Summary）
+
+* **Entities are what a large part of our knowledge is about** 实体是我们知识的重要组成部分。通过识别、分类和链接实体，我们可以把非结构化文本转化为结构化知识，支持自动问答、信息检索、知识图谱等多种智能应用。
+
+### 3. NER Approaches NER的实现方法
+
+1. 基于语言语法的技术（Linguistic grammar-based techniques）
+   * **Hand-crafted grammar-based systems typically obtain better precision 人工设计的语法规则系统通常能获得更高的精确率**
+     通过语言学家手工编写规则，可以更准确地识别实体。
+   * **But at the cost of lower recall and months of work by experienced computational linguists 但代价是召回率较低，且需要经验丰富的计算语言学家花费数月时间开发**
+     这种方法虽然精度高，但容易漏掉一些实体，且开发成本高、周期长。
+2. 基于统计模型的方法（Statistical models such as machine learning）
+   * **Statistical NER systems typically require a large amount of manually annotated training data 统计NER系统通常需要大量人工标注的训练数据**
+     机器学习方法需要大量带标签的数据来训练模型。
+   * **Semi-supervised approaches have been suggested to avoid part of the annotation effort 半监督方法被提出以减少标注工作量**
+     为了减少人工标注的负担，研究者提出了半监督学习方法，结合少量标注数据和大量未标注数据进行训练。
+3. NB classifier（朴素贝叶斯分类器）
+   * **Use conventional classification algorithms to classify substrings of document as “to be extracted” or not 使用常规分类算法将文档中的子串分类为“需要提取”或“不需要提取”**
+     通过传统的分类算法（如朴素贝叶斯），判断文档中的某些片段是否为实体。
+   * **In some simple but compelling domains, this naive technique is remarkably effective在一些简单但有代表性的领域，这种朴素的方法非常有效**
+     虽然方法简单，但在特定领域，朴素贝叶斯等基础模型依然可以取得不错的效果。
+
+### 4. NER Tools NER工具
+
+1. **spaCy NER Model:** A free and open-source library, spaCy. 免费且开源的库 spaCy。
+   * advanced Natural Language Processing (NLP) much simpler in Python.
+     让高级自然语言处理（NLP）在 Python 中变得更简单。
+   * ![1745271698082](images/README/1745271698082.png)
+2. **Stanford Named Entity Recognizer:** Stanford NER is a Named Entity Recognizer, implemented in Java. Stanford NER 是一个用 Java 实现的命名实体识别工具。
+   * It provides a default trained model for recognizing chiefly entities like Organization, Person and Location.
+     它提供了默认训练好的模型，主要用于识别组织、人物和地点等实体类型。
+3. **Stanford NER is also referred to as:** CRF (Conditional Random Field) Classifier. 也被称为 CRF（条件随机场）分类器。
+   * Linear chain Conditional Random Field (CRF) sequence models have been implemented in the software.该软件实现了线性链条件随机场（CRF）序列模型。
+   * We can train our own custom models with our own labeled dataset for various applications.
+     我们可以用自己的标注数据集训练自定义模型，以适应不同的应用场景。
+
+### 4. NER应用场景 (NER Application Scenarios)
+
+* **How is it used?** **它是如何被使用的？**
+
+  * HR Department across companies is to evaluate a gigantic pile of resumes to shortlist candidates.
+    各公司的人力资源部门需要筛选大量简历以选出候选人。
+  * To add to their burden, resumes of applicants are often excessively populated in detail, of which, most of the information is irrelevant to what the evaluator is seeking.
+    让工作更繁重的是，很多求职者的简历信息非常详细，但其中大部分内容对评审者来说并不重要。
+  * NER model could facilitate evaluation of resumes at a quick glance, thereby simplifying the effort required in shortlisting candidates among a pile of resumes.
+    命名实体识别（NER）模型可以帮助快速浏览简历，从而简化在大量简历中筛选候选人的工作量。
+* **A search engine algorithm** **搜索引擎算法，**
+
+  * instead of searching for an entered query across the millions of articles and websites online,
+    不再需要在数以百万计的文章和网站中直接检索用户输入的查询内容，
+  * a more efficient approach would be to run an NER model on the articles once and
+    更高效的方法是在所有文章上先运行一次NER模型，
+    * store the entities associated with them permanently.
+      并永久存储这些文章中提取到的实体信息。
+  * The key tags in the search query can then be compared with the tags associated with the website articles for a quick and efficient search.
+    之后，用户查询中的关键词标签可以与文章关联的实体标签进行匹配，实现快速高效的搜索。
+
+## 8. Information Extraction (IE) Systems / 信息抽取（IE）系统
+
+* **Find and understand limited relevant parts of texts** 找到并理解文本中有限且相关的部分
+* **Gather information from many pieces of text** 从多篇文本中收集信息
+* **Produce a structured representation of relevant information, such as:**
+  生成相关信息的结构化表示，例如：
+  * Relations (in the database sense) 关系（数据库意义上的关系）
+  * A knowledge base 知识库
+* Goal:
+  * **Organize information so that it is useful to people** 组织信息，使其对人有用
+  * **Put information in a semantically precise form that allows further inferences to be made by computer algorithms** 以语义精确的形式存储信息，便于计算机算法进一步推理
+* IE系统的目标就是“从杂乱文本中提取有用信息，结构化存储，既方便人用，也方便机器用，还能支持进一步的智能推理和应用”。
+
+## 9. From Text to Knowledge Graph 文本到知识图谱
+
+Example:
+
+“Indian tennis player Sumit Nagal moved up six places from 135 to a career-best 129 in the latest men’s singles ranking. The 22-year-old recently won the ATP Challenger tournament. He made his Grand Slam debut againstFederer in the 2019 US Open. Nagal won the first set.”
+
+### Steps 步骤
+
+1. **Sentence Segmentation (Split text into sentences)** 句子分割（将文本分割为句子）
+
+   1. *Indian tennis player Sumit Nagal moved up six places from 135 to a career-best 129 in the latest men’s singles ranking.*
+   2. *The 22-year-old recently won the ATP Challenger tournament.*
+   3. *He made his Grand Slam debut against Federer in the 2019 US Open.*
+   4. *Nagal won the first set.*
+
+   ````python
+   import spacy
+   # 加载英文分词和句子分割模型
+   nlp = spacy.load("en_core_web_sm")
+   # 原始文本（多行字符串形式）
+   text = """Indian tennis player Sumit Nagal moved up six places from 135 to a career-best 129 in the latest men’s singles ranking.The 22-year-old recently won the ATP Challenger tournament.He made his Grand Slam debut against Federer in the 2019 US Open.Nagal won the first set."""
+   # 处理文本
+   doc = nlp(text)
+   # 句子分割并输出
+   for sent in doc.sents:
+       print(sent.text)
+   ````
+2. Subject & Object 分析主语与宾语
+
+   在句子分析中，主语（subject）是动作的发出者，宾语（object）是动作的承受者。结合原文的句子：
+
+   1. **原文第二句：**
+      * 英文原文：*The 22-year-old recently won ATP Challenger tournament.*
+      * 分析：
+        * **主语**：22-year-old（22岁的选手）
+        * **宾语**：ATP Challenger tournament（ATP挑战赛）
+      * 解释：这句话中，“22岁的选手”是赢得比赛的人，“ATP挑战赛”是被赢得的对象。
+   2. **原文第四句：**
+      * 英文原文：*Nagal won the first set.*
+      * 分析：
+        * **主语**：Nagal（纳加尔）
+        * **宾语**：first set（首盘）
+      * 解释：这句话中，“Nagal”是赢得首盘的人，“first set”是被赢得的对象。
+3. **Entity Extraction (Identify entities using POS tagging, e.g., nouns and proper nouns)** 实体抽取（用词性标注识别实体，如名词和专有名词）
+
+   * We can easily do this with the help of parts of speech (POS) tagging systems (e.g., Spacy).
+     借助词性标注系统（如Spacy），我们可以轻松完成这项工作。
+     * The nouns and the proper nouns would be our entities. 名词和专有名词通常就是我们要抽取的实体。
+   * **The Rule** **规则**
+     * extract the subject/object along with its modifiers 抽取主语/宾语及其修饰成分
+     * and also extract the punctuation marks between them. 同时抽取它们之间的标点符号。
+
+   ```python
+   import spacy
+   nlp = spacy.load('en_core_web_sm')
+
+   doc = nlp("The 22-year-old recently won ATP Challenger tournament.")
+
+   for tok in doc:
+       print(tok.text, "...", tok.dep_)
+   ```
+
+   * The subject (nsubj) in this sentence is "old". 这个句子的主语（nsubj）是“old”。
+   * Our aim is to extract "22-year-old". 我们的目标是抽取“22-year-old”这个实体。
+
+     * dependency tag of "22" is nummod “22”的依存标签是 nummod（数字修饰语）
+     * "year" is npadvmod “year”的依存标签是 npadvmod（名词短语状语修饰语）
+     * means modifier of "old". 这表示它们都是“old”的修饰成分。
+   * We need to define a rule to extract such entities. 我们需要定义规则来抽取类似的复合实体。
+   * Entity extraction is not just about finding single nouns, but also combining their modifiers (such as numbers, adjectives, etc.) to form complete entity phrases. 实体抽取不仅仅是找单个名词，还要结合其修饰成分（如数字、形容词等），形成完整的实体短语。
+   * By using POS tagging and dependency parsing, we can automatically identify and extract such entities. 可以通过POS标注和依存句法分析，自动识别并抽取这些实体。
+4. **Extract Compound Words and Modifiers** 抽取复合词和修饰词
+
+   * Compound words are those words that collectively form a new term with a different meaning.复合词是指多个词组合在一起，形成一个具有不同含义的新术语。
+   * Example: It is just "tournament" instead of "ATP Challenger tournament". 在原始抽取中，只得到了“tournament”，而不是“ATP Challenger tournament”。"ATP Challenger tournament" is a compound word, representing一个整体的专有名词或短语，具有独特含义。
+   * The rule should be updated to:
+     * extract the subject/object along with its modifiers, compound words. 抽取主语/宾语及其修饰成分，包括复合词
+     * and also extract the punctuation marks between them. 同时抽取它们之间的标点符号
+   * 在抽取实体时，不能只取单个词，还要把相关的修饰词和构成复合词的部分都包含进来，确保抽取到完整、具有实际意义的实体短语。例如，“ATP Challenger tournament”要整体作为一个实体被抽取，而不是只抽取“tournament”。
+5. **Extract Relations (Edges between entities) 抽取关系（实体之间的边）and Construct Triples (Subject, Predicate, Object)抽取关系（实体之间的边）和 构建三元组（主语，谓语，宾语）**
+
+   * We need to connect the nodes (entities) with edges 我们需要用边将节点（实体）彼此连接起来这些“边”
+
+     * These “edges” are the “relations” between a pair of nodes.实际上表示一对节点之间的“关系”（relations）。
+   * Triplets: subject, object and predicate (or entity-attribute-value). 三元组：主语、宾语和谓语（或实体-属性-值）。
+
+     * Example1: The 22-year-old recently won the ATP Challenger tournament.
+
+       * 22-year-old” ——won——> “ATP Challenger Tournament”
+     * Example2: Nagal won the first set.
+
+       * “Nagal” ——won——> “first set”
+     * Example3: Startup companies create jobs and innovation. Bill Gates supports entrepreneurship.
+
+       * “Startup companies” ——create——> “jobs”
+       * “Startup companies” ——create——> “innovation”
+   * 第五步是在知识抽取流程中，把已识别的实体节点通过自动化方法用“关系”连接起来，形成结构化的知识三元组，为知识图谱的构建打下基础。
+6. **Graph Construction and Store in Graph Database** 构建图然后存储到图数据库中
+
+   * The fact represented as an SPO conveys that **SPO三元组表达的事实**
+     * the Subject is related to the Object  用SPO（主语-谓语-宾语）三元组来表示事实，说明主语与宾语之间存在某种关系
+     * through the relationship described by the Predicate. 这种关系由谓语来描述
+   * Storing the SPO triples on a Graph Database **在图数据库中存储SPO三元组**
+     * Remove any ambiguities 将这些SPO三元组存储到图数据库中，并且需要消除任何歧义，保证数据的准确性和一致性
+   * Process the Graph to achieve things like **对知识图谱进行后续处理**
+     * *filling missing links, clustering entities, etc.* 可以对图谱进行进一步处理，比如自动补全缺失的连接（filling missing links）、对实体进行聚类（clustering entities）等操作，以提升图谱的完整性和智能化程度
+   * 第6步主要强调了三元组的表达意义、如何在图数据库中高质量地存储这些三元组，以及如何通过进一步处理来完善和优化知识图谱，使其可以支持更复杂的应用场景。
+
+## 9. Knowledge Graph Construction Challenges 构建挑战
+
+* **Documents may contain inaccurate, outdated, incomplete, or hypothetical information.**
+  文档可能包含不准确、过时、不完整或假设性信息。
+* **Creative language is often difficult to interpret.**
+  创造性语言难以解释。
+* **Miss key facts or include spurious outputs.**
+  可能遗漏关键信息或包含虚假输出。
+
+## 10. Resource Description Framework (RDF) 资源描述框架
+
+- **RDF is a standard model for data interchange on the Web.**
+  RDF是Web上数据交换的标准模型。
+- **RDF has features that facilitate data merging even if the underlying schemas differ,**RDF具有便于数据合并的特性，即使底层模式不同也能合并，
+
+  - **it specifically supports the evolution of schemas over time without requiring all the data consumers to be changed.**
+    它特别支持模式随时间演化，而无需所有数据使用者都做出改变。
+- **RDF is one of the three foundational Semantic Web technologies,**RDF是三大语义网基础技术之一，
+
+  - **RDF is the data model of the Semantic Web.**
+    RDF是语义网的数据模型。
+
+**Example RDF XML: 示例RDF XML**
+
+```
+<?xml version="1.0"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:si="http://www.glasgow.ac.uk/singapore/">
+  <rdf:Description rdf:about="http://www.glasgow.ac.uk">
+    <si:title>University of Glasgow Singapore</si:title>
+  </rdf:Description>
+</rdf:RDF>
+```
+
+- **This example shows how RDF describes resources and their properties in XML format.**
+  该示例展示了RDF如何用XML格式描述资源及其属性。
+
+## 11. Example: Entity Recognition and Expansion 实例：实体识别与扩展
+
+* **Let us say we have string "Geoffrey Hinton".** 假设我们有字符串“Geoffrey Hinton”。
+* **First, the system recognizes that the string actually meant the person Geoffrey Hinton.** 首先，系统识别出该字符串实际上指的是“Geoffrey Hinton”这个人。
+* **Then it will recognize the related entities to that person.** 接着会识别与该人物相关的其他实体。
+* **Named relationships such as "MotherOf", "discovered", "siblings", "is\_knowned\_for", "studied\_at" are identified.** 系统会进一步识别出和主实体之间的命名关系，如“MotherOf（母亲）”、“discovered（发现）”、“siblings（兄弟姐妹）”、“is\_knowned\_for（以……著称）”、“studied\_at（就读于）”等。
+
+## 12. Extraction Process 抽取流程
+
+* **Vast variety of features are used.** 使用大量不同的特征。
+* **Statistics: Ranging from the characteristics of web pages to the reliability of certain techniques used.** 统计方法：涵盖网页特征及所用技术的可靠性。
+* **Employ heuristics or learned prediction functions to assign candidate scores to each candidate fact.** 利用启发式方法或学习到的预测函数为每个候选事实打分。
+* **Features derived from text to measure the quality of candidate facts.** 从文本中提取特征以衡量候选事实的质量。
+* **Many semantic dependencies between facts.** 事实之间存在许多语义依赖。
+
+## 13. Knowledge Graph Identification 知识图谱识别
+
+### Key Tasks 关键任务
+
+* NELL (Never Ending Language Learning):** *Continuously extracts facts from the web.* 持续从网络中抽取事实。
+
+  * *Uses statistics to assign scores to candidate facts.* 用统计方法为候选事实打分。
+
+    * *Bootstrap using NELL* 使用NELL进行自举。
+    * **NELL assigns confidence scores to extracted facts. NELL系统会为抽取出的事实赋予置信度分数。**
+    * **Example:**
+
+      * *[.75, .5] bird(Kyrgistan)*
+      * *[.60, .80] country(Kyrgystan)*
+      * *[.90, .55] country(Kyrgyz Republic)*
+      * *[.80, .65] locatedIn(Kyrgyz Republic, Asia)*
+* **Entity Resolution (ER):** *Determine coreferent entities in the knowledge graph.* 判定知识图谱中的共指实体（同一实体的不同名称或拼写）。
+
+  * *Example: Kyrghystan, Kyrgyzstan, Kyrgyz Republic all refer to the same entity.*例：Kyrghystan、Kyrgyzstan、Kyrgyz Republic 都指同一实体。
+* **Collective Classification:** *Label nodes considering ontology and neighboring labels.* 综合本体和邻居标签为节点分类。
+
+  * *Example: Bird and country are mutually exclusive.* 例：鸟和国家互斥。
+  * *Using the labels of related entities in the knowledge graph to correct label of an entity.* 利用知识图谱中相关实体的标签，修正实体的正确标签。
+* **Link Prediction:** *Predict missing or correct links between entities based on ontological information and graph structure.* *基于本体信息和图结构预测实体间的缺失或正确连接。*
+
+  * *Example: Many different facts relating to location, some are true & others are contradictory or false.*
+    例：关于Kyrgyzstan位置的多种事实，有些真实，有些矛盾或错误。
+* **Jointly inferring the entities, labels and relationships in a graph.** 在图中联合推断实体、标签和关系。
+* **Incorporate ontological constraints between facts during inference.** 推理过程中引入事实间的本体约束。
+
+### Quality and Challenges of Knowledge Graph 知识图谱的质量与挑战
+
+* **Co-referent entities should have same labels and relationships.** 共指实体应拥有相同的标签和关系。
+* **Will improve the quality of knowledge graph.** 这样可以提升知识图谱的质量。
+* **Multiple ontological constraints:** 多重本体约束：
+  * *Bird and country are mutually exclusive.* 鸟和国家是互斥的。
+  * *Relation locatedIn: Mapping from a domain of countries to a range of continents.*
+    locatedIn关系：应从国家映射到洲。
+
+## 14. Summary 总结
+
+* **Knowledge Graphs capture entities, attributes, and relationships as nodes and edges in a graph.**
+  知识图谱以图中节点和边的形式捕捉实体、属性和关系。
+* **Entities are represented as nodes; attributes as node labels; relationships as edges.**
+  实体以节点表示，属性作为节点标签，关系以边表示。
+* **Construction involves entity extraction, relation extraction, triple creation, and graph storage.**
+  构建过程包括实体抽取、关系抽取、三元组创建和图存储。
+* **To build knowledge graph: Input entities, labels, and relationships produced by an information extraction system.**
+  构建知识图谱：输入由信息抽取系统生成的实体、标签和关系。
+* **Key challenges: entity resolution, collective classification, link prediction, and dealing with noisy/incomplete data.**
+  主要挑战：实体消歧、集体分类、链接预测，以及处理噪声/不完整数据。
+* **In real-life: Noise, ambiguity, errors limit the usefulness of extraction graph.**
+  现实中：噪声、歧义和错误会限制抽取图的有效性。
+* **Applications: search engines, resume evaluation, question answering, etc.**
+  应用场景：搜索引擎、简历筛选、问答系统等。
+
+
+# Week 10 Hate, Conflict and Bullying within Online Brand Communities
+
+![1745280042240](images/README/1745280042240.png)
+
+## 1. Background and Motivation 背景与动机
+
+- Social media is widely used across the world, with numerous users across platforms and communities.
+  社交媒体在全球广泛使用，拥有大量用户和社区。
+- User to User interactions are a core feature of social media platforms. Not all interactions are positive; it is these negative interactions which we will discuss today.
+  用户间互动是社交平台的核心功能，但并非所有互动都是正面的，今天将讨论负面互动。
+- Key questions:关键问题：
+  - How do we define these negative interactions?
+    如何定义这些负面互动？
+  - How do they impact users?
+    它们对用户有何影响？
+  - What can platform and/or community owners do in response to negative interactions?
+    平台或社区所有者如何应对负面互动？
+
+## 2. Negative Interactions on Social Media 社交媒体上的负面互动
+
+- Interactions on social media can take many forms i.e. ‘likes’, ‘shares’ and ‘comments’.
+  社交媒体互动有多种形式，如点赞、分享和评论。
+- Interactions can be categorised based on the type of user:互动可按用户类型分类：
+  - User – User (Majority of Interactions) 用户对用户（大多数互动）
+  - User – Brand 用户对品牌
+- Negative interactions can take different forms, often used interchangeably:负面互动形式多样，常被交替使用：
+  - Bullying / cyberbullying 欺凌/网络欺凌
+  - Conflict 冲突
+  - Hate 仇恨
+  - Aggression 攻击性
+
+## 4. Consequences of Negative Interactions 负面互动的后果
+
+### 4.1 Business Perspective 商业视角
+
+- Brand perception 品牌认知
+- Brand stance on the negative interaction 品牌对负面互动的立场
+- Ethical responsibility for brands to act on negative interactions 品牌是否有伦理责任应对负面互动
+- Responsibility debated between brands and platforms 品牌与平台之间对责任的争议
+
+### 4.2 Research Perspectives 研究视角
+
+- Some researchers suggest negative interactions may present positive opportunities for the brand (any publicity is good publicity).
+  有研究认为负面互动对品牌可能是正面机会（任何宣传都是好宣传）。
+- Others suggest negative interactions have negative impacts and brands should intervene.
+  也有研究认为负面互动带来负面影响，品牌应积极介入。
+- Brand intervention can have a positive effect for both brand and consumer.
+  品牌介入对品牌和消费者都有积极影响。
+
+## 5. Defining Hate and Conflict 定义仇恨与冲突
+
+### 5.1 Hate 仇恨
+
+- Extremely negative comments (race, religion, sexuality, etc.)
+  极端负面评论（种族、宗教、性取向等）
+- Doesn’t capture less extreme forms of negative interaction
+  无法涵盖较轻的负面互动（如讽刺、戏弄）
+
+### 5.2 Conflict 冲突
+
+- Includes lighter forms of conflict, captures a wider variety of interactions
+  包含较轻的冲突，涵盖更广泛的互动
+- Complaints could be considered within user’s right if done without aggression
+  投诉如果没有攻击性，可视为用户权利
+
+## 6. Conflict Detection 冲突检测
+
+### 6.1 Methods 方法
+
+- Dictionary based classification 字典法分类
+- Machine learning classification 机器学习分类
+- Deep learning classification 深度学习分类
+
+### 6.2 Sentiment Classification 情感分类
+
+- Identification of opinion's polarity (positive, negative, neutral)
+  识别文本情感极性（正面、负面、中性）
+- Pros: Accurate, easy to implement
+  优点：准确，易于实现
+- Cons: Conflict can exist without negative sentiment
+  缺点：冲突可能存在于非负面评论中
+
+### 6.3 Emotion Classification 情绪分类
+
+- Identification of emotions in text (anger, disgust, fear, happiness, sadness, surprise)
+  识别文本中的情绪（愤怒、厌恶、恐惧、快乐、悲伤、惊讶）
+- Negative emotions grouped for conflict detection
+  检测冲突时将负面情绪归为一类
+
+### 6.4 Conflict Classification Models 冲突分类模型
+
+- Binary or multi-class classification (e.g. Conflict vs Non-Conflict, Threat, Personal Attack, Aggression)
+  二分类或多分类（如冲突/非冲突、威胁、人身攻击、攻击性）
+- Pros: Specific categorisation
+  优点：具体分类
+- Cons: Resource intensive, requires robust datasets
+  缺点：资源消耗大，需要强大的数据集
+
+### 6.5 Multi Label vs Multi Class 多标签与多分类
+
+- Multi-label: Each text can belong to multiple labels
+  多标签：一条文本可属于多个标签
+- Multi-class: Each text can only belong to one label
+  多分类：一条文本只能属于一个标签
+
+## 7. Conflict Detection – Dataset Formation 数据集构建
+
+- Robust domain specific datasets required
+  需要强有力的领域专用数据集
+- Methods: Crowd sourcing, Data Generation
+  方法：众包、数据生成
+
+## 8. Data Augmentation 数据增强
+
+### 8.1 Purpose 目的
+
+- Artificially increasing dataset size
+  人工增加数据集规模
+- Increase classifier performance, generalisability, diversity
+  提高分类器性能、泛化能力和多样性
+
+### 8.2 Methods 方法
+
+- Rule based augmentation (synonym swapping, sentence manipulation)
+  规则增强（同义词替换、句子操作）
+- Augmentation via trained LLM (generate new datapoints, zero-shot prompt engineering)
+  通过训练大模型生成新数据点，零样本提示工程
+
+### 8.3 Few Shot LLM Prompt Engineering 少样本大模型提示工程
+
+- Four components: Instruction, Context, Examples, Definition
+  四要素：指令、上下文、示例、定义
+
+## 9. Classification Analysis 分类分析
+
+### 9.1 Classification Measures 分类指标
+
+- Accuracy, Recall, Precision, F1-Score
+  准确率、召回率、精确率、F1分数
+- Imbalanced data can affect accuracy metric
+  数据不平衡会影响准确率
+
+### 9.2 Recall & Precision 召回率与精确率
+
+- Recall: Proportion of true positives identified
+  召回率：被正确识别的真正例比例
+- Precision: Proportion of identified positives that are correct
+  精确率：被正确识别的正例中有多少是真正例
+
+## 10. Thematic Analysis 主题分析
+
+### 10.1 Process 流程
+
+- Familiarization, Generating initial codes, Identifying themes, Reviewing themes, Defining and naming themes, Reporting findings
+  熟悉数据、生成初始编码、识别主题、审查主题、定义和命名主题、报告结果
+
+### 10.2 Evaluating Data Augmentation 评估数据增强
+
+- Annotate sample data, identify mis-annotated points, analyse reasons
+  标注样本数据，找出误标点，分析原因
+- Four problematic themes:四个问题主题：
+  - Linguistic fluidity 语言流动性
+  - Humour Ambiguity 幽默模糊性
+  - Augmented Content Ambiguity 增强内容模糊性
+  - Augmented Content Misinterpretation 增强内容误解
+
+## 11. Case Study: Glasgow 案例研究：格拉斯哥
+
+### 11.1 Previous Research 先前研究
+
+- Ilhan et al (2018): Used negative sentiment as indication of consumer conflict
+  以负面情感指示消费者冲突
+- Our research aims:我们的研究目标：
+  - Can we identify conflict/hate/aggression on social media using data science techniques?
+    能否用数据科学技术识别社交媒体上的冲突/仇恨/攻击？
+  - Can we identify impacts and optimal responses?
+    能否识别其影响和最佳应对方式？
+
+### 11.2 Conflict Analysis 冲突分析
+
+- Used combination of classifiers: Sentiment + Emotion + Hate Speech
+  结合情感、情绪和仇恨言论分类器
+- Findings:发现：
+  - Users were more negative in conflict
+    用户在冲突中更负面
+  - Positive response when brand intervened
+    品牌介入时用户反应更积极
+  - Brands rarely intervened
+    品牌很少介入
+
+### 11.3 Hate Analysis – Twitter Metadata 仇恨分析——推特元数据
+
+- Used Multi-Class Hate Dataset (Founta et al. 2018)
+  使用多类别仇恨数据集
+- Text classification outperformed metadata classification
+  文本分类优于元数据分类
+- Combining text and metadata produced no significant improvement
+  结合文本和元数据无明显提升
+
+## 12. Analysis of Social Media Brand Communities 社交媒体品牌社区分析
+
+- Collected around 1,200,000 tweets from various brands
+  收集了约120万条品牌推文
+- Used conflict classification model to analyse
+  用冲突分类模型分析
+- Some brands have constant stream of conflict comments (e.g. Adidas), some have low levels (e.g. Rolex)
+  部分品牌有持续的冲突评论（如Adidas），部分品牌较低（如Rolex）
+- Spikes in hate at certain times
+  某些时间段仇恨激增
+
+## 13. Summary 总结
+
+- Negative interactions (bullying, hate, conflict) are prevalent and impactful in online brand communities.
+  负面互动（欺凌、仇恨、冲突）在品牌社区中普遍存在且影响深远。
+- Detection and classification methods include dictionary, machine learning, and deep learning.
+  检测和分类方法包括字典法、机器学习和深度学习。
+- Data augmentation (especially PromptAug) improves classifier performance, especially with small datasets.
+  数据增强（特别是PromptAug）显著提升分类性能，尤其在小数据集场景下。
+- Thematic analysis identifies nuanced issues in data quality and annotation.
+  主题分析帮助发现数据质量和标注中的细微问题。
+- Brand intervention in conflict situations leads to more positive user responses, but is rare in practice.
+  品牌介入冲突时用户反应更积极，但实际介入较少。
