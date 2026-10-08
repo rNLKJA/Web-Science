@@ -15,9 +15,11 @@
 
 This repository is a single, comprehensive set of **bilingual study notes** for a postgraduate **Web Science** course — the analysis of social-media data using natural language processing, machine learning and network science. Each section pairs an English explanation with a Chinese translation so the material can be revised in either language.
 
-The notes run from raw Twitter/X data through content processing, credibility scoring, geolocalisation, network analysis, large language models, emotion analysis and knowledge graphs — ending with a study of hate and conflict in online brand communities. They were written up from the lecture slides kept in [`lecture/`](lecture/), with supporting figures in [`img/`](img/) and [`images/`](images/).
+The notes run from raw Twitter/X data through content processing, credibility scoring, geolocalisation, network analysis, large language models, emotion analysis and knowledge graphs — ending with a study of hate and conflict in online brand communities. They were written up from the lecture slides, with supporting figures in [`img/`](img/) and [`images/`](images/).
 
 > The full notes follow below this header. A rendered snapshot is also available as [`README.pdf`](README.pdf).
+
+> **Note:** The lecture slides are university material, so I keep them privately and don't publish them here. The notes in this repo are my own write-up of what was covered.
 
 ## Weekly contents
 
@@ -40,7 +42,6 @@ The notes run from raw Twitter/X data through content processing, credibility sc
 |---|---|
 | `README.md` | The full bilingual notes (this file) |
 | `README.pdf` | Rendered PDF snapshot of the notes |
-| `lecture/` | Source lecture slides (PDF) |
 | `img/`, `images/` | Figures referenced throughout the notes |
 | `_archive/` | Original README kept for reference |
 

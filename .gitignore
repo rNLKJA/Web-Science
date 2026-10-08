@@ -1,0 +1,6 @@
+# macOS
+.DS_Store
+
+# Course material (lecture slides) is university material, kept privately and not published
+lecture/
+L[0-9]*.pdf
