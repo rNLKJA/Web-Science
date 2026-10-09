@@ -154,7 +154,7 @@ When analyzing social media data, particularly from Twitter/X, we must consider 
   - Document limitations and potential biases in research findings
   - 记录研究发现中的局限性和潜在偏见
 
-![](./img/2025-03-11-20-21-24.png)
+*Slide image omitted: it is university lecture material and isn't published here.*
 
 ## It's not about Twitter but about data 这不是关于Twitter而是关于数据
 
@@ -182,9 +182,7 @@ We focus primarily on Twitter and Reddit data because:
 
 ## Data Structure 数据结构
 
-![](./img/2025-03-11-20-23-25.png)
-
-![](./img/2025-03-11-20-23-37.png)
+*Slide image omitted: it is university lecture material and isn't published here.*
 
 ## Tweet Structure and Metadata 推文结构和元数据
 
@@ -472,23 +470,7 @@ The JSON structure of tweets provides multiple fields relevant to geolocation:
 - `event_type`: Categorized based on content analysis
 - `event_type`：基于内容分析进行分类
 
-![](./img/2025-03-11-20-24-52.png)
-
-![](./img/2025-03-11-20-25-37.png)
-
-![](./img/2025-03-11-20-27-00.png)
-
-![](./img/2025-03-11-20-27-11.png)
-
-![](./img/2025-03-11-20-27-17.png)
-
-![](./img/2025-03-11-20-27-23.png)
-
-![](./img/2025-03-11-20-27-29.png)
-
-![](./img/2025-03-11-20-27-35.png)
-
-![](./img/2025-03-11-20-27-43.png)
+*Slide image omitted: it is university lecture material and isn't published here.*
 
 ## Place Object 地点对象
 
@@ -611,15 +593,7 @@ The JSON structure of tweets provides multiple fields relevant to geolocation:
 - The combination of verified status, official source, and precise coordinates makes this tweet highly reliable for traffic incident detection
 - 认证状态、官方来源和精确坐标的组合使得这条推文在交通事件检测方面高度可靠
 
-![](./img/2025-03-11-20-29-16.png)
-
-![](./img/2025-03-11-20-29-24.png)
-
-![](./img/2025-03-11-20-29-41.png)
-
-![](./img/2025-03-11-20-29-49.png)
-
-![](./img/2025-03-11-20-29-55.png)
+*Slide image omitted: it is university lecture material and isn't published here.*
 
 ## Tutorial Questions and Answers 教程问题与答案
 
@@ -742,15 +716,7 @@ Twitter provides multiple layers of geographic information that vary in precisio
 
 ![](./img/Content%20Processing%20&%20Clustering%20(内容处理与聚类)%20⭐⭐⭐⭐.png)
 
-![](./img/2025-03-11-20-42-49.png)
-
-![](./img/2025-03-11-20-42-56.png)
-
-![](./img/2025-03-11-20-43-03.png)
-
-![](./img/2025-03-11-20-43-08.png)
-
-![](./img/2025-03-11-20-43-14.png)
+*Slide image omitted: it is university lecture material and isn't published here.*
 
 ## Processing and Cleansing Social Media Data 处理和清理社交媒体数据
 
@@ -877,13 +843,7 @@ From a data science perspective, processing social media data involves several c
 The cleansing process must balance removing noise while preserving meaningful signal, especially considering the informal, abbreviated, and context-dependent nature of social media communication.
 清理过程必须在去除噪音和保留有意义的信号之间取得平衡，特别是考虑到社交媒体交流的非正式、缩略和依赖上下文的性质。
 
-![](./img/2025-03-11-20-46-47.png)
-
-![](./img/2025-03-11-20-46-54.png)
-
-![](./img/2025-03-11-20-47-03.png)
-
-![](./img/2025-03-11-20-47-10.png)
+*Slide image omitted: it is university lecture material and isn't published here.*
 
 ## Text Vector Representation 文本向量表示
 
@@ -959,9 +919,7 @@ This vector representation enables:
 More sophisticated weighting schemes like TF-IDF (Term Frequency-Inverse Document Frequency) extend this model by considering term frequency and importance.
 更复杂的加权方案如 TF-IDF（术语频率-逆文档频率）通过考虑术语频率和重要性来扩展此模型。
 
-![](./img/2025-03-11-20-49-24.png)
-
-![](./img/2025-03-11-20-49-47.png)
+*Slide image omitted: it is university lecture material and isn't published here.*
 
 ## Similar Documents 相似文档
 
@@ -1127,15 +1085,7 @@ Cosine similarity measures the cosine of the angle between two vectors, providin
 - **Similarity can be computed just using sum of $t_i\times qt_i$** when vectors are normalized, as the denominator in the cosine similarity formula becomes 1
 - **相似性可以仅使用 $t_i\times qt_i$ 的总和来计算** 当向量归一化时，因为余弦相似性公式中的分母变为 1
 
-![](./img/2025-03-11-21-00-11.png)
-
-![](./img/2025-03-11-21-00-19.png)
-
-![](./img/2025-03-11-21-00-25.png)
-
-![](./img/2025-03-11-21-00-30.png)
-
-![](./img/2025-03-11-21-00-35.png)
+*Slide image omitted: it is university lecture material and isn't published here.*
 
 ## Text Processing Pipeline 文本处理管道
 
@@ -1168,7 +1118,7 @@ The text processing pipeline is a series of steps applied to raw text to transfo
 This systematic approach ensures consistency in text analysis and improves the quality of results in applications like search, classification, and clustering.
 这种系统的方法确保了文本分析的一致性，并提高了搜索、分类和聚类等应用中的结果质量。
 
-![](./img/2025-03-11-21-01-13.png)
+*Slide image omitted: it is university lecture material and isn't published here.*
 
 ## Term Weighting 术语加权
 
@@ -1224,9 +1174,7 @@ weight(t,d) = \begin{cases}
 \end{cases}
 $$
 
-![](./img/2025-03-11-21-02-57.png)
-
-![](./img/2025-03-11-21-03-03.png)
+*Slide image omitted: it is university lecture material and isn't published here.*
 
 ## Finding similar tweets 查找相似的推文
 
@@ -1334,7 +1282,7 @@ Cluster centroid is the representation of group/cluster:
 - It may not correspond to any actual document in the cluster, but serves as an abstract representation of the cluster's central theme
 - 它可能不对应于聚类中的任何实际文档，但作为聚类中心主题的抽象表示
 
-![](./img/2025-03-11-21-09-30.png)
+*Slide image omitted: it is university lecture material and isn't published here.*
 
 ## Stream of tweets 推文流
 
